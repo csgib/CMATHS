@@ -198,7 +198,7 @@ ApplicationWindow {
                 z: 2
                 button_title: "Démarrer"
                 onClicked: {
-                    choice_menu.x = frm_application.width
+                    choice_menu.x = frm_application.width*2
                     switch(wl_current_activity){
                       case 1:
                           exo1.visible = true

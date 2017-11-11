@@ -1,5 +1,4 @@
 import QtQuick 2.0
-import QtGraphicalEffects 1.0
 import "WIDGETS/"
 
 Item {
@@ -34,7 +33,7 @@ Item {
     Text{
         id: text_start_1
         y: 40
-        height: logo_app.height
+        height: logo_app.height/2
         minimumPixelSize: 8
         font.pixelSize: 512
         fontSizeMode: Text.Fit
@@ -54,13 +53,16 @@ Item {
     Text{
         id: text_start_2
         x: 30
+        height: logo_app.height/2
         anchors.top: text_start_1.bottom
         anchors.topMargin: 8
         anchors.right: parent.right
-        anchors.rightMargin: 10
-        anchors.left: parent.right
+        anchors.rightMargin: 20
+        anchors.left: logo_app.right
         anchors.leftMargin: 10
-        font.pixelSize: 30
+        minimumPixelSize: 8
+        font.pixelSize: 512
+        fontSizeMode: Text.Fit
         horizontalAlignment: Text.AlignRight
         verticalAlignment: Text.AlignVCenter
         font.family: local_school.name
