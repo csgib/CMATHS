@@ -63,5 +63,11 @@
         <file>Images/horloge.png</file>
         <file>Images/aiguille_m.png</file>
         <file>Images/fd_activity.png</file>
+        <file>Sounds/exo_heures.wav</file>
+        <file>Images/b10.png</file>
+        <file>Images/b5.png</file>
+        <file>Images/b20.png</file>
+        <file>Images/b50.png</file>
+        <file>Images/b100.png</file>
     </qresource>
 </RCC>

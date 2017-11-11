@@ -3,7 +3,7 @@ import "WIDGETS/"
 import QtGraphicalEffects 1.0
 
 Item {
-    property real activity_number: 8
+    property real activity_number: 9
 
     Rectangle{
         anchors.fill: parent
@@ -51,7 +51,7 @@ Item {
                 y: parent.height*0.2
                 width: parent.width
                 height: parent.height
-                columns: 8
+                columns: activity_number
                 spacing: 20
 
                 WID_Activity{
@@ -172,12 +172,21 @@ Item {
                 }
 
                 WID_Activity{
-                    wg_txt_activity: "La monnaie"
-                    wg_id_activity: 13
+                    wg_txt_activity: "La monnaie - billets"
+                    wg_id_activity: 17
                     wg_niv_1: 1
                     wg_niv_2: 1
                     wg_niv_3: 1
-                    wg_text_expl: "10 Euro"
+                    wg_text_expl: "50 Euro"
+                }
+
+                WID_Activity{
+                    wg_txt_activity: "La monnaie - pièces"
+                    wg_id_activity: 13
+                    wg_niv_1: 0.3
+                    wg_niv_2: 1
+                    wg_niv_3: 1
+                    wg_text_expl: "1.20 Euro"
                 }
 
                 WID_Activity{

@@ -14,11 +14,11 @@ ApplicationWindow {
     visibility: Window.Maximized
     title: "CMATHS"
 
-    maximumHeight: frm_application.height
+    /*maximumHeight: frm_application.height
     maximumWidth: frm_application.width
 
     minimumHeight: frm_application.height
-    minimumWidth: frm_application.width
+    minimumWidth: frm_application.width*/
 
     // *** BLOCK FOR LEVELS ***
     property int wl_current_level: 1
@@ -115,6 +115,12 @@ ApplicationWindow {
         volume: 1.0
     }
 
+    SoundEffect {
+        id: exoheures
+        source: "Sounds/exo_heures.wav"
+        volume: 1.0
+    }
+
     Start_screen{
         id: start_screen
         x: 0
@@ -192,6 +198,7 @@ ApplicationWindow {
                 z: 2
                 button_title: "Démarrer"
                 onClicked: {
+                    choice_menu.x = frm_application.width
                     switch(wl_current_activity){
                       case 1:
                           exo1.visible = true
@@ -240,6 +247,9 @@ ApplicationWindow {
                           break;
                       case 16:
                           exo11.visible = true
+                          break;
+                      case 17:
+                          exo9.visible = true
                           break;
                     }
 
@@ -634,6 +644,7 @@ ApplicationWindow {
               consignes_txt.text = "Achètes ton jouet avec les pièces dont tu disposes"
               consignes.y = 0
               exopieces.play()
+              exo9.wg_sens = 0
               exo9.init_work()
               break;
           case 14:
@@ -651,13 +662,20 @@ ApplicationWindow {
               exo5.init_work()
               break;
           case 16:
-              consignes_txt.text = "Lis l'heure et donnes le bon résultat"
+              consignes_txt.text = "Lis l'heure sur la pendule et donne le bon résultat"
               consignes.y = 0
+              exoheures.play()
               exo11.init_work()
+              break;
+          case 17:
+              consignes_txt.text = "Achètes ton jouet avec les billets dont tu disposes"
+              consignes.y = 0
+              exopieces.play()
+              exo9.wg_sens = 1
+              exo9.init_work()
               break;
         }
         start_screen.x = frm_application.width
-        choice_menu.x = frm_application.width
     }
 
     function fn_close_activity(wl_id_activity)

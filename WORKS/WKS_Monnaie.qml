@@ -3,6 +3,7 @@ import "../WIDGETS/"
 
 Item {
     property real wg_cumul_monnaie: 0
+    property int wg_sens: 0
 
     WID_Button{
         x: parent.width - 35
@@ -48,7 +49,7 @@ Item {
             width: (parent.width-30)/3
             height: (parent.height-10)/2
             fillMode: Image.PreserveAspectFit
-            source: "../Images/10cent.png"
+            source: ""
             horizontalAlignment: Image.AlignHCenter
             verticalAlignment: Image.AlignVCenter
             MouseArea{
@@ -63,7 +64,7 @@ Item {
             width: (parent.width-30)/3
             height: (parent.height-10)/2
             fillMode: Image.PreserveAspectFit
-            source: "../Images/20cent.png"
+            source: ""
             horizontalAlignment: Image.AlignHCenter
             verticalAlignment: Image.AlignVCenter
             MouseArea{
@@ -78,7 +79,7 @@ Item {
             width: (parent.width-30)/3
             height: (parent.height-10)/2
             fillMode: Image.PreserveAspectFit
-            source: "../Images/50cent.png"
+            source: ""
             horizontalAlignment: Image.AlignHCenter
             verticalAlignment: Image.AlignVCenter
             MouseArea{
@@ -93,7 +94,7 @@ Item {
             width: (parent.width-30)/3
             height: (parent.height-10)/2
             fillMode: Image.PreserveAspectFit
-            source: "../Images/1euro.png"
+            source: ""
             horizontalAlignment: Image.AlignHCenter
             verticalAlignment: Image.AlignVCenter
             MouseArea{
@@ -108,7 +109,7 @@ Item {
             width: (parent.width-30)/3
             height: (parent.height-10)/2
             fillMode: Image.PreserveAspectFit
-            source: "../Images/2euro.png"
+            source: ""
             horizontalAlignment: Image.AlignHCenter
             verticalAlignment: Image.AlignVCenter
             MouseArea{
@@ -220,6 +221,23 @@ Item {
 
     function init_work()
     {
+        if ( wg_sens == 0 )
+        {
+            p0.source = "../Images/10cent.png"
+            p1.source = "../Images/20cent.png"
+            p2.source = "../Images/50cent.png"
+            p3.source = "../Images/1euro.png"
+            p4.source = "../Images/2euro.png"
+        }
+        else
+        {
+            p0.source = "../Images/b5.png"
+            p1.source = "../Images/b10.png"
+            p2.source = "../Images/b20.png"
+            p3.source = "../Images/b50.png"
+            p4.source = "../Images/b100.png"
+        }
+
         change_values()
     }
 
@@ -237,11 +255,23 @@ Item {
 
         wg_cumul_monnaie = 0
 
-        var wl_prix = 0.1 * Math.round((Math.random() * 100))
-
-        while ( wl_prix == 0 )
+        if ( wg_sens == 0 )
         {
-            wl_prix = 0.1 * Math.round((Math.random() * 100))
+            var wl_prix = 0.1 * Math.round((Math.random() * 100))
+
+            while ( wl_prix == 0 )
+            {
+                wl_prix = 0.1 * Math.round((Math.random() * 100))
+            }
+        }
+        else
+        {
+            var wl_prix = 5 * Math.round((Math.random() * wl_current_max))
+
+            while ( wl_prix == 0 )
+            {
+                wl_prix = 5 * Math.round((Math.random() * wl_current_max))
+            }
         }
 
         price_monnaie.text = wl_prix.toFixed(2) + " €"
@@ -249,23 +279,47 @@ Item {
 
     function fn_put_monnaie(id_piece)
     {
-        switch(id_piece){
-        case 0:
-            wg_cumul_monnaie += 0.10
-            break;
-        case 1:
-            wg_cumul_monnaie += 0.20
-            break;
-        case 2:
-            wg_cumul_monnaie += 0.50
-            break;
-        case 3:
-            wg_cumul_monnaie += 1
-            break;
-        case 4:
-            wg_cumul_monnaie += 2
-            break;
+        if ( wg_sens == 0 )
+        {
+            switch(id_piece){
+            case 0:
+                wg_cumul_monnaie += 0.10
+                break;
+            case 1:
+                wg_cumul_monnaie += 0.20
+                break;
+            case 2:
+                wg_cumul_monnaie += 0.50
+                break;
+            case 3:
+                wg_cumul_monnaie += 1
+                break;
+            case 4:
+                wg_cumul_monnaie += 2
+                break;
+            }
         }
+        else
+        {
+            switch(id_piece){
+            case 0:
+                wg_cumul_monnaie += 5
+                break;
+            case 1:
+                wg_cumul_monnaie += 10
+                break;
+            case 2:
+                wg_cumul_monnaie += 20
+                break;
+            case 3:
+                wg_cumul_monnaie += 50
+                break;
+            case 4:
+                wg_cumul_monnaie += 100
+                break;
+            }
+        }
+
         cumul_enfant.text = "Tu as déjà versé\n" + wg_cumul_monnaie.toFixed(2) + "€"
     }
 
@@ -287,7 +341,7 @@ Item {
                 wl_current_level++
                 wl_current_point = 0
 
-                if ( wl_current_point_cumul > 100 )
+                if ( wl_current_point_cumul >= 100 )
                 {
                     fn_show_victory()
                 }
