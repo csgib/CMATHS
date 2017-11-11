@@ -10,7 +10,7 @@ Item {
         y: 0
         width: parent.width
         height: parent.height
-        color: "#AA000000"
+        color: "#000000"
     }
 
     Text{

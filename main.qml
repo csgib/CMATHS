@@ -11,14 +11,14 @@ ApplicationWindow {
     visible: true
     width: 480
     height: 800
-    //visibility: Window.Maximized
+    visibility: Window.Maximized
     title: "CMATHS"
 
-    /*maximumHeight: frm_application.height
+    maximumHeight: frm_application.height
     maximumWidth: frm_application.width
 
     minimumHeight: frm_application.height
-    minimumWidth: frm_application.width*/
+    minimumWidth: frm_application.width
 
     // *** BLOCK FOR LEVELS ***
     property int wl_current_level: 1
@@ -553,7 +553,6 @@ ApplicationWindow {
           case 3:
               consignes_txt.text = "Comptez l'ensemble des objets comme vous l'indique la consigne"
               consignes.y = 0
-              exo3.consignes_wks = "Comptez le nombre de : "
               exocompte.play()
               exo3.init_work()
               break;
@@ -634,7 +633,6 @@ ApplicationWindow {
           case 13:
               consignes_txt.text = "Achètes ton jouet avec les pièces dont tu disposes"
               consignes.y = 0
-              exo9.consignes_wks = "Cliques sur les pièces pour obtenir le prix du jouet"
               exopieces.play()
               exo9.init_work()
               break;

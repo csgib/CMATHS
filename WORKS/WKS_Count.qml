@@ -3,7 +3,6 @@ import "../WIDGETS/"
 
 Item {
     property var array_fruits: ["../Images/candy0.png", "../Images/candy1.png", "../Images/candy2.png", "../Images/candy3.png"]
-    property string consignes_wks: ""
     property int wl_good_result: 0
 
     WID_Button{
@@ -27,7 +26,7 @@ Item {
         horizontalAlignment: Text.AlignRight
         verticalAlignment: Text.AlignVCenter
         wrapMode: Text.WordWrap
-        text: consignes_wks
+        text: "Comptez le nombre de : "
         color: "#FFFFFF"
         style: Text.Outline
         styleColor: "#000000"

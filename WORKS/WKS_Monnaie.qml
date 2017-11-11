@@ -2,7 +2,6 @@ import QtQuick 2.0
 import "../WIDGETS/"
 
 Item {
-    property string consignes_wks: ""
     property real wg_cumul_monnaie: 0
 
     WID_Button{
@@ -24,7 +23,7 @@ Item {
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         wrapMode: Text.WordWrap
-        text: consignes_wks
+        text: "Cliques sur les pièces pour obtenir le prix du jouet"
         anchors.right: parent.right
         anchors.rightMargin: 41
         anchors.left: parent.left

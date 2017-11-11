@@ -33,7 +33,7 @@ Item {
             fontSizeMode: Text.Fit
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
-            text: "Sélectionnes une activité"
+            text: "Sélectionne une activité"
             font.family: local_school.name
             color: "#FFFFFF"
             style: Text.Outline
