@@ -2,8 +2,6 @@ import QtQuick 2.0
 import "WIDGETS/"
 
 Item {
-    anchors.fill: parent
-
     Rectangle{
         x: 0
         anchors.fill: parent

@@ -198,7 +198,11 @@ ApplicationWindow {
                 z: 2
                 button_title: "Démarrer"
                 onClicked: {
+                    gc()
+
                     choice_menu.x = frm_application.width*2
+                    start_screen.x = frm_application.width*2
+
                     switch(wl_current_activity){
                       case 1:
                           exo1.visible = true
@@ -675,7 +679,6 @@ ApplicationWindow {
               exo9.init_work()
               break;
         }
-        start_screen.x = frm_application.width
     }
 
     function fn_close_activity(wl_id_activity)

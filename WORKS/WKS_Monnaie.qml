@@ -358,6 +358,7 @@ Item {
         else
         {
             result_question.fn_show_hit("NOK")
+            fn_cancel_exomonnaie()
         }
     }
 }
