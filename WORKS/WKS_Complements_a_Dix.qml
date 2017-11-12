@@ -15,7 +15,7 @@ Item {
         button_title: "X"
         onClicked: {
             particles_cad.stop()
-            fn_close_activity(5)
+            fn_close_activity()
         }
     }
 

@@ -63,7 +63,7 @@ Item {
     MouseArea{
         anchors.fill: parent
         onClicked: {
-            fn_close_activity(congra_current_acitivity)
+            fn_close_activity()
             victory_screen.x = frm_application.width
             particleSystem_victory.stop()
             youwin.stop()

@@ -24,6 +24,18 @@ ApplicationWindow {
     FontLoader { id: local_school; source: "Fonts/GrandHotel-Regular.ttf" }
 
     SoundEffect {
+        id: nanbruitage
+        source: "Sounds/nan.wav"
+        volume: 1.0
+    }
+
+    SoundEffect {
+        id: ouibruitage
+        source: "Sounds/oui.wav"
+        volume: 1.0
+    }
+
+    SoundEffect {
         id: exo1bruitage
         source: "Sounds/exo_compare.wav"
         volume: 1.0
@@ -674,47 +686,65 @@ ApplicationWindow {
         }
     }
 
-    function fn_close_activity(wl_id_activity)
+    function fn_close_activity()
     {
         start_screen.x = 0
         choice_menu.x = 0
         choice_menu.visible = true
         support_game.visible = false
         support_jeu.visible = false
-        switch(wl_id_activity){
-          case 1:
-              exo1.visible = false
-              break;
-          case 2:
-              exo2.visible = false
-              break;
-          case 3:
-              exo3.visible = false
-              break;
-          case 4:
-              exo4.visible = false
-              break;
-          case 5:
-              exo5.visible = false
-              break;
-          case 6:
-              exo6.visible = false
-              break;
-          case 9:
-              exo7.visible = false
-              break;
-          case 10:
-              exo8.visible = false
-              break;
-          case 11:
-              exo9.visible = false
-              break;
-          case 12:
-              exo10.visible = false
-              break;
-          case 13:
-              exo11.visible = false
-              break;
+        switch(wl_current_activity){
+            case 1:
+                exo1.visible = false
+                break;
+            case 2:
+                exo2.visible = false
+                break;
+            case 3:
+                exo3.visible = false
+                break;
+            case 4:
+                exo2.visible = false
+                break;
+            case 5:
+                exo4.visible = false
+                break;
+            case 6:
+                exo4.visible = false
+                break;
+            case 7:
+                exo5.visible = false
+                break;
+            case 8:
+                exo6.visible = false
+                break;
+            case 9:
+                exo7.visible = false
+                break;
+            case 10:
+                exo7.visible = false
+                break;
+            case 11:
+                exo8.visible = false
+                break;
+            case 12:
+                exo8.visible = false
+                break;
+            case 13:
+                exo9.visible = false
+                break;
+            case 14:
+                exo10.visible = false
+                break;
+            case 15:
+                exo5.visible = false
+                break;
+            case 16:
+                exo11.visible = false
+                break;
+            case 17:
+                exo9.visible = false
+                break;
         }
     }
 

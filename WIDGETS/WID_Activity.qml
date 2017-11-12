@@ -133,13 +133,12 @@ Item {
     }
 
     Image {
-        id: image
         x: 1
         y: 1
         width: 250
         height: 198
         fillMode: Image.PreserveAspectCrop
         source: "../Images/fd_activity.png"
-
+        asynchronous: true
     }
 }

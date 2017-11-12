@@ -12,7 +12,7 @@ Item {
         height: 30
         button_title: "X"
         onClicked: {
-            fn_close_activity(11)
+            fn_close_activity()
         }
     }
 
@@ -53,6 +53,7 @@ Item {
             source: ""
             horizontalAlignment: Image.AlignHCenter
             verticalAlignment: Image.AlignVCenter
+            asynchronous: true
             MouseArea{
                 anchors.fill: parent
                 onClicked: {
@@ -69,6 +70,7 @@ Item {
             source: ""
             horizontalAlignment: Image.AlignHCenter
             verticalAlignment: Image.AlignVCenter
+            asynchronous: true
             MouseArea{
                 anchors.fill: parent
                 onClicked: {
@@ -85,6 +87,7 @@ Item {
             source: ""
             horizontalAlignment: Image.AlignHCenter
             verticalAlignment: Image.AlignVCenter
+            asynchronous: true
             MouseArea{
                 anchors.fill: parent
                 onClicked: {
@@ -101,6 +104,7 @@ Item {
             source: ""
             horizontalAlignment: Image.AlignHCenter
             verticalAlignment: Image.AlignVCenter
+            asynchronous: true
             MouseArea{
                 anchors.fill: parent
                 onClicked: {
@@ -117,6 +121,7 @@ Item {
             source: ""
             horizontalAlignment: Image.AlignHCenter
             verticalAlignment: Image.AlignVCenter
+            asynchronous: true
             MouseArea{
                 anchors.fill: parent
                 onClicked: {
@@ -176,10 +181,11 @@ Item {
                 id: imgnounours
                 smooth: false
                 cache: false
+                asynchronous: true
                 anchors.fill: parent
                 horizontalAlignment: Image.AlignHCenter
                 verticalAlignment: Image.AlignVCenter
-                source: ""
+                source: "../Images/toy3.png"
                 fillMode: Image.PreserveAspectFit
             }
         }
@@ -250,18 +256,9 @@ Item {
 
     function change_values()
     {
-        var wl_cado = Math.ceil(Math.random() * 3)
         var wl_prix = 0
 
-        if ( wl_cado < 1 )
-        {
-            wl_cado = 1
-        }
-
-        imgnounours.source = "../Images/toy" + wl_cado + ".png"
-
-        cumul_enfant.text = "Déjà payé 0.00 €"
-
+        cumul_enfant.text = "Dejà payé 0.00"
         wg_cumul_monnaie = 0
 
         if ( wg_sens == 0 )

@@ -13,7 +13,7 @@ Item {
         height: 30
         button_title: "X"
         onClicked: {
-            fn_close_activity(10)
+            fn_close_activity()
         }
     }
 

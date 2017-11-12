@@ -2,20 +2,9 @@ import QtQuick 2.0
 import QtMultimedia 5.9
 
 Item {
+    id: id_scr_ans
     anchors.centerIn: parent
     opacity: 0
-
-    SoundEffect {
-        id: nanbruitage
-        source: "Sounds/nan.wav"
-        volume: 1.0
-    }
-
-    SoundEffect {
-        id: ouibruitage
-        source: "Sounds/oui.wav"
-        volume: 1.0
-    }
 
     Rectangle{
         anchors.fill: parent
@@ -25,59 +14,33 @@ Item {
         AnimatedImage {
             anchors.fill: parent
             id: animation_nan
-            cache: true
+            cache: false
             smooth: false
             source: "Images/nan.gif"
             playing: false
+            asynchronous: true
             fillMode: Image.PreserveAspectFit
         }
 
         AnimatedImage {
             anchors.fill: parent
             id: animation_yes
-            cache: true
+            cache: false
             smooth: false
             source: "Images/yes.gif"
             playing: false
+            asynchronous: true
             fillMode: Image.PreserveAspectFit
-        }
-    }
-
-    SequentialAnimation on opacity{
-        id: show
-        running: false
-        loops: 1
-        NumberAnimation {
-            from: 0
-            to: 1
-            duration: 20
-            easing.type: Easing.Linear
-        }
-    }
-
-    SequentialAnimation on opacity{
-        id: hide
-        running: false
-        loops: 1
-        NumberAnimation {
-            from: 1
-            to: 0
-            duration: 300
-            easing.type: Easing.InOutBack
         }
     }
 
     function fn_show_hit(result)
     {       
-        if ( opacity == 0 )
-        {
-            show.start()
+        //if ( opacity == 0 )
+        //{
+            id_scr_ans.opacity = 1
             timer_hide.start()
-        }
-        else
-        {
-            timer_hide.restart()
-        }
+        //}
 
         if ( result == "OK" )
         {
@@ -109,17 +72,11 @@ Item {
 
     function fn_hide_hit()
     {
-        if ( animation_nan.playing == true )
-        {
-            animation_nan.playing = false
-        }
+        animation_nan.playing = false
+        animation_yes.playing = false
 
-        if ( animation_yes.playing == true )
-        {
-            animation_yes.playing = false
-        }
         support_game.x = 0
-        hide.start()
+        id_scr_ans.opacity = 0
     }
 
     Timer {

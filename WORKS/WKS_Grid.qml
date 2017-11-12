@@ -27,7 +27,7 @@ Item {
         button_title: "X"
         onClicked: {
             particles_grid.stop()
-            fn_close_activity(12)
+            fn_close_activity()
         }
     }
 

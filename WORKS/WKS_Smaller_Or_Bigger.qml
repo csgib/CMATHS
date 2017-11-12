@@ -177,6 +177,6 @@ Item {
 
     function fn_local_close_activity()
     {
-        fn_close_activity(1)
+        fn_close_activity()
     }
 }
