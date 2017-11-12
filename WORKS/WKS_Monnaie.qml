@@ -174,6 +174,7 @@ Item {
             height: parent.height
             Image{
                 id: imgnounours
+                smooth: false
                 cache: false
                 anchors.fill: parent
                 horizontalAlignment: Image.AlignHCenter
@@ -217,7 +218,7 @@ Item {
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
 
-                text: ""
+                text: "0"
                 color: "#FFFFFF"
                 style: Text.Outline
                 styleColor: "#000000"
@@ -250,21 +251,22 @@ Item {
     function change_values()
     {
         var wl_cado = Math.ceil(Math.random() * 3)
+        var wl_prix = 0
+
         if ( wl_cado < 1 )
         {
             wl_cado = 1
         }
 
-        imgnounours.source = ""
         imgnounours.source = "../Images/toy" + wl_cado + ".png"
 
-        cumul_enfant.text = "Tu as déjà versé\n0.00 €"
+        cumul_enfant.text = "Déjà payé 0.00 €"
 
         wg_cumul_monnaie = 0
 
         if ( wg_sens == 0 )
         {
-            var wl_prix = 0.1 * Math.round((Math.random() * 100))
+            wl_prix = 0.1 * Math.round((Math.random() * 100))
 
             while ( wl_prix == 0 )
             {
@@ -273,7 +275,7 @@ Item {
         }
         else
         {
-            var wl_prix = 5 * Math.round((Math.random() * wl_current_max))
+            wl_prix = 5 * Math.round((Math.random() * wl_current_max))
 
             while ( wl_prix == 0 )
             {
@@ -327,12 +329,12 @@ Item {
             }
         }
 
-        cumul_enfant.text = "Tu as déjà versé\n" + wg_cumul_monnaie.toFixed(2) + "€"
+        cumul_enfant.text = "Déjà payé " + wg_cumul_monnaie.toFixed(2) + "€"
     }
 
     function fn_cancel_exomonnaie()
     {
-        cumul_enfant.text = "Tu as déjà versé\n0.00 €"
+        cumul_enfant.text = "Déjà payé 0.00 €"
         wg_cumul_monnaie = 0
     }
 

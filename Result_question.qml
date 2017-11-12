@@ -25,7 +25,7 @@ Item {
         AnimatedImage {
             anchors.fill: parent
             id: animation_nan
-            cache: false
+            cache: true
             smooth: false
             source: "Images/nan.gif"
             playing: false
@@ -35,7 +35,7 @@ Item {
         AnimatedImage {
             anchors.fill: parent
             id: animation_yes
-            cache: false
+            cache: true
             smooth: false
             source: "Images/yes.gif"
             playing: false

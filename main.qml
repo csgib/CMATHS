@@ -13,12 +13,6 @@ ApplicationWindow {
     visibility: Window.Maximized
     title: "CMATHS"
 
-    /*maximumHeight: frm_application.height
-    maximumWidth: frm_application.width
-
-    minimumHeight: frm_application.height
-    minimumWidth: frm_application.width*/
-
     // *** BLOCK FOR LEVELS ***
     property int wl_current_level: 1
     property int wl_current_point: 0
