@@ -25,6 +25,8 @@ Item {
         AnimatedImage {
             anchors.fill: parent
             id: animation_nan
+            cache: false
+            smooth: false
             source: "Images/nan.gif"
             playing: false
             fillMode: Image.PreserveAspectFit
@@ -33,6 +35,8 @@ Item {
         AnimatedImage {
             anchors.fill: parent
             id: animation_yes
+            cache: false
+            smooth: false
             source: "Images/yes.gif"
             playing: false
             fillMode: Image.PreserveAspectFit

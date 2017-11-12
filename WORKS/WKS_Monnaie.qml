@@ -48,6 +48,7 @@ Item {
             id: p0
             width: (parent.width-30)/3
             height: (parent.height-10)/2
+            cache: false
             fillMode: Image.PreserveAspectFit
             source: ""
             horizontalAlignment: Image.AlignHCenter
@@ -63,6 +64,7 @@ Item {
             id: p1
             width: (parent.width-30)/3
             height: (parent.height-10)/2
+            cache: false
             fillMode: Image.PreserveAspectFit
             source: ""
             horizontalAlignment: Image.AlignHCenter
@@ -78,6 +80,7 @@ Item {
             id: p2
             width: (parent.width-30)/3
             height: (parent.height-10)/2
+            cache: false
             fillMode: Image.PreserveAspectFit
             source: ""
             horizontalAlignment: Image.AlignHCenter
@@ -93,6 +96,7 @@ Item {
             id: p3
             width: (parent.width-30)/3
             height: (parent.height-10)/2
+            cache: false
             fillMode: Image.PreserveAspectFit
             source: ""
             horizontalAlignment: Image.AlignHCenter
@@ -108,6 +112,7 @@ Item {
             id: p4
             width: (parent.width-30)/3
             height: (parent.height-10)/2
+            cache: false
             fillMode: Image.PreserveAspectFit
             source: ""
             horizontalAlignment: Image.AlignHCenter
@@ -169,6 +174,7 @@ Item {
             height: parent.height
             Image{
                 id: imgnounours
+                cache: false
                 anchors.fill: parent
                 horizontalAlignment: Image.AlignHCenter
                 verticalAlignment: Image.AlignVCenter
@@ -249,6 +255,7 @@ Item {
             wl_cado = 1
         }
 
+        imgnounours.source = ""
         imgnounours.source = "../Images/toy" + wl_cado + ".png"
 
         cumul_enfant.text = "Tu as déjà versé\n0.00 €"

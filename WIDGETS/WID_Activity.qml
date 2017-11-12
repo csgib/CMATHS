@@ -1,7 +1,6 @@
 import QtQuick 2.0
 
 Item {
-    id: item1
     property string wg_txt_activity
     property int wg_id_activity
     property real wg_niv_1: 0.3
@@ -9,8 +8,8 @@ Item {
     property real wg_niv_3: 0.3
     property string wg_text_expl: ""
 
-    width: 350 //frm_application.width / 2
-    height: 200 //parent.height
+    width: 350
+    height: 200
 
     Rectangle{
         color: "#aaffffff"
@@ -23,6 +22,8 @@ Item {
     Image{
         anchors.fill: parent
         fillMode: Image.Tile
+        cache: false
+        smooth: false
         source: "../Images/grid.png"
     }
 

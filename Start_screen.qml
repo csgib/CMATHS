@@ -25,6 +25,8 @@ Item {
         anchors.leftMargin: 10
         fillMode: Image.PreserveAspectFit
         z: 2
+        cache: false
+        smooth: false
         source: "Images/logo.png"
     }
 
@@ -64,7 +66,7 @@ Item {
         horizontalAlignment: Text.AlignRight
         verticalAlignment: Text.AlignVCenter
         font.family: local_school.name
-        text: "Gibault Stéphane - 2017"
+        text: "Gibault Stéphane"
         styleColor: "#00000000"
         color: "#211e1e"
         z: 2
