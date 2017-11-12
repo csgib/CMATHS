@@ -20,7 +20,7 @@ Item {
         id: textcsg
         height: 91
         minimumPixelSize: 8
-        width: parent.width - 250
+        width: parent.width - 180
         font.pixelSize: 512
         fontSizeMode: Text.Fit
         horizontalAlignment: Text.AlignRight
