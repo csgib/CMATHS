@@ -4,6 +4,7 @@ import "../WIDGETS/"
 Item {
     property int wl_calc_val_1: 0
     property int wl_calc_val_2: 0
+    property int wl_sens: 0
 
     property string wl_true_hre: ""
 
@@ -51,7 +52,7 @@ Item {
                 }
             }
         }
-        z: 1
+        z: 2
     }
 
     Image{
@@ -178,104 +179,159 @@ Item {
 
     function change_values()
     {
-        wl_calc_val_1 = Math.ceil(Math.random() * 24)
-        if ( wl_calc_val_1 == 24 )
+        if ( wl_sens == 1 )
         {
-            wl_calc_val_1 = 0
-        }
+            wl_calc_val_1 = Math.ceil(Math.random() * 24)
+            if ( wl_calc_val_1 == 24 )
+            {
+                wl_calc_val_1 = 0
+            }
 
-        wl_calc_val_2 = Math.ceil(Math.random() * 12)
-
-        while ( wl_calc_val_2 == wl_calc_val_1 )
-        {
             wl_calc_val_2 = Math.ceil(Math.random() * 12)
-        }
 
-        rot_aig_hr.angle = ((wl_calc_val_1 * 360) / 12)
-        rot_aig_mn.angle = ((wl_calc_val_2 * 360) / 12)
-
-        var wl_vari_hre = Math.ceil(Math.random() * 10)
-        var wl_wk_hre = ""
-
-        if ( wl_vari_hre < 5 )
-        {
-            if ( wl_calc_val_2*5 < 10 )
+            while ( wl_calc_val_2 == wl_calc_val_1 )
             {
-                wl_wk_hre = "0" + (wl_calc_val_2*5)
+                wl_calc_val_2 = Math.ceil(Math.random() * 12)
             }
-            else
+
+            var wl_vari_hre = Math.ceil(Math.random() * 10)
+            var wl_wk_hre = ""
+
+            if ( wl_vari_hre < 5 )
             {
-                if ( wl_calc_val_2*5 > 59 )
+                if ( wl_calc_val_2*5 < 10 )
                 {
-                    wl_wk_hre = "00"
+                    wl_wk_hre = "0" + (wl_calc_val_2*5)
                 }
                 else
                 {
-                    wl_wk_hre = (wl_calc_val_2*5)
+                    if ( wl_calc_val_2*5 > 59 )
+                    {
+                        wl_wk_hre = "00"
+                    }
+                    else
+                    {
+                        wl_wk_hre = (wl_calc_val_2*5)
+                    }
                 }
-            }
 
-            rval_hr_1.text = wl_calc_val_1 + ":" + wl_wk_hre
-            wl_true_hre = rval_hr_1.text
+                rval_hr_1.text = wl_calc_val_1 + ":" + wl_wk_hre
+                wl_true_hre = rval_hr_1.text
 
-            if ( wl_calc_val_1*5 < 10 )
-            {
-                wl_wk_hre = "0" + (wl_calc_val_1*5)
-            }
-            else
-            {
-                if ( wl_calc_val_1*5 > 59 )
+                if ( wl_calc_val_1*5 < 10 )
                 {
-                    wl_wk_hre = "00"
+                    wl_wk_hre = "0" + (wl_calc_val_1*5)
                 }
                 else
                 {
-                    wl_wk_hre = (wl_calc_val_1*5)
+                    if ( wl_calc_val_1*5 > 59 )
+                    {
+                        wl_wk_hre = "00"
+                    }
+                    else
+                    {
+                        wl_wk_hre = (wl_calc_val_1*5)
+                    }
                 }
-            }
 
-            rval_hr_2.text = wl_calc_val_2 + ":" + wl_wk_hre
+                rval_hr_2.text = wl_calc_val_2 + ":" + wl_wk_hre
+            }
+            else
+            {
+                if ( wl_calc_val_1*5 < 10 )
+                {
+                    wl_wk_hre = "0" + (wl_calc_val_1*5)
+                }
+                else
+                {
+                    if ( wl_calc_val_1*5 > 59 )
+                    {
+                        wl_wk_hre = "00"
+                    }
+                    else
+                    {
+                        wl_wk_hre = (wl_calc_val_1*5)
+                    }
+                }
+
+                rval_hr_1.text = wl_calc_val_2 + ":" + wl_wk_hre
+
+                if ( wl_calc_val_2*5 < 10 )
+                {
+                    wl_wk_hre = "0" + (wl_calc_val_2*5)
+                }
+                else
+                {
+                    if ( wl_calc_val_2*5 > 59 )
+                    {
+                        wl_wk_hre = "00"
+                    }
+                    else
+                    {
+                        wl_wk_hre = (wl_calc_val_2*5)
+                    }
+                }
+
+                rval_hr_2.text = wl_calc_val_1 + ":" + wl_wk_hre
+                wl_true_hre = rval_hr_2.text
+            }
+            rot_aig_hr.angle = ((wl_calc_val_1 * 360) / 12)
+            rot_aig_mn.angle = ((wl_calc_val_2 * 360) / 12)
         }
         else
         {
-            if ( wl_calc_val_1*5 < 10 )
+            wl_calc_val_1 = Math.ceil(Math.random() * 12)
+
+            wl_calc_val_2 = Math.ceil(Math.random() * 4)
+
+            while ( wl_calc_val_2 == wl_calc_val_1 )
             {
-                wl_wk_hre = "0" + (wl_calc_val_1*5)
+                wl_calc_val_2 = Math.ceil(Math.random() * 4)
+            }
+
+            var wl_vari_hre = Math.ceil(Math.random() * 10)
+            var wl_wk_hre = ""
+
+            if ( wl_calc_val_2*15 == 60 )
+            {
+                wl_wk_hre = "00"
             }
             else
             {
-                if ( wl_calc_val_1*5 > 59 )
+                wl_wk_hre = (wl_calc_val_2*15)
+            }
+
+            if ( wl_vari_hre < 5 )
+            {
+                rval_hr_1.text = wl_calc_val_1 + ":" + wl_wk_hre
+                wl_true_hre = rval_hr_1.text
+
+                if ( wl_calc_val_1 + 1 > 12 )
                 {
-                    wl_wk_hre = "00"
+                    rval_hr_2.text = (wl_calc_val_1-1) + ":" + wl_wk_hre
                 }
                 else
                 {
-                    wl_wk_hre = (wl_calc_val_1*5)
+                    rval_hr_2.text = (wl_calc_val_1+1) + ":" + wl_wk_hre
                 }
-            }
-
-            rval_hr_1.text = wl_calc_val_2 + ":" + wl_wk_hre
-
-            if ( wl_calc_val_2*5 < 10 )
-            {
-                wl_wk_hre = "0" + (wl_calc_val_2*5)
             }
             else
             {
-                if ( wl_calc_val_2*5 > 59 )
+                rval_hr_2.text = wl_calc_val_1 + ":" + wl_wk_hre
+                wl_true_hre = rval_hr_2.text
+
+                if ( wl_calc_val_1 + 1 > 12 )
                 {
-                    wl_wk_hre = "00"
+                    rval_hr_1.text = (wl_calc_val_1-1) + ":" + wl_wk_hre
                 }
                 else
                 {
-                    wl_wk_hre = (wl_calc_val_2*5)
+                    rval_hr_1.text = (wl_calc_val_1+1) + ":" + wl_wk_hre
                 }
             }
-
-            rval_hr_2.text = wl_calc_val_1 + ":" + wl_wk_hre
-            wl_true_hre = rval_hr_2.text
+            rot_aig_hr.angle = ((wl_calc_val_1 * 360) / 12)
+            rot_aig_mn.angle = ((wl_calc_val_2 * 360) / 4)
         }
-
     }
 
     function fn_valide_result(wl_hre)

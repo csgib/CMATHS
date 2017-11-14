@@ -126,6 +126,12 @@ ApplicationWindow {
         volume: 1.0
     }
 
+    SoundEffect {
+        id: exosymetrie
+        source: "Sounds/exo_symetrie.wav"
+        volume: 1.0
+    }
+
     Start_screen{
         id: start_screen
         x: 0
@@ -259,6 +265,12 @@ ApplicationWindow {
                           break;
                       case 17:
                           exo9.visible = true
+                          break;
+                      case 18:
+                          exo11.visible = true
+                          break;
+                      case 19:
+                          exo12.visible = true
                           break;
                     }
 
@@ -503,6 +515,17 @@ ApplicationWindow {
                     visible: false
                     z: 2
                 }
+
+                WKS_Symetrie{
+                    id: exo12
+                    x: 0
+                    y: 10
+                    width: parent.width
+                    height: parent.height - 20
+                    anchors.fill: parent
+                    visible: false
+                    z: 2
+                }
             }
         }
     }
@@ -667,13 +690,14 @@ ApplicationWindow {
               consignes.y = 0
               exoadix.play()
               wl_current_max = 20
-              exo5.wl_diff = 1
+              exo5.wl_diff = 0
               exo5.init_work()
               break;
           case 16:
               consignes_txt.text = "Lis l'heure sur la pendule et donne le bon résultat"
               consignes.y = 0
               exoheures.play()
+              exo11.wl_sens = 0
               exo11.init_work()
               break;
           case 17:
@@ -682,6 +706,19 @@ ApplicationWindow {
               exopieces.play()
               exo9.wg_sens = 1
               exo9.init_work()
+              break;
+          case 18:
+              consignes_txt.text = "Lis l'heure sur la pendule et donne le bon résultat"
+              consignes.y = 0
+              exoheures.play()
+              exo11.wl_sens = 1
+              exo11.init_work()
+              break;
+          case 19:
+              consignes_txt.text = "Reproduis le modèle de gauche à droite"
+              consignes.y = 0
+              exosymetrie.play()
+              exo12.init_work()
               break;
         }
     }
@@ -744,6 +781,12 @@ ApplicationWindow {
                 break;
             case 17:
                 exo9.visible = false
+                break;
+            case 18:
+                exo11.visible = false
+                break;
+            case 19:
+                exo12.visible = false
                 break;
         }
     }

@@ -3,7 +3,7 @@ import "WIDGETS/"
 import QtGraphicalEffects 1.0
 
 Item {
-    property real activity_number: 9
+    property real activity_number: 10
 
     Rectangle{
         anchors.fill: parent
@@ -199,12 +199,30 @@ Item {
                 }
 
                 WID_Activity{
-                    wg_txt_activity: "L'heure"
+                    wg_txt_activity: "L'heure\nNiveau 1"
                     wg_id_activity: 16
                     wg_niv_1: 1
                     wg_niv_2: 1
                     wg_niv_3: 0.3
-                    wg_text_expl: "16h30"
+                    wg_text_expl: "10h30"
+                }
+
+                WID_Activity{
+                    wg_txt_activity: "L'heure\nNiveau 2"
+                    wg_id_activity: 18
+                    wg_niv_1: 0.3
+                    wg_niv_2: 1
+                    wg_niv_3: 1
+                    wg_text_expl: "16h40"
+                }
+
+                WID_Activity{
+                    wg_txt_activity: "La symétrie\nverticale"
+                    wg_id_activity: 19
+                    wg_niv_1: 1
+                    wg_niv_2: 1
+                    wg_niv_3: 0.3
+                    wg_text_expl: "A | A"
                 }
             }
         }
