@@ -64,7 +64,7 @@ Item {
         anchors.fill: parent
         onClicked: {
             fn_close_activity()
-            victory_screen.x = frm_application.width
+            victory_screen.x = frm_application.width*2
             particleSystem_victory.stop()
             youwin.stop()
         }
