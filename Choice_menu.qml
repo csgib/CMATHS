@@ -127,7 +127,7 @@ Item {
                 }
 
                 WID_Activity{
-                    wg_txt_activity: "Les compléments à 10"
+                    wg_txt_activity: "Décomposition d'un nombre"
                     wg_id_activity: 7
                     wg_niv_1: 1
                     wg_niv_2: 0.3
@@ -136,7 +136,7 @@ Item {
                 }
 
                 WID_Activity{
-                    wg_txt_activity: "Les compléments à 10 niveau 2"
+                    wg_txt_activity: "Décomposition d'un nombre niveau 2"
                     wg_id_activity: 15
                     wg_niv_1: 1
                     wg_niv_2: 1
@@ -154,7 +154,7 @@ Item {
                 }
 
                 WID_Activity{
-                    wg_txt_activity: "Tables de multiplications"
+                    wg_txt_activity: "Tables de multiplication"
                     wg_id_activity: 11
                     wg_niv_1: 1
                     wg_niv_2: 1
@@ -163,7 +163,7 @@ Item {
                 }
 
                 WID_Activity{
-                    wg_txt_activity: "Tables d'additions"
+                    wg_txt_activity: "Tables d'addition"
                     wg_id_activity: 12
                     wg_niv_1: 1
                     wg_niv_2: 1

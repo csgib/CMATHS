@@ -24,7 +24,7 @@ Item {
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         wrapMode: Text.WordWrap
-        text: "Cliques sur les pièces pour obtenir le prix du jouet"
+        text: "Clique sur les pièces pour obtenir le prix du jouet"
         anchors.right: parent.right
         anchors.rightMargin: 41
         anchors.left: parent.left

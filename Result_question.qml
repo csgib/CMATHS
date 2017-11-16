@@ -49,8 +49,26 @@ Item {
             animation_yes.currentFrame = 0
             animation_yes.visible = true
             animation_yes.playing = true
-            ouibruitage.play()
 
+            var wl_calc_val_2 = Math.ceil(Math.random() * 4)
+
+            switch(wl_calc_val_2){
+                case 0:
+                    ouibruitage.play()
+                    break;
+                case 1:
+                    ouibruitage.play()
+                    break;
+                case 2:
+                    oui2bruitage.play()
+                    break;
+                case 3:
+                    oui3bruitage.play()
+                    break;
+                case 4:
+                    oui4bruitage.play()
+                    break;
+            }
             wl_current_point++
             wl_current_point_cumul++
             progress_bar_value.width = (wl_current_point_cumul*progress_bar.width)/100

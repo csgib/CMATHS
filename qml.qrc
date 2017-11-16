@@ -69,5 +69,8 @@
         <file>Images/b100.png</file>
         <file>WORKS/WKS_Symetrie.qml</file>
         <file>Sounds/exo_symetrie.wav</file>
+        <file>Sounds/oui2.wav</file>
+        <file>Sounds/oui3.wav</file>
+        <file>Sounds/oui4.wav</file>
     </qresource>
 </RCC>

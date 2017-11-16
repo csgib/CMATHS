@@ -158,7 +158,7 @@ Item {
             horl_aig_mn.height = horl_num.height/3
             horl_aig_mn.width = horl_aig_mn.height / 8.745
 
-            horl_aig_hr.height = horl_num.height/4
+            horl_aig_hr.height = horl_num.height/4.5
             horl_aig_hr.width = horl_aig_hr.height / 8.745
 
         }
@@ -170,7 +170,7 @@ Item {
             horl_aig_mn.height = horl_num.height/3
             horl_aig_mn.width = horl_aig_mn.height / 8.745
 
-            horl_aig_hr.height = horl_num.height/4
+            horl_aig_hr.height = horl_num.height/4.5
             horl_aig_hr.width = horl_aig_hr.height / 8.745
         }
 

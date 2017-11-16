@@ -36,6 +36,24 @@ ApplicationWindow {
     }
 
     SoundEffect {
+        id: oui2bruitage
+        source: "Sounds/oui2.wav"
+        volume: 1.0
+    }
+
+    SoundEffect {
+        id: oui3bruitage
+        source: "Sounds/oui3.wav"
+        volume: 1.0
+    }
+
+    SoundEffect {
+        id: oui4bruitage
+        source: "Sounds/oui4.wav"
+        volume: 1.0
+    }
+
+    SoundEffect {
         id: exo1bruitage
         source: "Sounds/exo_compare.wav"
         volume: 1.0
@@ -580,13 +598,13 @@ ApplicationWindow {
 
         switch(wl_id_activity){
           case 1:
-              consignes_txt.text = "Comparez les chiffres et utilisez le signe qui convient > pour plus grand que < pour plus petit que ou = si les nombres sont les mêmes"
+              consignes_txt.text = "Comparez les chiffres et utilisez le signe qui convient\n> pour plus grand que\n< pour plus petit que\nou = si les nombres sont les mêmes"
               consignes.y = 0
               exo1bruitage.play()
               exo1.init_work()
               break;
           case 2:
-              consignes_txt.text = "Remettez les chiffres et nombre dans l'ordre croissant 'du plus petit au plus grands'"
+              consignes_txt.text = "Remettez les chiffres et nombre dans l'ordre croissant 'du plus petit au plus grand'"
               consignes.y = 0
               exo2bruitage.play()
               exo2.sens_count = 0
@@ -673,14 +691,14 @@ ApplicationWindow {
               exo8.init_work()
               break;
           case 13:
-              consignes_txt.text = "Achètes ton jouet avec les pièces dont tu disposes"
+              consignes_txt.text = "Achète ton jouet avec les pièces dont tu disposes"
               consignes.y = 0
               exopieces.play()
               exo9.wg_sens = 0
               exo9.init_work()
               break;
           case 14:
-              consignes_txt.text = "Coches la case qui corresponds a la consigne"
+              consignes_txt.text = "Coche la case qui correspond à la consigne"
               consignes.y = 0
               exogrid.play()
               exo10.init_work()
@@ -690,7 +708,7 @@ ApplicationWindow {
               consignes.y = 0
               exoadix.play()
               wl_current_max = 20
-              exo5.wl_diff = 0
+              exo5.wl_diff = 1
               exo5.init_work()
               break;
           case 16:
@@ -701,7 +719,7 @@ ApplicationWindow {
               exo11.init_work()
               break;
           case 17:
-              consignes_txt.text = "Achètes ton jouet avec les billets dont tu disposes"
+              consignes_txt.text = "Achète ton jouet avec les billets dont tu disposes"
               consignes.y = 0
               exopieces.play()
               exo9.wg_sens = 1
