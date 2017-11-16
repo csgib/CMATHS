@@ -76,8 +76,8 @@ Item {
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
-                        fire_cad.x = parent.x + (parent.width / 2)
-                        fire_cad.y = parent.y + repeat_carre.y + (parent.height / 2)
+                        fire_cad.x = parent.x
+                        fire_cad.y = parent.y + repeat_carre.y
                         if ( parent.opacity < 1 )
                         {
                             parent.opacity = 1
@@ -120,8 +120,8 @@ Item {
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
-                        fire_cad.x = parent.x + (parent.width / 2)
-                        fire_cad.y = parent.y + repeat_carre.y + (parent.height / 2)
+                        fire_cad.x = parent.x
+                        fire_cad.y = parent.y + repeat_carre.y
 
                         if ( parent.opacity < 1 )
                         {
@@ -164,8 +164,8 @@ Item {
             MouseArea{
                 anchors.fill: parent
                 onClicked: {
-                    fire_cad.x = parent.x + (parent.width / 2)
-                    fire_cad.y = parent.y + repeat_carre.y + (parent.height / 2)
+                    fire_cad.x = parent.x
+                    fire_cad.y = parent.y + repeat_carre.y
 
                     if ( parent.opacity < 1 )
                     {

@@ -36,18 +36,23 @@ Item {
         anchors.topMargin: 10
     }
 
-    Image{
-        id: textfruit
+    Rectangle{
         height: 91
-        fillMode: Image.PreserveAspectFit
-        horizontalAlignment: Text.AlignLeft
-        verticalAlignment: Text.AlignVCenter
         anchors.left: textcsg.right
         anchors.leftMargin: 10
         anchors.right: parent.right
         anchors.rightMargin: 40
         anchors.top: parent.top
         anchors.topMargin: 10
+        color: "#66FFFFFF"
+        border.width: 1
+        border.color: "#AAFFFFFF"
+        Image{
+            anchors.fill:  parent
+            anchors.margins: 5
+            id: textfruit
+            fillMode: Image.PreserveAspectFit
+        }
     }
 
     Item{
