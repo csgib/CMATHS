@@ -71,7 +71,7 @@ Item {
             }
             wl_current_point++
             wl_current_point_cumul++
-            progress_bar_value.width = (wl_current_point_cumul*progress_bar.width)/100
+            progress_bar_value.width = (wl_current_point_cumul*progress_bar.width)/50
 
             support_game.x = frm_application.width
         }

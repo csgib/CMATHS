@@ -299,7 +299,7 @@ Item {
                 wl_current_level++
                 wl_current_point = 0
 
-                if ( wl_current_point_cumul > 100 )
+                if ( wl_current_point_cumul >= 50 )
                 {
                     particles_cad.stop()
                     fn_show_victory()

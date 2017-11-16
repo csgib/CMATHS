@@ -262,7 +262,14 @@ Item {
         if ( wl_errors == 0 )
         {
             result_question.fn_show_hit("OK")
-            change_values()
+            if ( wl_current_point > 50 )
+            {
+                fn_show_victory()
+            }
+            else
+            {
+                change_values()
+            }
         }
         else
         {
