@@ -16,7 +16,7 @@ ApplicationWindow {
     // *** BLOCK FOR LEVELS ***
     property int wl_current_level: 1
     property int wl_current_point: 0
-    property int wl_current_max: 20
+    property int wl_current_max: 10
     property int wl_current_point_cumul: 0
     property int wl_current_activity: 0
 
@@ -588,7 +588,7 @@ ApplicationWindow {
     {
         wl_current_level = 1
         wl_current_point = 0
-        wl_current_max = 20
+        wl_current_max = 10
         wl_current_point_cumul = 0
         wl_current_activity = wl_id_activity
         victory_screen.congra_current_acitivity = wl_id_activity
@@ -655,7 +655,7 @@ ApplicationWindow {
               exo6.init_work()
               break;
           case 9:
-              consignes_txt.text = "Résolvez les opérations suivantes en complétant la formule"
+              consignes_txt.text = "Complètez les opérations suivantes"
               consignes.y = 0
               wl_current_max = 20
               exo7.sens_count = 0
@@ -663,7 +663,7 @@ ApplicationWindow {
               exo7.init_work()
               break;
           case 10:
-              consignes_txt.text = "Résolvez les opérations suivantes en complétant la formule"
+              consignes_txt.text = "Complètez les opérations suivantes"
               consignes.y = 0
               wl_current_max = 20
               exo7.sens_count = 1
@@ -675,7 +675,7 @@ ApplicationWindow {
               consignes.y = 0
               wl_current_max = 20
               exo8.wl_sens = 0
-              exo8.wl_calc_val_1 = 1
+              exo8.wl_calc_val_1 = 0
               exo8.wl_calc_val_2 = 1
               exotmul.play()
               exo8.init_work()
@@ -685,7 +685,7 @@ ApplicationWindow {
               consignes.y = 0
               wl_current_max = 20
               exo8.wl_sens = 1
-              exo8.wl_calc_val_1 = 1
+              exo8.wl_calc_val_1 = 0
               exo8.wl_calc_val_2 = 1
               exotadd.play()
               exo8.init_work()

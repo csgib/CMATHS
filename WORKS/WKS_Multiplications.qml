@@ -5,6 +5,7 @@ Item {
     property int wl_calc_val_1: 0
     property int wl_calc_val_2: 0
     property int wl_sens: 0
+    property var array_numbers_mult: [1,2,3,4,5,6,7,8,9,10]
 
     WID_Button{
         x: parent.width - 35
@@ -193,19 +194,39 @@ Item {
     // *** MUST ALWAYS HAVE THIS ENTRY POINT IN WORK FOR INITIALIZE ***
     function init_work()
     {
+
+        array_numbers_mult = shuffle(array_numbers_mult)
         change_values()
     }
+
+    function shuffle(a)
+    {
+       var j = 0;
+       var valI = '';
+       var valJ = valI;
+       var l = a.length - 1;
+       while(l > -1)
+       {
+            j = Math.floor(Math.random() * l);
+            valI = a[l];
+            valJ = a[j];
+            a[l] = valJ;
+            a[j] = valI;
+            l = l - 1;
+        }
+        return a;
+     }
 
     function change_values()
     {
         exo_calc_result_multi.text = "..."
         if ( wl_sens == 0 )
         {
-            exo_calc_operation_multi.text = wl_calc_val_2 + " * " + wl_calc_val_1 + " = "
+            exo_calc_operation_multi.text = wl_calc_val_2 + " * " + array_numbers_mult[wl_calc_val_1] + " = "
         }
         else
         {
-            exo_calc_operation_multi.text = wl_calc_val_2 + " + " + wl_calc_val_1 + " = "
+            exo_calc_operation_multi.text = wl_calc_val_2 + " + " + array_numbers_mult[wl_calc_val_1] + " = "
         }
     }
 
@@ -230,17 +251,17 @@ Item {
     {
         if ( wl_sens == 0 )
         {
-            if ( parseInt(exo_calc_result_multi.text) == wl_calc_val_1*wl_calc_val_2 )
+            if ( parseInt(exo_calc_result_multi.text) == array_numbers_mult[wl_calc_val_1]*wl_calc_val_2 )
             {
                 result_question.fn_show_hit("OK")
                 wl_calc_val_1++
-                if ( wl_calc_val_1 > 10 )
+                if ( wl_calc_val_1 >= 10 )
                 {
-                    wl_calc_val_1 = 1
+                    wl_calc_val_1 = 0
                     wl_calc_val_2++
+                    array_numbers_mult = shuffle(array_numbers_mult)
                 }
 
-                wl_current_max = wl_current_max+(5*wl_current_level)
                 wl_current_level++
                 wl_current_point = 0
 
@@ -250,6 +271,7 @@ Item {
                 }
                 else
                 {
+                    progress_bar_value.width = (wl_current_point_cumul*progress_bar.width)/100
                     change_values()
                 }
             }
@@ -261,17 +283,16 @@ Item {
         }
         else
         {
-            if ( parseInt(exo_calc_result_multi.text) == wl_calc_val_1+wl_calc_val_2 )
+            if ( parseInt(exo_calc_result_multi.text) == array_numbers_mult[wl_calc_val_1]+wl_calc_val_2 )
             {
                 result_question.fn_show_hit("OK")
                 wl_calc_val_1++
-                if ( wl_calc_val_1 > 10 )
+                if ( wl_calc_val_1 >= 10 )
                 {
-                    wl_calc_val_1 = 1
+                    wl_calc_val_1 = 0
                     wl_calc_val_2++
                 }
 
-                wl_current_max = wl_current_max+(5*wl_current_level)
                 wl_current_level++
                 wl_current_point = 0
 
@@ -281,6 +302,7 @@ Item {
                 }
                 else
                 {
+                    progress_bar_value.width = (wl_current_point_cumul*progress_bar.width)/100
                     change_values()
                 }
             }

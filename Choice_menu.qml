@@ -21,13 +21,14 @@ Item {
         }
 
         Text{
+            id: txt_scroll_choice
             anchors.top: parent.top
             anchors.topMargin: 10
             anchors.right: parent.right
             anchors.rightMargin: 10
             anchors.left: parent.left
             anchors.leftMargin: 10
-            height: (parent.height*0.2)-10
+            height: 100
             minimumPixelSize: 6
             font.pixelSize: 128
             fontSizeMode: Text.Fit
@@ -41,14 +42,20 @@ Item {
         }
 
         Flickable {
-            anchors.fill: parent
+            anchors.top: txt_scroll_choice.bottom
+            anchors.topMargin: 10
+            anchors.right: parent.right
+            anchors.rightMargin: 0
+            anchors.left: parent.left
+            anchors.leftMargin: 0
+            anchors.bottom: parent.bottom
             flickableDirection: Flickable.HorizontalFlick
             contentWidth: (350 * activity_number) + (20 * activity_number)
             contentHeight: parent.height
 
             Grid {
                 x: 0
-                y: parent.height*0.2
+                y: 0
                 width: parent.width
                 height: parent.height
                 columns: activity_number
