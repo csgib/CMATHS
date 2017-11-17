@@ -290,6 +290,9 @@ ApplicationWindow {
                       case 19:
                           exo12.visible = true
                           break;
+                      case 20:
+                          exo13.visible = true
+                          break;
                     }
 
                     consignes.y = Screen.height*-1
@@ -544,6 +547,17 @@ ApplicationWindow {
                     visible: false
                     z: 2
                 }
+
+                WKS_Suivant{
+                    id: exo13
+                    x: 0
+                    y: 10
+                    width: parent.width
+                    height: parent.height - 20
+                    anchors.fill: parent
+                    visible: false
+                    z: 2
+                }
             }
         }
     }
@@ -738,6 +752,11 @@ ApplicationWindow {
               exosymetrie.play()
               exo12.init_work()
               break;
+          case 20:
+              consignes_txt.text = "Trouvez le chiffre qui vient juste après pour aider l'enfant a traverser la rivière"
+              consignes.y = 0
+              exo13.init_work()
+              break;
         }
     }
 
@@ -805,6 +824,9 @@ ApplicationWindow {
                 break;
             case 19:
                 exo12.visible = false
+                break;
+            case 20:
+                exo13.visible = false
                 break;
         }
     }

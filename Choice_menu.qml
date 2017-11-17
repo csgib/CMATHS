@@ -98,6 +98,15 @@ Item {
                 }
 
                 WID_Activity{
+                    wg_txt_activity: "Chiffre suivant"
+                    wg_id_activity: 20
+                    wg_niv_1: 1
+                    wg_niv_2: 1
+                    wg_niv_3: 0.3
+                    wg_text_expl: "1 2 ... 4"
+                }
+
+                WID_Activity{
                     wg_txt_activity: "Faire des additions"
                     wg_id_activity: 5
                     wg_niv_1: 1
