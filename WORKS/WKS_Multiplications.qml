@@ -222,7 +222,7 @@ Item {
         exo_calc_result_multi.text = "..."
         if ( wl_sens == 0 )
         {
-            exo_calc_operation_multi.text = wl_calc_val_2 + " * " + array_numbers_mult[wl_calc_val_1] + " = "
+            exo_calc_operation_multi.text = wl_calc_val_2 + " x " + array_numbers_mult[wl_calc_val_1] + " = "
         }
         else
         {

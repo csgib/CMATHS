@@ -134,7 +134,7 @@ Item {
     Item{
         id: flotte_next
 
-        x: frm_application.width + 100
+        x: frm_application.width + 10
         y: parent.height - 176
         width: 210
         height: 176
@@ -241,7 +241,7 @@ Item {
     function init_work()
     {
         player_next.playing = true
-        flotte_next.x = frm_application.width + 100
+        flotte_next.x = frm_application.width + 10
         timer_move.start()
     }
 
@@ -307,14 +307,14 @@ Item {
                 wl_good_answer = wl_calc_val_1 + 2
                 break;
         }
-        flotte_next.x = 110
+        flotte_next.x = frm_application.width - 212
     }
 
     function fn_click_ans_next(wl_response)
     {
         if ( wl_good_answer == wl_response )
         {
-            flotte_next.x = -260
+            flotte_next.x = -220
             timer_wait.start()
         }
         else
