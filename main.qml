@@ -204,27 +204,16 @@ ApplicationWindow {
                 anchors.fill: parent
             }
 
-            WID_Button{
-                anchors.right: parent.right
-                anchors.rightMargin: 10
-                y: 10
-                width: 150
-                button_title: "Consigne"
-                onClicked: {
-                    fn_start_activty(wl_current_activity)
-                }
-            }
-
             Text{
                 z: 2
-                x: 100
-                y: 100
+                x: 20
+                y: 10
                 font.family: local_school.name
                 minimumPixelSize: 8
                 font.pixelSize: 128
                 fontSizeMode: Text.Fit
-                width: parent.width - 200
-                height: parent.height - 250
+                width: parent.width - 40
+                height: parent.height - 150
                 id: consignes_txt
                 wrapMode: Text.WordWrap
                 color: "#FFFFFF"
@@ -232,9 +221,9 @@ ApplicationWindow {
             }
 
             WID_Button {
-                width: parent.width-100
-                x: 50
-                y: parent.height-100
+                width: parent.width-40
+                x: 20
+                y: parent.height-130
                 z: 2
                 button_title: "Démarrer"
                 onClicked: {
@@ -311,6 +300,16 @@ ApplicationWindow {
                     consignes.y = Screen.height*-1
                     support_jeu.visible = true
                     choice_menu.visible = false
+                }
+            }
+
+            WID_Button{
+                width: parent.width-40
+                x: 20
+                y: parent.height-60
+                button_title: "Relire la consigne"
+                onClicked: {
+                    fn_start_activty(wl_current_activity)
                 }
             }
         }
