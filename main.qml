@@ -291,6 +291,7 @@ ApplicationWindow {
                           exo12.visible = true
                           break;
                       case 20:
+                          exo13.wl_interval = 0
                           exo13.init_work()
                           exo13.visible = true
                           break;

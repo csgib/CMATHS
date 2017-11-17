@@ -77,7 +77,7 @@
         <file>Images/Game_art/terre_bas.png</file>
         <file>Images/Game_art/terre_haut.png</file>
         <file>WORKS/WKS_Suivant.qml</file>
-        <file>Images/Game_art/player.png</file>
         <file>Images/Game_art/stone.png</file>
+        <file>Images/Game_art/player.gif</file>
     </qresource>
 </RCC>

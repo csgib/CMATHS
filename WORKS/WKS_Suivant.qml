@@ -5,6 +5,7 @@ Item {
 
     property int wl_calc_val_1: 0
     property int wl_good_answer: 0
+    property int wl_interval: 0
 
     WID_Button{
         x: parent.width - 35
@@ -116,10 +117,14 @@ Item {
         fillMode: Image.Tile
     }
 
-    Image{
+    AnimatedImage{
         id: player_next
         x: 20
         y: parent.height - 286
+        cache: true
+        smooth: false
+        playing: true
+        asynchronous: true
         width: 80
         height: 110
         source: "../Images/Game_art/player.png"
@@ -234,7 +239,7 @@ Item {
 
     function init_work()
     {
-        //flotte_next.x = frm_application.width + 100
+        flotte_next.x = frm_application.width + 100
         timer_move.start()
     }
 
@@ -331,12 +336,13 @@ Item {
                 fn_show_victory()
             }
         }
+        wl_interval = 2000
         timer_move.start()
     }
 
     Timer {
         id: timer_move
-        interval: 200
+        interval: wl_interval
         running: false
         repeat: false
         onTriggered: change_values()
