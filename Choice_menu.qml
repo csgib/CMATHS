@@ -98,7 +98,7 @@ Item {
                 }
 
                 WID_Activity{
-                    wg_txt_activity: "Chiffre suivant"
+                    wg_txt_activity: "Chiffre manquant"
                     wg_id_activity: 20
                     wg_niv_1: 1
                     wg_niv_2: 1

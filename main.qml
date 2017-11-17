@@ -291,6 +291,7 @@ ApplicationWindow {
                           exo12.visible = true
                           break;
                       case 20:
+                          exo13.init_work()
                           exo13.visible = true
                           break;
                     }
@@ -753,7 +754,7 @@ ApplicationWindow {
               exo12.init_work()
               break;
           case 20:
-              consignes_txt.text = "Trouvez le chiffre qui vient juste après pour aider l'enfant a traverser la rivière"
+              consignes_txt.text = "Trouvez le chiffre qui manque pour aider l'enfant a traverser la rivière"
               consignes.y = 0
               exo13.init_work()
               break;

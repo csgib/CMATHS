@@ -214,14 +214,8 @@ Item {
         while ( wl_idx < 12 )
         {
             component = Qt.createComponent("../WIDGETS/Item_Rectangle.qml");
-           /* if ( ((frm_application.width-20) / (wl_max+2)) > ((flow_algo_answer.height-20)/2) )
-            {
-                sprite = component.createObject(flow_algo_answer, {"wl_color": "#44FFFFFF", "wl_width": (model_algo.height-180) / 2, "wl_height": (model_algo.height-180) / 2})
-            }
-            else
-            {*/
-                sprite = component.createObject(flow_algo_answer, {"wl_color": "#44FFFFFF", "wl_width": (flow_algo_answer.width-60) / 6, "wl_height": (flow_algo_answer.height-20) / 2})
-            //}
+            sprite = component.createObject(flow_algo_answer, {"wl_color": "#44FFFFFF", "wl_width": (flow_algo_answer.width-60) / 6, "wl_height": (flow_algo_answer.height-20) / 2})
+
             wl_idx++
         }
         wl_current_algo_case = 0
