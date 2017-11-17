@@ -127,7 +127,7 @@ Item {
         asynchronous: true
         width: 80
         height: 110
-        source: "../Images/Game_art/player.png"
+        source: "../Images/Game_art/player.gif"
     }
 
     Item{
@@ -336,7 +336,7 @@ Item {
                 fn_show_victory()
             }
         }
-        wl_interval = 2000
+        wl_interval = 3100
         timer_move.start()
     }
 
