@@ -204,6 +204,17 @@ ApplicationWindow {
                 anchors.fill: parent
             }
 
+            WID_Button{
+                anchors.right: parent.right
+                anchors.rightMargin: 10
+                y: 10
+                width: 150
+                button_title: "Consigne"
+                onClicked: {
+                    fn_start_activty(wl_current_activity)
+                }
+            }
+
             Text{
                 z: 2
                 x: 100
@@ -614,33 +625,33 @@ ApplicationWindow {
 
         switch(wl_id_activity){
           case 1:
-              consignes_txt.text = "Comparez les chiffres et utilisez le signe qui convient\n> pour plus grand que\n< pour plus petit que\nou = si les nombres sont les mêmes"
+              consignes_txt.text = "Comparez les chiffres et utilisez le signe qui convient\n> pour plus grand que\n< pour plus petit que\nou = si les nombres sont les mêmes."
               consignes.y = 0
               exo1bruitage.play()
               exo1.init_work()
               break;
           case 2:
-              consignes_txt.text = "Remettez les chiffres et nombre dans l'ordre croissant 'du plus petit au plus grand'"
+              consignes_txt.text = "Remettez les chiffres et nombre dans l'ordre croissant 'du plus petit au plus grand'."
               consignes.y = 0
               exo2bruitage.play()
               exo2.sens_count = 0
               exo2.init_work()
               break;
           case 3:
-              consignes_txt.text = "Comptez l'ensemble des objets comme vous l'indique la consigne"
+              consignes_txt.text = "Comptez l'ensemble des objets comme vous l'indique la consigne."
               consignes.y = 0
               exocompte.play()
               exo3.init_work()
               break;
           case 4:
-              consignes_txt.text = "Remettez les chiffres et nombre dans l'ordre décroissant 'du plus grand au plus petit'"
+              consignes_txt.text = "Remettez les chiffres et nombre dans l'ordre décroissant 'du plus grand au plus petit'."
               consignes.y = 0
               exo2bruitage2.play()
               exo2.sens_count = 1
               exo2.init_work()
               break;
           case 5:
-              consignes_txt.text = "Trouvez le résultat des additions"
+              consignes_txt.text = "Trouvez le résultat des additions."
               consignes.y = 0
               wl_current_max = 9
               exoadd.play()
@@ -648,7 +659,7 @@ ApplicationWindow {
               exo4.init_work()
               break;
           case 6:
-              consignes_txt.text = "Trouvez le résultat des soustractions"
+              consignes_txt.text = "Trouvez le résultat des soustractions."
               consignes.y = 0
               wl_current_max = 9
               exosous.play()
@@ -656,7 +667,7 @@ ApplicationWindow {
               exo4.init_work()
               break;
           case 7:
-              consignes_txt.text = "Composez les nombres avec les éléments carré (10) et rond (1)"
+              consignes_txt.text = "Composez les nombres avec les éléments carré (10) et rond (1)."
               consignes.y = 0
               wl_current_max = 20
               exo5.wl_diff = 0
@@ -664,14 +675,14 @@ ApplicationWindow {
               exo5.init_work()
               break;
           case 8:
-              consignes_txt.text = "Résolvez les algorithmes suivants en complétant la grille avec le motif proposé"
+              consignes_txt.text = "Résolvez les algorithmes suivants en complétant la grille avec le motif proposé."
               consignes.y = 0
               wl_current_max = 20
               exoalgo.play()
               exo6.init_work()
               break;
           case 9:
-              consignes_txt.text = "Complètez les opérations suivantes"
+              consignes_txt.text = "Complètez les opérations suivantes."
               consignes.y = 0
               wl_current_max = 20
               exo7.sens_count = 0
@@ -679,7 +690,7 @@ ApplicationWindow {
               exo7.init_work()
               break;
           case 10:
-              consignes_txt.text = "Complètez les opérations suivantes"
+              consignes_txt.text = "Complètez les opérations suivantes."
               consignes.y = 0
               wl_current_max = 20
               exo7.sens_count = 1
@@ -687,7 +698,7 @@ ApplicationWindow {
               exo7.init_work()
               break;
           case 11:
-              consignes_txt.text = "Apprends tes tables de multiplications"
+              consignes_txt.text = "Apprends tes tables de multiplications."
               consignes.y = 0
               wl_current_max = 20
               exo8.wl_sens = 0
@@ -697,7 +708,7 @@ ApplicationWindow {
               exo8.init_work()
               break;
           case 12:
-              consignes_txt.text = "Apprends tes tables d'additions"
+              consignes_txt.text = "Apprends tes tables d'additions."
               consignes.y = 0
               wl_current_max = 20
               exo8.wl_sens = 1
@@ -707,20 +718,20 @@ ApplicationWindow {
               exo8.init_work()
               break;
           case 13:
-              consignes_txt.text = "Achète ton jouet avec les pièces dont tu disposes"
+              consignes_txt.text = "Achète ton jouet avec les pièces dont tu disposes."
               consignes.y = 0
               exopieces.play()
               exo9.wg_sens = 0
               exo9.init_work()
               break;
           case 14:
-              consignes_txt.text = "Coche la case qui correspond à la consigne"
+              consignes_txt.text = "Coche la case qui correspond à la consigne."
               consignes.y = 0
               exogrid.play()
               exo10.init_work()
               break;
           case 15:
-              consignes_txt.text = "Composez les nombres avec les éléments carré (10) et rond (1) et le super rond rose qui compte 5"
+              consignes_txt.text = "Composez les nombres avec les éléments carré (10) et rond (1) et le super rond rose qui compte 5."
               consignes.y = 0
               exoadix.play()
               wl_current_max = 20
@@ -728,34 +739,34 @@ ApplicationWindow {
               exo5.init_work()
               break;
           case 16:
-              consignes_txt.text = "Lis l'heure sur la pendule et donne le bon résultat"
+              consignes_txt.text = "Lis l'heure sur la pendule et donne le bon résultat."
               consignes.y = 0
               exoheures.play()
               exo11.wl_sens = 0
               exo11.init_work()
               break;
           case 17:
-              consignes_txt.text = "Achète ton jouet avec les billets dont tu disposes"
+              consignes_txt.text = "Achète ton jouet avec les billets dont tu disposes."
               consignes.y = 0
               exopieces.play()
               exo9.wg_sens = 1
               exo9.init_work()
               break;
           case 18:
-              consignes_txt.text = "Lis l'heure sur la pendule et donne le bon résultat"
+              consignes_txt.text = "Lis l'heure sur la pendule et donne le bon résultat."
               consignes.y = 0
               exoheures.play()
               exo11.wl_sens = 1
               exo11.init_work()
               break;
           case 19:
-              consignes_txt.text = "Reproduis le modèle de gauche à droite"
+              consignes_txt.text = "Reproduis le modèle de gauche à droite."
               consignes.y = 0
               exosymetrie.play()
               exo12.init_work()
               break;
           case 20:
-              consignes_txt.text = "Trouvez le chiffre qui manque pour aider l'enfant a traverser la rivière"
+              consignes_txt.text = "Trouvez le chiffre qui manque pour aider l'enfant a traverser la rivière."
               consignes.y = 0
               exo13.init_work()
               break;
