@@ -14,6 +14,7 @@ Item {
         height: 30
         button_title: "X"
         onClicked: {
+            player_next.playing = false
             fn_close_activity()
         }
     }
@@ -123,7 +124,7 @@ Item {
         y: parent.height - 286
         cache: true
         smooth: false
-        playing: true
+        playing: false
         asynchronous: true
         width: 80
         height: 110
@@ -142,7 +143,7 @@ Item {
             NumberAnimation {
                 easing.overshoot: 0
                 duration: 1000
-                easing.type: Easing.OutQuad
+                easing.type: Easing.InOutQuad
             }
         }
 
@@ -239,6 +240,7 @@ Item {
 
     function init_work()
     {
+        player_next.playing = true
         flotte_next.x = frm_application.width + 100
         timer_move.start()
     }
@@ -305,7 +307,7 @@ Item {
                 wl_good_answer = wl_calc_val_1 + 2
                 break;
         }
-        flotte_next.x = 160
+        flotte_next.x = 110
     }
 
     function fn_click_ans_next(wl_response)
@@ -333,6 +335,7 @@ Item {
 
             if ( wl_current_point_cumul >= 50 )
             {
+                player_next.playing = false
                 fn_show_victory()
             }
         }

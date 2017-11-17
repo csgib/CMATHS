@@ -101,7 +101,7 @@ Item {
                     wg_txt_activity: "Chiffre manquant"
                     wg_id_activity: 20
                     wg_niv_1: 1
-                    wg_niv_2: 1
+                    wg_niv_2: 0.3
                     wg_niv_3: 0.3
                     wg_text_expl: "1 2 ... 4"
                 }
