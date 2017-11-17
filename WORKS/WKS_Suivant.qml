@@ -28,11 +28,11 @@ Item {
         anchors.rightMargin: 10
         anchors.bottom: player_next.top
         anchors.bottomMargin: 10
-        spacing: 10
+        spacing: 20
 
         Text{
             id: rock_1_answer
-            width: (parent.width - 20)/3
+            width: (parent.width - 40)/3
             height: parent.height
             minimumPixelSize: 8
             font.pixelSize: 128
@@ -40,7 +40,6 @@ Item {
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             text: ""
-            font.family: local_school.name
             color: "#FFFFFF"
             style: Text.Outline
             styleColor: "#000000"
@@ -55,7 +54,7 @@ Item {
 
         Text{
             id: rock_2_answer
-            width: (parent.width - 20)/3
+            width: (parent.width - 40)/3
             height: parent.height
             minimumPixelSize: 8
             font.pixelSize: 128
@@ -63,7 +62,6 @@ Item {
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             text: ""
-            font.family: local_school.name
             color: "#FFFFFF"
             style: Text.Outline
             styleColor: "#000000"
@@ -78,7 +76,7 @@ Item {
 
         Text{
             id: rock_3_answer
-            width: (parent.width - 20)/3
+            width: (parent.width - 40)/3
             height: parent.height
             minimumPixelSize: 8
             font.pixelSize: 128
@@ -86,7 +84,6 @@ Item {
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             text: ""
-            font.family: local_school.name
             color: "#FFFFFF"
             style: Text.Outline
             styleColor: "#000000"
@@ -100,22 +97,38 @@ Item {
         }
     }
 
-    Image{
+    Item{
+        id: sol_suivant
         x: 0
         y: parent.height - 176
-        width: parent.width
-        height: 40
-        source: "../Images/Game_art/terre_haut.png"
-        fillMode: Image.Tile
-    }
+        width: parent.width*2
+        height: 176
 
-    Image{
-        x: 0
-        y: parent.height - 140
-        width: parent.width
-        height: 140
-        source: "../Images/Game_art/terre_bas.png"
-        fillMode: Image.Tile
+        Behavior on x {
+            NumberAnimation {
+                easing.overshoot: 0
+                duration: 1000
+                easing.type: Easing.InOutQuad
+            }
+        }
+
+        Image{
+            x: 0
+            y: 0
+            width: parent.width
+            height: 40
+            source: "../Images/Game_art/terre_haut.png"
+            fillMode: Image.Tile
+        }
+
+        Image{
+            x: 0
+            y: 36
+            width: parent.width
+            height: parent.height - 34
+            source: "../Images/Game_art/terre_bas.png"
+            fillMode: Image.Tile
+        }
     }
 
     AnimatedImage{
@@ -185,7 +198,6 @@ Item {
                     fontSizeMode: Text.Fit
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
-                    font.family: local_school.name
                     color: "#FFFFFF"
                     style: Text.Outline
                     styleColor: "#000000"
@@ -207,7 +219,6 @@ Item {
                     fontSizeMode: Text.Fit
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
-                    font.family: local_school.name
                     color: "#FFFFFF"
                     style: Text.Outline
                     styleColor: "#000000"
@@ -228,7 +239,6 @@ Item {
                     fontSizeMode: Text.Fit
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
-                    font.family: local_school.name
                     color: "#FFFFFF"
                     style: Text.Outline
                     styleColor: "#000000"
@@ -242,6 +252,7 @@ Item {
     {
         player_next.playing = true
         flotte_next.x = frm_application.width + 10
+        //sol_suivant.x = 0
         timer_move.start()
     }
 
@@ -307,6 +318,7 @@ Item {
                 wl_good_answer = wl_calc_val_1 + 2
                 break;
         }
+        sol_suivant.x = -222
         flotte_next.x = frm_application.width - 212
     }
 
@@ -314,6 +326,7 @@ Item {
     {
         if ( wl_good_answer == wl_response )
         {
+            sol_suivant.x = -flotte_next.x - 220
             flotte_next.x = -220
             timer_wait.start()
         }
@@ -326,6 +339,7 @@ Item {
     function fn_bravo()
     {
         flotte_next.x = frm_application.width + 10
+        sol_suivant.x = 0
         result_question.fn_show_hit("OK")
         if ( wl_current_point > 10 )
         {

@@ -150,6 +150,12 @@ ApplicationWindow {
         volume: 1.0
     }
 
+    SoundEffect {
+        id: exosuivant
+        source: "Sounds/exo_suivant.wav"
+        volume: 1.0
+    }
+
     Start_screen{
         id: start_screen
         x: 0
@@ -767,6 +773,7 @@ ApplicationWindow {
           case 20:
               consignes_txt.text = "Trouvez le chiffre qui manque pour aider l'enfant a traverser la rivière."
               consignes.y = 0
+              exosuivant.play()
               exo13.init_work()
               break;
         }

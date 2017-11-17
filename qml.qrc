@@ -79,5 +79,6 @@
         <file>WORKS/WKS_Suivant.qml</file>
         <file>Images/Game_art/stone.png</file>
         <file>Images/Game_art/player.gif</file>
+        <file>Sounds/exo_suivant.wav</file>
     </qresource>
 </RCC>
