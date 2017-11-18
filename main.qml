@@ -301,6 +301,9 @@ ApplicationWindow {
                           exo13.init_work()
                           exo13.visible = true
                           break;
+                      case 21:
+                          exo14.visible = true
+                          break;
                     }
 
                     consignes.y = Screen.height*-1
@@ -576,6 +579,17 @@ ApplicationWindow {
                     visible: false
                     z: 2
                 }
+
+                WKS_Balance{
+                    id: exo14
+                    x: 0
+                    y: 10
+                    width: parent.width
+                    height: parent.height - 20
+                    anchors.fill: parent
+                    visible: false
+                    z: 2
+                }
             }
         }
     }
@@ -776,6 +790,12 @@ ApplicationWindow {
               exosuivant.play()
               exo13.init_work()
               break;
+          case 21:
+              consignes_txt.text = "Remettez des poids dans le plateau de la balance pour obtenir le même poids."
+              consignes.y = 0
+              //exosuivant.play()
+              exo14.init_work()
+              break;
         }
     }
 
@@ -846,6 +866,9 @@ ApplicationWindow {
                 break;
             case 20:
                 exo13.visible = false
+                break;
+            case 21:
+                exo14.visible = false
                 break;
         }
     }
