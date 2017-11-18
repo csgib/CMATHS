@@ -101,7 +101,7 @@ Item {
         id: sol_suivant
         x: 0
         y: parent.height - 176
-        width: parent.width*2.5
+        width: frm_application.width*3
         height: 176
 
         Behavior on x {
