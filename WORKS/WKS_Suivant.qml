@@ -101,7 +101,7 @@ Item {
         id: sol_suivant
         x: 0
         y: parent.height - 176
-        width: parent.width*2
+        width: parent.width*2.5
         height: 176
 
         Behavior on x {
@@ -326,7 +326,7 @@ Item {
     {
         if ( wl_good_answer == wl_response )
         {
-            sol_suivant.x = -flotte_next.x - 220
+            sol_suivant.x = sol_suivant.x-(flotte_next.x + 220)
             flotte_next.x = -220
             timer_wait.start()
         }
