@@ -15,4 +15,29 @@ Item {
             fn_close_activity()
         }
     }
+
+    Item{
+        anchors.top: parent.top
+        anchors.topMargin: 40
+        anchors.left: parent.left
+        anchors.leftMargin: 10
+        anchors.right: parent.right
+        anchors.rightMargin: 10
+
+        Image{
+            anchors.fill: parent
+            source: "../Images/balance1.png"
+            fillMode: Image.PreserveAspectFit
+        }
+
+        Image{
+            anchors.fill: parent
+            source: "../Images/balance2.png"
+        }
+    }
+
+    function init_work()
+    {
+
+    }
 }
