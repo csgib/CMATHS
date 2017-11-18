@@ -5,6 +5,8 @@ import QtGraphicalEffects 1.0
 Item {
     property real activity_number: 10
 
+    property int cell_per_row: Math.ceil((activity_number*2) / Math.floor((frm_application.height-100)/220))
+
     Rectangle{
         anchors.fill: parent
         z: 0
@@ -28,7 +30,7 @@ Item {
             anchors.rightMargin: 10
             anchors.left: parent.left
             anchors.leftMargin: 10
-            height: 100
+            height: 85
             minimumPixelSize: 6
             font.pixelSize: 128
             fontSizeMode: Text.Fit
@@ -50,7 +52,7 @@ Item {
             anchors.leftMargin: 0
             anchors.bottom: parent.bottom
             flickableDirection: Flickable.HorizontalFlick
-            contentWidth: (350 * activity_number) + (20 * activity_number)
+            contentWidth: (350 * cell_per_row) + (20 * cell_per_row)
             contentHeight: parent.height
 
             Grid {
@@ -58,7 +60,7 @@ Item {
                 y: 0
                 width: parent.width
                 height: parent.height
-                columns: activity_number
+                columns: cell_per_row
                 spacing: 20
 
                 WID_Activity{

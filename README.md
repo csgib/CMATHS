@@ -10,10 +10,6 @@ Bon jeu à tous
 Liste des autorisations :
 
     android.permission.ACCESS_NETWORK_STATE
-    android.permission.CAMERA --- Remove in 1.1 BETA
     android.permission.INTERNET
-    android.permission.READ_EXTERNAL_STORAGE
-    android.permission.RECORD_AUDIO --- Remove in 1.1 BETA
-    android.permission.WRITE_EXTERNAL_STORAGE
     
 Aucune donnée n'est collectée par l'application, seules les autorisations de la bibliothèque par défaut et les modules multimédia sont requis. Les autorisations concernant la caméra et le micro ne sont pas utilisées.
