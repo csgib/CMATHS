@@ -6,6 +6,7 @@ Item {
     property int wl_calc_val_1: 0
     property int wl_good_answer: 0
     property int wl_interval: 0
+    property int wl_alea: 0
 
     WID_Button{
         x: parent.width - 35
@@ -265,7 +266,7 @@ Item {
             wl_calc_val_1 = Math.ceil(Math.random() * wl_current_max)
         }
 
-        var wl_alea = Math.ceil(Math.random() * 3)
+        wl_alea = Math.ceil(Math.random() * 3)
         if ( wl_alea < 1 )
         {
             wl_alea = 1
@@ -318,14 +319,32 @@ Item {
                 wl_good_answer = wl_calc_val_1 + 2
                 break;
         }
-        sol_suivant.x = -222
-        flotte_next.x = frm_application.width - 212
+        sol_suivant.x = -(frm_application.width - 112)
+        flotte_next.x = 102
     }
 
     function fn_click_ans_next(wl_response)
     {
         if ( wl_good_answer == wl_response )
         {
+            switch(wl_alea){
+                case 1:
+                    rock_1_p.opacity = 1
+                    rock_1.text = wl_response
+
+                    break;
+                case 2:
+
+                    rock_2_p.opacity = 1
+                    rock_2.text = wl_response
+
+                    break;
+                case 3:
+                    rock_3_p.opacity = 1
+                    rock_3.text = wl_response
+
+                    break;
+            }
             sol_suivant.x = sol_suivant.x-(flotte_next.x + 220)
             flotte_next.x = -220
             timer_wait.start()

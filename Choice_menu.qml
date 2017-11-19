@@ -3,7 +3,7 @@ import "WIDGETS/"
 import QtGraphicalEffects 1.0
 
 Item {
-    property real activity_number: 11
+    property real activity_number: 10
 
     property int cell_per_row: Math.ceil((activity_number*2) / Math.floor((frm_application.height-90)/220))
 
@@ -243,14 +243,14 @@ Item {
                     wg_text_expl: "A | A"
                 }
 
-                WID_Activity{
+                /*WID_Activity{
                     wg_txt_activity: "La balance"
                     wg_id_activity: 21
                     wg_niv_1: 1
                     wg_niv_2: 1
                     wg_niv_3: 0.3
                     wg_text_expl: "10 G | ?"
-                }
+                }*/
             }
         }
     }
