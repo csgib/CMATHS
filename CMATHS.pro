@@ -1,4 +1,4 @@
-QT += quick multimedia
+QT += quick multimedia androidextras
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use
@@ -39,6 +39,7 @@ DISTFILES += \
     android/gradlew.bat \
     Fonts/Licence_font.txt \
     cmaths.ico \
-    LICENSE.txt
+    LICENSE.txt \
+    android/src/MyActivity.java
 
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
