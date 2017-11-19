@@ -97,8 +97,8 @@ Item {
             id: bal_plato
             width: parent.width - 60
             height: 10
-            color: "#f9ea47"
-            border.color: "#2a2310"
+            color: "#ae8859"
+            border.color: "#886440"
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
         }
@@ -113,8 +113,8 @@ Item {
         onPaint: {
             var ctx = getContext("2d")
             ctx.lineWidth = 1
-            ctx.strokeStyle = "#2a2310"
-            ctx.fillStyle = "#f9ea47"
+            ctx.strokeStyle = "#9b9595"
+            ctx.fillStyle = "#bfbfc1"
 
             ctx.beginPath()
             ctx.moveTo(100,0)
@@ -136,18 +136,23 @@ Item {
         wl_calc_val_1 = Math.ceil(Math.random() * 3)
         wl_calc_val_2 = Math.ceil(Math.random() * 3)
 
+        while ( wl_calc_val_1 == wl_calc_val_2 )
+        {
+            wl_calc_val_2 = Math.ceil(Math.random() * 3)
+        }
+
         bal_pd_1_img.source = "../Images/candy" + wl_calc_val_1 + ".png"
         bal_pd_2_img.source = "../Images/candy" + wl_calc_val_2 + ".png"
 
         var wl_vari = Math.ceil(Math.random() * 10)
         if ( wl_vari < 5 )
         {
-            rot_aig_bal.angle = -5
+            rot_aig_bal.angle = -8
             wl_good_answer = 2
         }
         else
         {
-            rot_aig_bal.angle = 5
+            rot_aig_bal.angle = 8
             wl_good_answer = 1
         }
     }
@@ -157,6 +162,8 @@ Item {
         if ( wl_answer == wl_good_answer )
         {
             result_question.fn_show_hit("OK")
+
+            progress_bar_value.width = (wl_current_point_cumul*progress_bar.width)/25
             rot_aig_bal.angle = 0
             if ( wl_current_point > 10 )
             {
@@ -164,7 +171,7 @@ Item {
                 wl_current_level++
                 wl_current_point = 0
 
-                if ( wl_current_point_cumul >= 50 )
+                if ( wl_current_point_cumul >= 25 )
                 {
                     fn_show_victory()
                 }

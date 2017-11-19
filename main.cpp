@@ -1,8 +1,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#ifdef Q_OS_ANDROID
+/*#ifdef Q_OS_ANDROID
 #include <QtAndroidExtras>
-#endif
+#endif*/
 
 int main(int argc, char *argv[])
 {
