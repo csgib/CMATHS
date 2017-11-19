@@ -6,4 +6,3 @@ public class MyActivity extends org.qtproject.qt5.android.bindings.QtActivity {
                 this.getWindow().addFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         }
 }
-

@@ -80,8 +80,6 @@
         <file>Images/Game_art/stone.png</file>
         <file>Images/Game_art/player.gif</file>
         <file>Sounds/exo_suivant.wav</file>
-        <file>Images/balance1.png</file>
-        <file>Images/balance2.png</file>
         <file>WORKS/WKS_Balance.qml</file>
     </qresource>
 </RCC>
