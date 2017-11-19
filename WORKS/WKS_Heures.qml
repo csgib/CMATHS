@@ -367,7 +367,7 @@ Item {
 
     Timer {
         id: timer_change
-        interval: 2800
+        interval: 3000
         running: false
         repeat: false
         onTriggered: change_values()

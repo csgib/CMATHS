@@ -81,5 +81,6 @@
         <file>Images/Game_art/player.gif</file>
         <file>Sounds/exo_suivant.wav</file>
         <file>WORKS/WKS_Balance.qml</file>
+        <file>Sounds/exo_balance.wav</file>
     </qresource>
 </RCC>

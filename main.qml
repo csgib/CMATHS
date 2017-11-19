@@ -156,6 +156,12 @@ ApplicationWindow {
         volume: 1.0
     }
 
+    SoundEffect {
+        id: exobalance
+        source: "Sounds/exo_balance.wav"
+        volume: 1.0
+    }
+
     Start_screen{
         id: start_screen
         x: 0
@@ -791,9 +797,9 @@ ApplicationWindow {
               exo13.init_work()
               break;
           case 21:
-              consignes_txt.text = "Remettez des poids dans le plateau de la balance pour obtenir le même poids."
+              consignes_txt.text = "Trouve l'objet qui est le plus lourd."
               consignes.y = 0
-              //exosuivant.play()
+              exobalance.play()
               exo14.init_work()
               break;
         }
