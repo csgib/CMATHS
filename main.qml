@@ -884,6 +884,11 @@ ApplicationWindow {
         timer_victory.start()
     }
 
+    function fn_return_home()
+    {
+        choice_menu.visible = false
+    }
+
     Timer {
         id: timer_victory
         interval: 2800

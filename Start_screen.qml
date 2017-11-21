@@ -78,8 +78,8 @@ Item {
         anchors.rightMargin: 30
         anchors.left: parent.left
         anchors.leftMargin: 30
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: 50
+        anchors.bottom: bt_quit.top
+        anchors.bottomMargin: 20
         z: 2
         gradcolor_2: "#1a281b"
         gradcolor_1: "#2a382b"
@@ -88,6 +88,26 @@ Item {
         button_title: "Démarrer"
         onClicked: {
             fn_start_game()
+        }
+    }
+
+    WID_Button{
+        id: bt_quit
+        y: parent.height - 100
+        anchors.right: parent.right
+        anchors.rightMargin: 30
+        anchors.left: parent.left
+        anchors.leftMargin: 30
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 50
+        z: 2
+        gradcolor_2: "#1a281b"
+        gradcolor_1: "#2a382b"
+        textcolor: "#FFFFFF"
+
+        button_title: "Quitter CMATHS"
+        onClicked: {
+            Qt.quit()
         }
     }
 }
