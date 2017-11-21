@@ -242,7 +242,7 @@ Item {
 
             if ( wl_candy > 3 )
             {
-                wl_candy = 0
+                wl_candy = wl_candy_cpt
             }
 
             if ( wl_candy == wl_candy_cpt )

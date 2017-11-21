@@ -4,7 +4,6 @@ import QtGraphicalEffects 1.0
 
 Item {
     property real activity_number: 11
-
     property int cell_per_row: Math.ceil((activity_number*2) / Math.floor((frm_application.height-90)/220))
 
     Rectangle{

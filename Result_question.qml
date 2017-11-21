@@ -36,11 +36,8 @@ Item {
 
     function fn_show_hit(result)
     {       
-        //if ( opacity == 0 )
-        //{
-            id_scr_ans.opacity = 1
-            timer_hide.start()
-        //}
+        id_scr_ans.opacity = 1
+        timer_hide.start()
 
         if ( result == "OK" )
         {

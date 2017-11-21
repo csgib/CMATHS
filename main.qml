@@ -312,9 +312,8 @@ ApplicationWindow {
                           break;
                     }
 
-                    consignes.y = Screen.height*-1
                     support_jeu.visible = true
-                    choice_menu.visible = false
+                    consignes.y = Screen.height*-1
                 }
             }
 
@@ -803,6 +802,7 @@ ApplicationWindow {
               exo14.init_work()
               break;
         }
+        timer_hide_choice.start()
     }
 
     function fn_close_activity()
@@ -897,6 +897,16 @@ ApplicationWindow {
             youwin.play()
             start_screen.x = 0
             choice_menu.x = 0
+        }
+    }
+
+    Timer {
+        id: timer_hide_choice
+        interval: 500
+        running: false
+        repeat: false
+        onTriggered: {
+            choice_menu.x = frm_application.width
         }
     }
 }
