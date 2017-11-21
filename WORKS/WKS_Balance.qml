@@ -104,26 +104,12 @@ Item {
         }
     }
 
-    Canvas {
+    Image {
         width: 200
         height: 200
         anchors.horizontalCenter: parent.horizontalCenter
         y: (support_balance.height/2)+20
-
-        onPaint: {
-            var ctx = getContext("2d")
-            ctx.lineWidth = 1
-            ctx.strokeStyle = "#9b9595"
-            ctx.fillStyle = "#bfbfc1"
-
-            ctx.beginPath()
-            ctx.moveTo(100,0)
-            ctx.lineTo(200,100)
-            ctx.lineTo(0,100)
-            ctx.closePath()
-            ctx.fill()
-            ctx.stroke()
-        }
+        source: "../Images/Game_art/rock.png"
     }
 
     function init_work()

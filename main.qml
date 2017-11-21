@@ -881,12 +881,22 @@ ApplicationWindow {
 
     function fn_show_victory()
     {
-        victory_screen.x = 0
-        victory_screen.congra_current_acitivity = wl_current_activity
-        victory_screen.start_boom()
-        victory_screen.visible = true
-        youwin.play()
-        start_screen.x = 0
-        choice_menu.x = 0
+        timer_victory.start()
+    }
+
+    Timer {
+        id: timer_victory
+        interval: 2800
+        running: false
+        repeat: false
+        onTriggered: {
+            victory_screen.x = 0
+            victory_screen.congra_current_acitivity = wl_current_activity
+            victory_screen.start_boom()
+            victory_screen.visible = true
+            youwin.play()
+            start_screen.x = 0
+            choice_menu.x = 0
+        }
     }
 }

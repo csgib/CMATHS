@@ -82,5 +82,6 @@
         <file>Sounds/exo_suivant.wav</file>
         <file>WORKS/WKS_Balance.qml</file>
         <file>Sounds/exo_balance.wav</file>
+        <file>Images/Game_art/rock.png</file>
     </qresource>
 </RCC>
