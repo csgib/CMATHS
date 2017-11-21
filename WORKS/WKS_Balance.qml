@@ -27,6 +27,7 @@ Item {
         anchors.rightMargin: 10
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 10
+        z: 1
 
         transform: Rotation {
             id: rot_aig_bal
@@ -105,11 +106,49 @@ Item {
     }
 
     Image {
+        id: rock_balance
         width: 200
         height: 200
         anchors.horizontalCenter: parent.horizontalCenter
         y: (support_balance.height/2)+20
         source: "../Images/Game_art/rock.png"
+        z: 1
+    }
+
+    Image {
+        width: 200
+        height: 200
+        source: "../Images/Game_art/cactus.png"
+        anchors.bottom: rock_balance.bottom
+        anchors.right: parent.right
+        anchors.rightMargin: 20
+        fillMode: Image.PreserveAspectFit
+        z: 0
+    }
+
+    Item{
+        x: 0
+        anchors.top: rock_balance.bottom
+        width: frm_application.width
+        anchors.bottom: parent.bottom
+
+        Image{
+            x: 0
+            y: 0
+            width: parent.width
+            height: 40
+            source: "../Images/Game_art/terre_haut.png"
+            fillMode: Image.Tile
+        }
+
+        Image{
+            x: 0
+            y: 36
+            width: parent.width
+            height: parent.height - 34
+            source: "../Images/Game_art/terre_bas.png"
+            fillMode: Image.Tile
+        }
     }
 
     function init_work()
@@ -133,12 +172,12 @@ Item {
         var wl_vari = Math.ceil(Math.random() * 10)
         if ( wl_vari < 5 )
         {
-            rot_aig_bal.angle = -8
+            rot_aig_bal.angle = -10
             wl_good_answer = 2
         }
         else
         {
-            rot_aig_bal.angle = 8
+            rot_aig_bal.angle = 10
             wl_good_answer = 1
         }
     }

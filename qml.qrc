@@ -83,5 +83,6 @@
         <file>WORKS/WKS_Balance.qml</file>
         <file>Sounds/exo_balance.wav</file>
         <file>Images/Game_art/rock.png</file>
+        <file>Images/Game_art/cactus.png</file>
     </qresource>
 </RCC>
