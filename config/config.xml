@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+    <Name>CMATHS</Name>
+    <Version>1.5.0</Version>
+    <Title>Les mathématiques au CP / CE1 / CE2</Title>
+    <Publisher>Stéphane Gibault</Publisher>
+    <StartMenuDir>CMATHS</StartMenuDir>
+    <TargetDir>@HomeDir@/InstallationDirectory</TargetDir>
+</Installer>
