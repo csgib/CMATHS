@@ -16,6 +16,11 @@ Item {
             radius: 32
         }
 
+        Rectangle{
+            anchors.fill: parent
+            color: "#AA740846"
+        }
+
         WID_Button{
             x: parent.width - 35
             y: 5
@@ -25,11 +30,6 @@ Item {
             onClicked: {
                 fn_return_home()
             }
-        }
-
-        Rectangle{
-            anchors.fill: parent
-            color: "#AA740846"
         }
 
         Text{

@@ -10,8 +10,12 @@ ApplicationWindow {
     visible: true
     width: 480
     height: 800
-    visibility: Window.Maximized
+    visibility: Window.FullScreen
     title: "CMATHS"
+
+    onClosing: {
+        close.accepted = true
+    }
 
     // *** BLOCK FOR LEVELS ***
     property int wl_current_level: 1
