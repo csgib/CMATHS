@@ -116,7 +116,7 @@ Item {
     }
 
     Image {
-        width: 200
+        width: 100
         height: 200
         source: "../Images/Game_art/cactus.png"
         anchors.bottom: rock_balance.bottom

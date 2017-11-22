@@ -30,8 +30,8 @@ Item {
     Rectangle {
         x: parent.width-41
         y: 1
-        width: 40
-        height: 40
+        width: 60
+        height: 60
         color: "#CE93D8"
         border.color: "#ab47bc"
         border.width: 1
@@ -50,8 +50,8 @@ Item {
     Rectangle {
         x: parent.width-81
         y: 1
-        width: 40
-        height: 40
+        width: 30
+        height: 30
         color: "#F48FB1"
         border.color: "#EC407A"
         border.width: 1

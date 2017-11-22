@@ -8,8 +8,8 @@ import "WIDGETS/"
 ApplicationWindow {
     id: frm_application
     visible: true
-    width: 480
-    height: 800
+    /*width: 480
+    height: 800*/
     visibility: Window.FullScreen
     title: "CMATHS"
 
@@ -245,7 +245,6 @@ ApplicationWindow {
                 onClicked: {
                     gc()
 
-                    choice_menu.x = frm_application.width*2
                     start_screen.x = frm_application.width*2
 
                     switch(wl_current_activity){
@@ -651,6 +650,8 @@ ApplicationWindow {
         support_game.visible = true
         progress_bar_value.width = 0
 
+        timer_hide_choice.start()
+
         switch(wl_id_activity){
           case 1:
               consignes_txt.text = "Comparez les chiffres et utilisez le signe qui convient\n> pour plus grand que\n< pour plus petit que\nou = si les nombres sont les mêmes."
@@ -806,7 +807,6 @@ ApplicationWindow {
               exo14.init_work()
               break;
         }
-        timer_hide_choice.start()
     }
 
     function fn_close_activity()
@@ -915,7 +915,7 @@ ApplicationWindow {
         running: false
         repeat: false
         onTriggered: {
-            choice_menu.x = frm_application.width
+            choice_menu.x = 10000
         }
     }
 }
