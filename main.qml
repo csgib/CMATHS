@@ -313,6 +313,9 @@ ApplicationWindow {
                       case 21:
                           exo14.visible = true
                           break;
+                      case 22:
+                          exo15.visible = true
+                          break;
                     }
 
                     support_jeu.visible = true
@@ -598,6 +601,17 @@ ApplicationWindow {
                     visible: false
                     z: 2
                 }
+
+                WKS_Poids{
+                    id: exo15
+                    x: 0
+                    y: 10
+                    width: parent.width
+                    height: parent.height - 20
+                    anchors.fill: parent
+                    visible: false
+                    z: 2
+                }
             }
         }
     }
@@ -806,6 +820,12 @@ ApplicationWindow {
               exobalance.play()
               exo14.init_work()
               break;
+          case 22:
+              consignes_txt.text = "Classe les bocaux du plus léger au plus lourd."
+              consignes.y = 0
+              //exobalance.play()
+              exo15.init_work()
+              break;
         }
     }
 
@@ -879,6 +899,9 @@ ApplicationWindow {
                 break;
             case 21:
                 exo14.visible = false
+                break;
+            case 22:
+                exo15.visible = false
                 break;
         }
     }

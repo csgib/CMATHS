@@ -85,5 +85,6 @@
         <file>Images/Game_art/rock.png</file>
         <file>Images/Game_art/cactus.png</file>
         <file>Images/Game_art/bocal.png</file>
+        <file>WORKS/WKS_Poids.qml</file>
     </qresource>
 </RCC>
