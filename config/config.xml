@@ -5,5 +5,5 @@
     <Title>Les mathématiques au CP / CE1 / CE2</Title>
     <Publisher>Stéphane Gibault</Publisher>
     <StartMenuDir>CMATHS</StartMenuDir>
-    <TargetDir>@HomeDir@/InstallationDirectory</TargetDir>
+    <TargetDir>@HomeDir@/CMATHS</TargetDir>
 </Installer>

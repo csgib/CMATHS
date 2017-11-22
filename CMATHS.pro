@@ -41,7 +41,6 @@ DISTFILES += \
     Fonts/Licence_font.txt \
     cmaths.ico \
     LICENSE.txt \
-    android/src/MyActivity.java \
-    config/config.xml
+    android/src/MyActivity.java
 
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
