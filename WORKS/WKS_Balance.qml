@@ -107,8 +107,8 @@ Item {
 
     Image {
         id: rock_balance
-        width: 200
-        height: 200
+        width: 150
+        height: 150
         anchors.horizontalCenter: parent.horizontalCenter
         y: (support_balance.height/2)+20
         source: "../Images/Game_art/rock.png"
@@ -117,7 +117,7 @@ Item {
 
     Image {
         width: 100
-        height: 200
+        height: 150
         source: "../Images/Game_art/cactus.png"
         anchors.bottom: rock_balance.bottom
         anchors.right: parent.right
@@ -136,17 +136,17 @@ Item {
             x: 0
             y: 0
             width: parent.width
-            height: 40
-            source: "../Images/Game_art/terre_haut.png"
+            height: parent.height
+            source: "../Images/Game_art/terre_bas.png"
             fillMode: Image.Tile
         }
 
         Image{
             x: 0
-            y: 36
+            y: 0
             width: parent.width
-            height: parent.height - 34
-            source: "../Images/Game_art/terre_bas.png"
+            height: 40
+            source: "../Images/Game_art/terre_haut.png"
             fillMode: Image.Tile
         }
     }
