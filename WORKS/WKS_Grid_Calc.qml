@@ -32,10 +32,10 @@ Item {
 
         Repeater {
             id: repeat_add_grid
-            model: 64
+            model: 36
             delegate: Rectangle {
-                width: (parent.width-8) / 8
-                height: (parent.height-8) / 8
+                width: (parent.width-6) / 6
+                height: (parent.height-6) / 6
                 color: "#AAAAAAAA"
 
                 Text{
@@ -45,6 +45,8 @@ Item {
                     minimumPixelSize: 4
                     font.pixelSize: 128
                     fontSizeMode: Text.Fit
+                    style: Text.Outline
+                    styleColor: "#000000"
                     text: ""
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
@@ -103,7 +105,7 @@ Item {
             repeat_add_grid.itemAt(i).color = "#AAAAAAAA"
         }
 
-        wl_calc_val_1 = Math.ceil(Math.random() * 63)
+        wl_calc_val_1 = Math.ceil(Math.random() * 35)
         var wl_somme = repeat_add_grid.itemAt(wl_calc_val_1).children[0].text.split("+")
         wl_good_value = parseInt((wl_somme[0]*1)+(wl_somme[1]*1))
 
@@ -121,7 +123,7 @@ Item {
             if ( wl_select_value == wl_good_value )
             {
                 repeat_add_grid.itemAt(wl_coord).children[0].text = ""
-                repeat_add_grid.itemAt(wl_coord).color = "#AAF0F4C3"
+                repeat_add_grid.itemAt(wl_coord).color = "#AAEEFF41"
 
                 var wl_reste = 0
 
