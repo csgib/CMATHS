@@ -702,7 +702,7 @@ ApplicationWindow {
           case 5:
               consignes_txt.text = "Trouvez le résultat des additions."
               consignes.y = 0
-              wl_current_max = 9
+              wl_current_max = 5
               exoadd.play()
               exo4.sens_count = 0
               exo4.init_work()
@@ -710,7 +710,7 @@ ApplicationWindow {
           case 6:
               consignes_txt.text = "Trouvez le résultat des soustractions."
               consignes.y = 0
-              wl_current_max = 9
+              wl_current_max = 5
               exosous.play()
               exo4.sens_count = 1
               exo4.init_work()
