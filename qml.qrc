@@ -84,7 +84,7 @@
         <file>Sounds/exo_balance.wav</file>
         <file>Images/Game_art/rock.png</file>
         <file>Images/Game_art/cactus.png</file>
-        <file>Images/Game_art/bocal.png</file>
-        <file>WORKS/WKS_Poids.qml</file>
+        <file>WORKS/WKS_Grid_Calc.qml</file>
+        <file>Sounds/exo_grid_count.wav</file>
     </qresource>
 </RCC>

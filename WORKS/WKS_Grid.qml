@@ -4,7 +4,6 @@ import QtGraphicalEffects 1.0
 import "../WIDGETS/"
 
 Item {
-    id: item1
     property int wl_current_motif: 0
     property int wl_current_motif_item: 0
     property var array_Column: ["A", "B", "C", "D", "E","F"]

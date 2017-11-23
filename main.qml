@@ -166,6 +166,12 @@ ApplicationWindow {
         volume: 1.0
     }
 
+    SoundEffect {
+        id: exogridcount
+        source: "Sounds/exo_grid_count.wav"
+        volume: 1.0
+    }
+
     Start_screen{
         id: start_screen
         x: 0
@@ -602,7 +608,7 @@ ApplicationWindow {
                     z: 2
                 }
 
-                WKS_Poids{
+                WKS_Grid_Calc{
                     id: exo15
                     x: 0
                     y: 10
@@ -821,9 +827,9 @@ ApplicationWindow {
               exo14.init_work()
               break;
           case 22:
-              consignes_txt.text = "Classe les bocaux du plus léger au plus lourd."
+              consignes_txt.text = "Clique sur les cases dont le résultat corresponds à la consigne."
               consignes.y = 0
-              //exobalance.play()
+              exogridcount.play()
               exo15.init_work()
               break;
         }

@@ -155,6 +155,15 @@ Item {
                 }
 
                 WID_Activity{
+                    wg_txt_activity: "La grille a compter"
+                    wg_id_activity: 22
+                    wg_niv_1: 1
+                    wg_niv_2: 1
+                    wg_niv_3: 0.3
+                    wg_text_expl: "4 + 1 | 2 + 6 | 3 + 1"
+                }
+
+                WID_Activity{
                     wg_txt_activity: "Décomposition d'un nombre"
                     wg_id_activity: 7
                     wg_niv_1: 1
@@ -260,15 +269,6 @@ Item {
                     wg_niv_2: 1
                     wg_niv_3: 0.3
                     wg_text_expl: "10 G | ?"
-                }
-
-                WID_Activity{
-                    wg_txt_activity: "Le poids"
-                    wg_id_activity: 22
-                    wg_niv_1: 1
-                    wg_niv_2: 1
-                    wg_niv_3: 0.3
-                    wg_text_expl: "10 G | 15 G | 25 G"
                 }
             }
         }

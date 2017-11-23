@@ -13,7 +13,7 @@ Item {
         anchors.rightMargin: 10
         button_title: "X"
         onClicked: {
-            fn_local_close_activity()
+            fn_close_activity()
         }
     }
 
@@ -173,10 +173,5 @@ Item {
                 change_values()
             }
         }
-    }
-
-    function fn_local_close_activity()
-    {
-        fn_close_activity()
     }
 }
