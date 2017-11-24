@@ -20,6 +20,7 @@ Item {
             playing: false
             asynchronous: true
             fillMode: Image.PreserveAspectFit
+            verticalAlignment: Image.AlignBottom
         }
 
         AnimatedImage {
@@ -31,6 +32,7 @@ Item {
             playing: false
             asynchronous: true
             fillMode: Image.PreserveAspectFit
+            verticalAlignment: Image.AlignBottom
         }
     }
 
