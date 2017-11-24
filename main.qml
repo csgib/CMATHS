@@ -322,6 +322,9 @@ ApplicationWindow {
                       case 22:
                           exo15.visible = true
                           break;
+                      case 23:
+                          exo15.visible = true
+                          break;
                     }
 
                     support_jeu.visible = true
@@ -830,6 +833,14 @@ ApplicationWindow {
               consignes_txt.text = "Clique sur les cases dont le résultat corresponds à la consigne."
               consignes.y = 0
               exogridcount.play()
+              exo15.wl_sens = 0
+              exo15.init_work()
+              break;
+          case 23:
+              consignes_txt.text = "Clique sur les cases dont le résultat corresponds à la consigne."
+              consignes.y = 0
+              exogridcount.play()
+              exo15.wl_sens = 1
               exo15.init_work()
               break;
         }
@@ -907,6 +918,9 @@ ApplicationWindow {
                 exo14.visible = false
                 break;
             case 22:
+                exo15.visible = false
+                break;
+            case 23:
                 exo15.visible = false
                 break;
         }

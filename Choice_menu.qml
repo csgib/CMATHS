@@ -155,14 +155,22 @@ Item {
                 }
 
                 WID_Activity{
-                    wg_txt_activity: "La grille a compter"
+                    wg_txt_activity: "La grille a compter\nAdditions"
                     wg_id_activity: 22
-                    wg_niv_1: 1
+                    wg_niv_1: 0.3
                     wg_niv_2: 1
-                    wg_niv_3: 0.3
+                    wg_niv_3: 1
                     wg_text_expl: "4 + 1 | 2 + 6 | 3 + 1"
                 }
 
+                WID_Activity{
+                    wg_txt_activity: "La grille a compter\nSoustractions"
+                    wg_id_activity: 23
+                    wg_niv_1: 0.3
+                    wg_niv_2: 1
+                    wg_niv_3: 1
+                    wg_text_expl: "4 - 1 | 6 - 2 | 3 - 1"
+                }
                 WID_Activity{
                     wg_txt_activity: "Décomposition d'un nombre"
                     wg_id_activity: 7

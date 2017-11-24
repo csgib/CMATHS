@@ -2,8 +2,28 @@ import QtQuick 2.0
 import "../WIDGETS/"
 
 Item {
+    id: item1
     property real wg_cumul_monnaie: 0
     property int wg_sens: 0
+
+    Image{
+        y: parent.height-41
+        anchors.left: parent.left
+        anchors.right: parent.right
+        height: 41
+        source: "../Images/Game_art/sand.png"
+        fillMode: Image.Tile
+    }
+
+    Image{
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 41
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.top: etagere_monnaie.bottom
+        source: "../Images/Game_art/block.png"
+        fillMode: Image.Tile
+    }
 
     WID_Button{
         x: parent.width - 35
@@ -16,33 +36,30 @@ Item {
         }
     }
 
-    Text{
-        height: 60
-        minimumPixelSize: 8
-        font.pixelSize: 512
-        fontSizeMode: Text.Fit
-        horizontalAlignment: Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
-        wrapMode: Text.WordWrap
-        text: "Clique sur les pièces pour obtenir le prix du jouet"
+    Rectangle{
+        id: etagere_monnaie
+        height: 20
         anchors.right: parent.right
-        anchors.rightMargin: 41
+        anchors.rightMargin: 0
         anchors.left: parent.left
-        anchors.leftMargin: 10
+        anchors.leftMargin: 0
         anchors.top: parent.top
-        anchors.topMargin: 10
-        color: "#FFFFFF"
-        style: Text.Outline
-        styleColor: "#000000"
+        anchors.topMargin: 250
+        color: "#e6ac46"
+        border.width: 1
+        border.color: "#c2913d"
     }
 
     Flow{
         id: flowmonnaie
-        x: 10
-        width: parent.width - 20
-        height: 150
-        anchors.bottom: parent.bottom
+        anchors.right: parent.right
+        anchors.rightMargin: 10
+        anchors.left: parent.left
+        anchors.leftMargin: 10
+        anchors.bottom: action_monnaie.top
         anchors.bottomMargin: 10
+        anchors.top: etagere_monnaie.bottom
+        anchors.topMargin: 10
         spacing: 10
         Image {
             id: p0
@@ -139,8 +156,8 @@ Item {
         anchors.rightMargin: 10
         anchors.left: parent.left
         anchors.leftMargin: 10
-        anchors.bottom: flowmonnaie.top
-        anchors.bottomMargin: 10
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 50
         spacing: 10
         WID_Button{
             button_title: "Annuler"
@@ -166,58 +183,69 @@ Item {
     Flow {
         id: flow1
         anchors.top: parent.top
-        anchors.topMargin: 80
+        anchors.topMargin: 0
         anchors.right: parent.right
-        anchors.rightMargin: 10
+        anchors.rightMargin: 50
         anchors.left: parent.left
         anchors.leftMargin: 10
-        anchors.bottom: action_monnaie.top
-        anchors.bottomMargin: 10
+        anchors.bottom: etagere_monnaie.top
+        anchors.bottomMargin: 0
 
         Item{
+            id: item2
             width: parent.width / 2
             height: parent.height
             Image{
                 id: imgnounours
+                anchors.fill: parent
                 smooth: false
                 cache: false
                 asynchronous: true
-                anchors.fill: parent
                 horizontalAlignment: Image.AlignHCenter
-                verticalAlignment: Image.AlignVCenter
+                verticalAlignment: Image.AlignBottom
                 source: "../Images/toy3.png"
                 fillMode: Image.PreserveAspectFit
+            }
+
+            Rectangle{
+                id: support_price_monnaie
+                x: 0
+                y: parent.height / 3
+                width: parent.width
+                height: parent.height / 3
+                color: "#CCffffff"
+                border.width: 1
+                border.color: "#777777"
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: -14
+                rotation: -1
+                Text{
+                    id: price_monnaie
+                    anchors.fill: parent
+
+                    minimumPixelSize: 8
+                    font.pixelSize: 128
+                    fontSizeMode: Text.Fit
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+
+                    text: "0"
+                    anchors.top: parent.top
+                    anchors.topMargin: 0
+                    color: "#FFFFFF"
+                    style: Text.Outline
+                    styleColor: "#000000"
+                }
             }
         }
 
         Item{
+            id: item3
             width: (parent.width-10)/2
             height: parent.height
-            Text{
-                id: price_monnaie
-                y: 0
-                x: 0
-                width: parent.width
-                height: parent.height / 2
-
-                minimumPixelSize: 8
-                font.pixelSize: 128
-                fontSizeMode: Text.Fit
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-
-                text: "0"
-                color: "#FFFFFF"
-                style: Text.Outline
-                styleColor: "#000000"
-            }
 
             Text{
                 id: cumul_enfant
-                x: 0
-                y: parent.height/2
-                height: parent.height / 2
-                width: parent.width
                 minimumPixelSize: 8
                 font.pixelSize: 128
                 fontSizeMode: Text.Fit
@@ -225,6 +253,14 @@ Item {
                 verticalAlignment: Text.AlignVCenter
 
                 text: "0"
+                anchors.right: parent.right
+                anchors.rightMargin: 0
+                anchors.left: parent.left
+                anchors.leftMargin: 0
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 0
+                anchors.top: parent.top
+                anchors.topMargin: 0
                 color: "#FFFFFF"
                 style: Text.Outline
                 styleColor: "#000000"
@@ -258,7 +294,7 @@ Item {
     {
         var wl_prix = 0
 
-        cumul_enfant.text = "Dejà payé 0.00"
+        cumul_enfant.text = "Déjà payé\n0.00"
         wg_cumul_monnaie = 0
 
         if ( wg_sens == 0 )
@@ -326,12 +362,12 @@ Item {
             }
         }
 
-        cumul_enfant.text = "Déjà payé " + wg_cumul_monnaie.toFixed(2) + "€"
+        cumul_enfant.text = "Déjà payé\n" + wg_cumul_monnaie.toFixed(2) + "€"
     }
 
     function fn_cancel_exomonnaie()
     {
-        cumul_enfant.text = "Déjà payé 0.00 €"
+        cumul_enfant.text = "Déjà payé\n0.00 €"
         wg_cumul_monnaie = 0
     }
 

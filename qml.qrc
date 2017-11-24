@@ -86,5 +86,7 @@
         <file>Images/Game_art/cactus.png</file>
         <file>WORKS/WKS_Grid_Calc.qml</file>
         <file>Sounds/exo_grid_count.wav</file>
+        <file>Images/Game_art/block.png</file>
+        <file>Images/Game_art/sand.png</file>
     </qresource>
 </RCC>

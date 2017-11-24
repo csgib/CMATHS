@@ -6,6 +6,7 @@ Item {
     property int wl_calc_val_1: 0
     property int wl_calc_val_2: 0
     property int wl_good_value : 0
+    property int wl_sens: 0
 
     WID_Button{
         x: parent.width - 35
@@ -101,13 +102,37 @@ Item {
             wl_calc_val_1 = Math.ceil(Math.random() * wl_current_max)
             wl_calc_val_2 = Math.ceil(Math.random() * wl_current_max)
 
-            repeat_add_grid.itemAt(i).children[0].text = wl_calc_val_1 + "+" + wl_calc_val_2
+            if ( wl_sens == 0 )
+            {
+                repeat_add_grid.itemAt(i).children[0].text = wl_calc_val_1 + "+" + wl_calc_val_2
+            }
+            else
+            {
+                if ( wl_calc_val_1 > wl_calc_val_2 )
+                {
+                    repeat_add_grid.itemAt(i).children[0].text = wl_calc_val_1 + "-" + wl_calc_val_2
+                }
+                else
+                {
+                    repeat_add_grid.itemAt(i).children[0].text = wl_calc_val_2 + "-" + wl_calc_val_1
+                }
+            }
+
             repeat_add_grid.itemAt(i).color = "#AAAAAAAA"
         }
 
         wl_calc_val_1 = Math.ceil(Math.random() * 35)
-        var wl_somme = repeat_add_grid.itemAt(wl_calc_val_1).children[0].text.split("+")
-        wl_good_value = parseInt((wl_somme[0]*1)+(wl_somme[1]*1))
+
+        if ( wl_sens == 0 )
+        {
+            var wl_somme = repeat_add_grid.itemAt(wl_calc_val_1).children[0].text.split("+")
+            wl_good_value = parseInt((wl_somme[0]*1)+(wl_somme[1]*1))
+        }
+        else
+        {
+            var wl_somme = repeat_add_grid.itemAt(wl_calc_val_1).children[0].text.split("-")
+            wl_good_value = parseInt((wl_somme[0]*1)+(wl_somme[1]*1))
+        }
 
         txtconsgrid.text = "A trouver : " + wl_good_value
     }
@@ -117,8 +142,16 @@ Item {
     {
         if ( repeat_add_grid.itemAt(wl_coord).children[0].text != "" )
         {
-            var wl_somme = repeat_add_grid.itemAt(wl_coord).children[0].text.split("+")
-            var wl_select_value = parseInt((wl_somme[0]*1)+(wl_somme[1]*1))
+            if ( wl_sens == 0 )
+            {
+                var wl_somme = repeat_add_grid.itemAt(wl_coord).children[0].text.split("+")
+                var wl_select_value = parseInt((wl_somme[0]*1)+(wl_somme[1]*1))
+            }
+            else
+            {
+                var wl_somme = repeat_add_grid.itemAt(wl_coord).children[0].text.split("-")
+                var wl_select_value = parseInt((wl_somme[0]*1)-(wl_somme[1]*1))
+            }
 
             if ( wl_select_value == wl_good_value )
             {
@@ -129,8 +162,16 @@ Item {
 
                 for (var i = 0; i < add_grid.children.length-1; i++)
                 {
-                    wl_somme = repeat_add_grid.itemAt(i).children[0].text.split("+")
-                    wl_select_value = parseInt((wl_somme[0]*1)+(wl_somme[1]*1))
+                    if ( wl_sens == 0 )
+                    {
+                        wl_somme = repeat_add_grid.itemAt(i).children[0].text.split("+")
+                        wl_select_value = parseInt((wl_somme[0]*1)+(wl_somme[1]*1))
+                    }
+                    else
+                    {
+                        wl_somme = repeat_add_grid.itemAt(i).children[0].text.split("-")
+                        wl_select_value = parseInt((wl_somme[0]*1)-(wl_somme[1]*1))
+                    }
 
                     if ( wl_select_value == wl_good_value )
                     {
@@ -143,7 +184,7 @@ Item {
                     result_question.fn_show_hit("OK")
                     if ( wl_current_point > 10 )
                     {
-                        wl_current_max = wl_current_max+8
+                        wl_current_max = wl_current_max+4
                         wl_current_point = 0
 
                         if ( wl_current_point_cumul > 50 )
