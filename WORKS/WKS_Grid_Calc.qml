@@ -131,7 +131,7 @@ Item {
         else
         {
             var wl_somme = repeat_add_grid.itemAt(wl_calc_val_1).children[0].text.split("-")
-            wl_good_value = parseInt((wl_somme[0]*1)+(wl_somme[1]*1))
+            wl_good_value = parseInt((wl_somme[0]*1)-(wl_somme[1]*1))
         }
 
         txtconsgrid.text = "A trouver : " + wl_good_value
