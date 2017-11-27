@@ -88,5 +88,6 @@
         <file>Sounds/exo_grid_count.wav</file>
         <file>Images/Game_art/block.png</file>
         <file>Images/Game_art/sand.png</file>
+        <file>WORKS/WKS_Tetri_Chiffres.qml</file>
     </qresource>
 </RCC>

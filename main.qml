@@ -325,6 +325,9 @@ ApplicationWindow {
                       case 23:
                           exo15.visible = true
                           break;
+                      case 24:
+                          exo16.visible = true
+                          break;
                     }
 
                     support_jeu.visible = true
@@ -621,6 +624,17 @@ ApplicationWindow {
                     visible: false
                     z: 2
                 }
+
+                WKS_Tetri_Chiffres{
+                    id: exo16
+                    x: 0
+                    y: 10
+                    width: parent.width
+                    height: parent.height - 20
+                    anchors.fill: parent
+                    visible: false
+                    z: 2
+                }
             }
         }
     }
@@ -843,6 +857,12 @@ ApplicationWindow {
               exo15.wl_sens = 1
               exo15.init_work()
               break;
+          case 24:
+              consignes_txt.text = "Cliques sur les chiffres pour les aditionner et faire le bon résultat."
+              consignes.y = 0
+              //exogridcount.play()
+              exo16.init_work()
+              break;
         }
     }
 
@@ -922,6 +942,9 @@ ApplicationWindow {
                 break;
             case 23:
                 exo15.visible = false
+                break;
+            case 24:
+                exo16.visible = false
                 break;
         }
     }
