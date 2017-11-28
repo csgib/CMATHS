@@ -29,7 +29,7 @@ Item {
 
     function fn_destroy()
     {
-        rect_number.angle = 20
+        rect_number.angle = 40
         timer_destroy_number.start()
     }
 

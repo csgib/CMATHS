@@ -93,12 +93,11 @@ Item {
     {
         wl_cumul_eleve = 0
 
-        var wl_max_chiffre = 4
-        if ( wl_current_point_cumul / 5 > 1 )
+        var wl_max_chiffre = 6
+        if ( wl_current_point_cumul / 5 > 6 )
         {
             wl_max_chiffre = wl_current_point_cumul/5
         }
-
 
         var wl_haz_tetri = Math.ceil(Math.random() * wl_max_chiffre)
         while ( wl_haz_tetri < wl_max_chiffre/2 )

@@ -112,9 +112,9 @@ Item {
                 WID_Activity{
                     wg_txt_activity: "Tétri'chiffres"
                     wg_id_activity: 24
-                    wg_niv_1: 1
-                    wg_niv_2: 1.0
-                    wg_niv_3: 0.3
+                    wg_niv_1: 0.3
+                    wg_niv_2: 1
+                    wg_niv_3: 1
                     wg_text_expl: "4 + 5 = 9"
                 }
 
