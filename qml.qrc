@@ -89,5 +89,6 @@
         <file>Images/Game_art/block.png</file>
         <file>Images/Game_art/sand.png</file>
         <file>WORKS/WKS_Tetri_Chiffres.qml</file>
+        <file>WIDGETS/WID_Number.qml</file>
     </qresource>
 </RCC>

@@ -3,9 +3,10 @@ import "../WIDGETS/"
 
 Item {
     property int wl_calc_val_1: 0
-    property int wl_reste_tetri: 0
     property int wl_cumul_eleve: 0
-    property int wl_good_teri: 0
+    property int wl_good_tetri: 0
+    property var field: []
+    property var wg_item: Qt.createComponent('../WIDGETS/WID_Number.qml')
 
     WID_Button{
         x: parent.width - 35
@@ -18,48 +19,16 @@ Item {
         }
     }
 
-    Flow {
+    Item {
         id: tetri_grid
         anchors.top: txtconstetri.bottom
         anchors.topMargin: 10
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: 40
+        anchors.bottomMargin: 10
         anchors.right: parent.right
         anchors.rightMargin: 10
         anchors.left: parent.left
         anchors.leftMargin: 10
-        spacing: 1
-
-        Repeater {
-            id: repeat_tetri_grid
-            model: 36
-            delegate: Rectangle {
-                width: (parent.width-6) / 6
-                height: (parent.height-6) / 6
-                color: "#AAAAAAAA"
-
-                Text{
-                    color: "#FFFFFF"
-                    anchors.fill: parent
-                    anchors.margins: 6
-                    minimumPixelSize: 4
-                    font.pixelSize: 128
-                    fontSizeMode: Text.Fit
-                    style: Text.Outline
-                    styleColor: "#000000"
-                    text: ""
-                    horizontalAlignment: Text.AlignHCenter
-                    verticalAlignment: Text.AlignVCenter
-                }
-
-                MouseArea{
-                    anchors.fill: parent
-                    onClicked: {
-                        fn_yaclick(index)
-                    }
-                }
-            }
-        }
     }
 
     Text {
@@ -87,43 +56,54 @@ Item {
     // *** MUST ALWAYS HAVE THIS ENTRY POINT IN WORK FOR INITIALIZE ***
     function init_work()
     {
+        wl_current_max = 9
         change_values()
     }
 
     function change_values()
     {
-        wl_reste_tetri = 36
-        wl_cumul_eleve = 0
-        var idx_val = 0
-        var max_idx_val = 0
-
-        for (var i = 0; i < tetri_grid.children.length-1; i++)
+        for (var i = 0; i < tetri_grid.children.length; i++)
         {
-            idx_val = 0
-            wl_calc_val_1 = Math.ceil(Math.random() * wl_current_max)
-            repeat_tetri_grid.itemAt(i).children[0].text = wl_calc_val_1
-            repeat_tetri_grid.itemAt(i).color = "#AAAAAAAA"
+            tetri_grid.children[i].destroy()
         }
 
-        wl_calc_val_1 = Math.ceil(Math.random() * 35)
+        var wl_idx = 0
+        var component
+        var sprite
+
+        field.length = 0
+
+        var wl_item_object
+        for(i = 0; i < 6; i++)
+        {
+            field[i] = new Array(6);
+            for(var j = 0; j < 6; j++)
+            {
+                wl_calc_val_1 = Math.ceil(Math.random() * wl_current_max)
+
+                wl_item_object = wg_item.createObject(tetri_grid, {"wl_x": ((tetri_grid.width-6)/6)*j, "wl_y": ((tetri_grid.height-6)/6)*i, "wl_width": (tetri_grid.width-12)/6, "wl_height": (tetri_grid.height-12)/6, "wl_str_txt": wl_calc_val_1, "wl_col_number": j, "wl_row_number": i})
+                field[i][j] = wl_item_object
+
+            }
+        }
         fn_cal_val_tetris()
     }
 
     function fn_cal_val_tetris()
     {
-        for (var i = 0; i < tetri_grid.children.length-1; i++)
+        wl_cumul_eleve = 0
+
+        var wl_max_chiffre = 4
+        if ( wl_current_point_cumul / 5 > 1 )
         {
-            if ( repeat_tetri_grid.itemAt(i).color != "#aaaaaaaa" )
-            {
-                repeat_tetri_grid.itemAt(i).children[0].text = ""
-                repeat_tetri_grid.itemAt(i).color = "#AAAAAAAA"
-            }
+            wl_max_chiffre = wl_current_point_cumul/5
         }
 
-        var wl_haz_tetri = Math.ceil(Math.random() * 4)
-        while ( wl_haz_tetri < 2 )
+
+        var wl_haz_tetri = Math.ceil(Math.random() * wl_max_chiffre)
+        while ( wl_haz_tetri < wl_max_chiffre/2 )
         {
-            wl_haz_tetri = Math.ceil(Math.random() * 4)
+            wl_haz_tetri = Math.ceil(Math.random() * wl_max_chiffre)
         }
 
         var wl_idx_tetri = 0
@@ -131,58 +111,112 @@ Item {
 
         var array_numbers_tetri = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
-        while ( wl_idx_tetri < wl_haz_tetri && wl_reste_tetri-wl_idx_tetri > 0 )
+        while ( wl_idx_tetri < wl_haz_tetri )
         {
             wl_calc_val_1 = Math.ceil(Math.random() * 35)
-            while ( wl_calc_val_1[wl_calc_val_1] == 1 || repeat_tetri_grid.itemAt(wl_calc_val_1).children[0].text == "" )
+            while ( array_numbers_tetri[wl_calc_val_1] == 1 )
             {
                 wl_calc_val_1 = Math.ceil(Math.random() * 35)
             }
 
             array_numbers_tetri[wl_calc_val_1] = 1
-            wl_cumul = wl_cumul + parseInt(repeat_tetri_grid.itemAt(wl_calc_val_1).children[0].text)
+
+            wl_cumul = wl_cumul + parseInt(tetri_grid.children[wl_calc_val_1].wl_str_txt)
             wl_idx_tetri++
         }
 
-        wl_good_teri = wl_cumul
+        wl_good_tetri = wl_cumul
 
         txtconstetri.text = "A trouver : " + wl_cumul
     }
 
-    function fn_yaclick(wl_coord)
+    function fn_yaclick(wl_coord, wl_row, wl_col)
     {
-        if ( repeat_tetri_grid.itemAt(wl_coord).color == "#aaaaaaaa" )
+        if ( field[wl_row][wl_col].wl_color == "#aa222222" )
         {
-            wl_reste_tetri--
-            repeat_tetri_grid.itemAt(wl_coord).color = "#AAEEFF41"
-            wl_cumul_eleve = wl_cumul_eleve + parseInt(repeat_tetri_grid.itemAt(wl_coord).children[0].text)
+            field[wl_row][wl_col].wl_color = "#AAEEFF41"
+            wl_cumul_eleve = wl_cumul_eleve + parseInt(field[wl_row][wl_col].wl_str_txt)
         }
         else
         {
-            wl_reste_tetri++
-            repeat_tetri_grid.itemAt(wl_coord).color = "#aaaaaaaa"
-            wl_cumul_eleve = wl_cumul_eleve - parseInt(repeat_tetri_grid.itemAt(wl_coord).children[0].text)
+            field[wl_row][wl_col].wl_color = "#aa222222"
+            wl_cumul_eleve = wl_cumul_eleve - parseInt(field[wl_row][wl_col].wl_str_txt)
         }
 
-        if ( wl_cumul_eleve == wl_good_teri)
+        if ( wl_cumul_eleve == wl_good_tetri)
         {
-            result_question.fn_show_hit("OK")
-            wl_cumul_eleve = 0
-            if ( wl_reste_tetri < 1 )
+            for(var i = 0; i < 6; i++)
             {
-                if ( wl_current_point_cumul > 5 )
+                for(var j = 0; j < 6; j++)
                 {
-                    fn_show_victory()
-                }
-                else
-                {
-                    change_values()
+                    if ( field[i][j].wl_color != "#aa222222" && field[i][j] != "" )
+                    {
+                        field[i][j].fn_destroy()
+                        field[i][j] = ""
+
+                        wl_current_point_cumul++
+
+                        progress_bar_value.width = (wl_current_point_cumul*progress_bar.width)/50
+
+                    }
                 }
             }
-            else
+
+            if ( wl_current_point_cumul > 50 )
             {
-                fn_cal_val_tetris()
+                result_question.fn_show_hit("OK")
+                fn_show_victory()
             }
+
+            var wl_id_search = 0
+
+            for(i = 5; i > 0; i--)
+            {
+                for(j = 0; j < 6; j++)
+                {
+                    if ( field[i][j] == "" )
+                    {
+                        wl_id_search = 0
+                        while ( i-wl_id_search >= 0 )
+                        {
+                            if ( field[i-wl_id_search][j] != "" )
+                            {
+                                break
+                            }
+                            else
+                            {
+                                wl_id_search++
+                            }
+                        }
+
+                        if ( i-wl_id_search >= 0 )
+                        {
+                            field[i-wl_id_search][j].y = ((tetri_grid.height-6)/6)*i
+                            field[i][j] = field[i-wl_id_search][j]
+                            field[i][j].wl_row_number = i
+                            field[i-wl_id_search][j] = ""
+                        }
+                    }
+                }
+            }
+
+            var wl_item_object
+
+            for(i = 5; i >= 0; i--)
+            {
+                for(j = 0; j < 6; j++)
+                {
+                    if ( field[i][j] == "" )
+                    {
+                        wl_calc_val_1 = Math.ceil(Math.random() * wl_current_max)
+                        wl_item_object = wg_item.createObject(tetri_grid, {"wl_x": ((tetri_grid.width-6)/6)*j, "wl_y": -200, "wl_width": (tetri_grid.width-12)/6, "wl_height": (tetri_grid.height-12)/6, "wl_str_txt": wl_calc_val_1, "wl_col_number": j, "wl_row_number": i})
+                        field[i][j] = wl_item_object
+                        field[i][j].y = ((tetri_grid.height-6)/6)*i
+                    }
+                }
+            }
+
+            fn_cal_val_tetris()
         }
     }
 }
