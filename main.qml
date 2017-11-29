@@ -8,9 +8,9 @@ import "WIDGETS/"
 ApplicationWindow {
     id: frm_application
     visible: true
-    /*width: 480
-    height: 800*/
-    visibility: Window.FullScreen
+    width: 480
+    height: 800
+    //visibility: Window.FullScreen
     title: "CMATHS"
 
     onClosing: {
@@ -328,6 +328,9 @@ ApplicationWindow {
                       case 24:
                           exo16.visible = true
                           break;
+                      case 25:
+                          exo17.visible = true
+                          break;
                     }
 
                     support_jeu.visible = true
@@ -635,6 +638,17 @@ ApplicationWindow {
                     visible: false
                     z: 2
                 }
+
+                WKS_Memory{
+                    id: exo17
+                    x: 0
+                    y: 10
+                    width: parent.width
+                    height: parent.height - 20
+                    anchors.fill: parent
+                    visible: false
+                    z: 2
+                }
             }
         }
     }
@@ -863,6 +877,12 @@ ApplicationWindow {
               //exogridcount.play()
               exo16.init_work()
               break;
+          case 25:
+              consignes_txt.text = "Retrouve les paires."
+              consignes.y = 0
+              //exogridcount.play()
+              exo17.init_work()
+              break;
         }
     }
 
@@ -945,6 +965,9 @@ ApplicationWindow {
                 break;
             case 24:
                 exo16.visible = false
+                break;
+            case 25:
+                exo17.visible = false
                 break;
         }
     }
