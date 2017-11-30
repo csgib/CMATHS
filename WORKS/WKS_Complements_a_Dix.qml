@@ -320,12 +320,12 @@ Item {
         {
             result_question.fn_show_hit("NOK")
 
-            for (var i = 0; i < repeat_carre.children.length; i++)
+            /*for (var i = 0; i < repeat_carre.children.length; i++)
             {
                 repeat_carre.children[i].opacity = 0.5
             }
 
-            wl_cumul_comp = 0
+            wl_cumul_comp = 0*/
         }
     }
 }

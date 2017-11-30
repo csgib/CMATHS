@@ -160,7 +160,7 @@ Item {
             Behavior on y {
                 NumberAnimation {
                     easing.amplitude: 0.5
-                    duration: 400
+                    duration: 800
                     easing.type: Easing.OutBounce
                 }
             }
@@ -168,7 +168,7 @@ Item {
             Behavior on x {
                 NumberAnimation {
                     easing.amplitude: 0.5
-                    duration: 400
+                    duration: 800
                     easing.type: Easing.OutBounce
                 }
              }

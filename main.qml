@@ -172,6 +172,18 @@ ApplicationWindow {
         volume: 1.0
     }
 
+    SoundEffect {
+        id: exomemo
+        source: "Sounds/exo_memory.wav"
+        volume: 1.0
+    }
+
+    SoundEffect {
+        id: exotetri
+        source: "Sounds/exo_tetri.wav"
+        volume: 1.0
+    }
+
     Start_screen{
         id: start_screen
         x: 0
@@ -872,15 +884,15 @@ ApplicationWindow {
               exo15.init_work()
               break;
           case 24:
-              consignes_txt.text = "Cliques sur les chiffres pour les aditionner et faire le bon résultat."
+              consignes_txt.text = "Cliques sur les chiffres pour les aditionner et obtenir le résultat donné dans la consigne."
               consignes.y = 0
-              //exogridcount.play()
+              exotetri.play()
               exo16.init_work()
               break;
           case 25:
               consignes_txt.text = "Retrouve les paires."
               consignes.y = 0
-              //exogridcount.play()
+              exomemo.play()
               exo17.init_work()
               break;
         }
