@@ -152,7 +152,7 @@ Item {
                     {
                         field[i][j].fn_destroy()
                         field[i][j] = ""
-                        wl_current_max = wl_current_max + 2
+
                         wl_current_point_cumul++
 
                         progress_bar_value.width = (wl_current_point_cumul*progress_bar.width)/60
@@ -160,9 +160,10 @@ Item {
                 }
             }
 
-            if ( wl_current_point_cumul > 50 )
+            if ( wl_current_point_cumul > 60 )
             {
                 result_question.fn_show_hit("OK")
+                wl_current_max = wl_current_max + 2
                 fn_show_victory()
             }
 
