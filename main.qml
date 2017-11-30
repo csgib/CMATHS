@@ -8,9 +8,9 @@ import "WIDGETS/"
 ApplicationWindow {
     id: frm_application
     visible: true
-    width: 480
-    height: 800
-    //visibility: Window.FullScreen
+    //width: 480
+    //height: 800
+    visibility: Window.FullScreen
     title: "CMATHS"
 
     onClosing: {

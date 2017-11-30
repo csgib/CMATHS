@@ -184,9 +184,11 @@ Item {
 
     Item{
         id: bt_valide_cad
-        width: (parent.width/2)
+        anchors.left: parent.left
+        anchors.leftMargin: 10
+        anchors.right: parent.right
+        anchors.rightMargin: 10
         height: 60
-        x: (parent.width/2)-10
         y: parent.height - 70
         WID_Button{
             anchors.fill: parent

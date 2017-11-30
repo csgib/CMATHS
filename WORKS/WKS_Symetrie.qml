@@ -33,9 +33,11 @@ Item {
 
     Item{
         id: bt_valide_sym
-        width: (parent.width/2)
+        anchors.left: parent.left
+        anchors.leftMargin: 10
+        anchors.right: parent.right
+        anchors.rightMargin: 10
         height: 60
-        x: (parent.width/2)-10
         y: parent.height - 70
         WID_Button{
             anchors.fill: parent
@@ -83,6 +85,22 @@ Item {
         anchors.leftMargin: 10
         width: (parent.width-30)/2
         spacing: 0
+
+        transform: Rotation {
+            id: symres_number
+            origin.x: -5
+            origin.y: parent.height/2
+            axis { x: 0; y: 1; z: 0 }
+            angle: 0
+
+            Behavior on angle {
+                NumberAnimation {
+                    easing.overshoot: 0
+                    duration: 1350
+                    easing.type: Easing.OutElastic
+                }
+            }
+        }
 
         Repeater {
             id: rp_result_sym
@@ -142,7 +160,7 @@ Item {
             Behavior on y {
                 NumberAnimation {
                     easing.amplitude: 0.5
-                    duration: 1000
+                    duration: 400
                     easing.type: Easing.OutBounce
                 }
             }
@@ -150,7 +168,7 @@ Item {
             Behavior on x {
                 NumberAnimation {
                     easing.amplitude: 0.5
-                    duration: 1000
+                    duration: 400
                     easing.type: Easing.OutBounce
                 }
              }
@@ -162,7 +180,6 @@ Item {
     {
         wl_current_motif = 0
         change_level()
-        //particles_sym.start()
         particles_sym.start()
     }
 
@@ -233,7 +250,33 @@ Item {
         }
         else
         {
+            for (var j = 0; j < 50; j++)
+            {
+                if ( rp_model_sym.itemAt(j).color != "#00000000" )
+                {
+                    rp_model_sym.itemAt(j).color = "#33ff0000"
+                }
+            }
+            symres_number.angle = -180
+            timer_error_symv.start()
+        }
+    }
+
+    Timer {
+        id: timer_error_symv
+        interval: 2800
+        running: false
+        repeat: false
+        onTriggered: {
             result_question.fn_show_hit("NOK")
+            symres_number.angle = 0
+            for (var j = 0; j < 50; j++)
+            {
+                if ( rp_model_sym.itemAt(j).color != "#00000000" )
+                {
+                    rp_model_sym.itemAt(j).color = "#ddffffff"
+                }
+            }
         }
     }
 }

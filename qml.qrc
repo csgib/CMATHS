@@ -91,5 +91,6 @@
         <file>WORKS/WKS_Tetri_Chiffres.qml</file>
         <file>WIDGETS/WID_Number.qml</file>
         <file>WORKS/WKS_Memory.qml</file>
+        <file>Images/fd_carte.png</file>
     </qresource>
 </RCC>

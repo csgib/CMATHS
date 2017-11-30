@@ -56,7 +56,7 @@ Item {
     // *** MUST ALWAYS HAVE THIS ENTRY POINT IN WORK FOR INITIALIZE ***
     function init_work()
     {
-        wl_current_max = 9
+        wl_current_max = 5
         change_values()
     }
 
@@ -152,11 +152,10 @@ Item {
                     {
                         field[i][j].fn_destroy()
                         field[i][j] = ""
-
+                        wl_current_max = wl_current_max + 2
                         wl_current_point_cumul++
 
-                        progress_bar_value.width = (wl_current_point_cumul*progress_bar.width)/50
-
+                        progress_bar_value.width = (wl_current_point_cumul*progress_bar.width)/60
                     }
                 }
             }

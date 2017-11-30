@@ -30,18 +30,20 @@ Item {
         spacing: 4
 
         Repeater{
-            model : 8
+            model : 12
 
             Flipable {
                 id: flipable
-                width: (parent.width-12)/4
-                height: (parent.height-4)/2
+                width: (parent.width-8)/3
+                height: (parent.height-12)/4
                 property string txt_card: ""
                 property bool flipped: false
                 property bool locked: false
 
                 front: Rectangle{
+                    id: front_card
                     color: "#AAFFFFFF"
+                    radius: 4
                     border.width: 1
                     border.color: "#EAEAEA"
                     anchors.fill: parent
@@ -52,15 +54,18 @@ Item {
                     }
                     Image{
                         anchors.fill: parent
-                        source: "../Images/fd_activity.png"
-                        fillMode: Image.PreserveAspectCrop
+                        source: "../Images/fd_carte.png"
+                        fillMode: Image.PreserveAspectFit
                         verticalAlignment: Image.AlignBottom
+                        horizontalAlignment: Image.AlignHCenter
                     }
                 }
+
                 back: Rectangle{
-                    color: "#AAFFFFFF"
+                    color: "#aa222222"
+                    radius: 4
                     border.width: 1
-                    border.color: "#EAEAEA"
+                    border.color: "#111111"
                     anchors.fill: parent
                     Text{
                         anchors.fill: parent
@@ -142,11 +147,13 @@ Item {
         array_numbers_memo[1] = array_numbers_memo[0] + Math.ceil(Math.random() * 5)
         array_numbers_memo[2] = array_numbers_memo[1] + Math.ceil(Math.random() * 3)
         array_numbers_memo[3] = array_numbers_memo[2] + Math.ceil(Math.random() * 3)
+        array_numbers_memo[4] = array_numbers_memo[3] + Math.ceil(Math.random() * 3)
+        array_numbers_memo[5] = array_numbers_memo[4] + Math.ceil(Math.random() * 3)
 
-        while ( wl_cpt_max < 4 )
+        while ( wl_cpt_max < 6 )
         {
-            wl_cpt = Math.ceil(Math.random() * 6)
-            if ( wl_cpt > 7 )
+            wl_cpt = Math.ceil(Math.random() * 12)
+            if ( wl_cpt > 11 )
             {
                 wl_cpt = 0
             }
@@ -197,7 +204,7 @@ Item {
                     }
                     wl_good_result++
 
-                    if ( wl_good_result >= 4 )
+                    if ( wl_good_result >= 6 )
                     {
                         result_question.fn_show_hit("OK")
                         progress_bar_value.width = (wl_current_point_cumul*progress_bar.width)/25
@@ -230,7 +237,7 @@ Item {
 
     Timer {
         id: timer_turn_card
-        interval: 400
+        interval: 1000
         running: false
         repeat: false
         onTriggered: {
