@@ -266,11 +266,11 @@ Item {
 
                 if ( wl_current_point > 10 )
                 {
-                    wl_current_max = wl_current_max+(5*wl_current_level)
+                    wl_current_max = wl_current_max+5
                     wl_current_level++
                     wl_current_point = 0
 
-                    if ( wl_current_point_cumul > 100 )
+                    if ( wl_current_point_cumul > 50 )
                     {
                         fn_show_victory()
                     }
