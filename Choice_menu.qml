@@ -299,9 +299,4 @@ Item {
             }
         }
     }
-
-    function show_blur()
-    {
-        animateRadius.start()
-    }
 }
