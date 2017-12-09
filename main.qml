@@ -24,6 +24,8 @@ ApplicationWindow {
     property int wl_current_point_cumul: 0
     property int wl_current_activity: 0
 
+    property int wl_level_of_difficulty: 0
+
     // *** APPLICATION FONTS ***
     FontLoader { id: local_school; source: "Fonts/GrandHotel-Regular.ttf" }
 
@@ -705,7 +707,7 @@ ApplicationWindow {
     {
         wl_current_level = 1
         wl_current_point = 0
-        wl_current_max = 10
+        wl_current_max = wl_level_of_difficulty
         wl_current_point_cumul = 0
         wl_current_activity = wl_id_activity
         victory_screen.congra_current_acitivity = wl_id_activity
@@ -745,7 +747,6 @@ ApplicationWindow {
           case 5:
               consignes_txt.text = "Trouvez le résultat des additions."
               consignes.y = 0
-              wl_current_max = 5
               exoadd.play()
               exo4.sens_count = 0
               exo4.init_work()
@@ -753,7 +754,6 @@ ApplicationWindow {
           case 6:
               consignes_txt.text = "Trouvez le résultat des soustractions."
               consignes.y = 0
-              wl_current_max = 5
               exosous.play()
               exo4.sens_count = 1
               exo4.init_work()
@@ -761,7 +761,6 @@ ApplicationWindow {
           case 7:
               consignes_txt.text = "Composez les nombres avec les éléments carré (10) et rond (1)."
               consignes.y = 0
-              wl_current_max = 20
               exo5.wl_diff = 0
               exoadix.play()
               exo5.init_work()
@@ -769,14 +768,12 @@ ApplicationWindow {
           case 8:
               consignes_txt.text = "Résolvez les algorithmes suivants en complétant la grille avec le motif proposé."
               consignes.y = 0
-              wl_current_max = 20
               exoalgo.play()
               exo6.init_work()
               break;
           case 9:
               consignes_txt.text = "Complètez les opérations suivantes."
               consignes.y = 0
-              wl_current_max = 20
               exo7.sens_count = 0
               exocomplete.play()
               exo7.init_work()
@@ -784,7 +781,6 @@ ApplicationWindow {
           case 10:
               consignes_txt.text = "Complètez les opérations suivantes."
               consignes.y = 0
-              wl_current_max = 20
               exo7.sens_count = 1
               exocomplete.play()
               exo7.init_work()
@@ -792,7 +788,6 @@ ApplicationWindow {
           case 11:
               consignes_txt.text = "Apprends tes tables de multiplications."
               consignes.y = 0
-              wl_current_max = 20
               exo8.wl_sens = 0
               exo8.wl_calc_val_1 = 0
               exo8.wl_calc_val_2 = 1
@@ -802,7 +797,6 @@ ApplicationWindow {
           case 12:
               consignes_txt.text = "Apprends tes tables d'additions."
               consignes.y = 0
-              wl_current_max = 20
               exo8.wl_sens = 1
               exo8.wl_calc_val_1 = 0
               exo8.wl_calc_val_2 = 1
@@ -826,7 +820,6 @@ ApplicationWindow {
               consignes_txt.text = "Composez les nombres avec les éléments carré (10) et rond (1) et le super rond rose qui compte 5."
               consignes.y = 0
               exoadix.play()
-              wl_current_max = 20
               exo5.wl_diff = 1
               exo5.init_work()
               break;

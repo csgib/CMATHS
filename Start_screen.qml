@@ -87,7 +87,7 @@ Item {
 
         button_title: "Démarrer"
         onClicked: {
-            fn_start_game()
+            select_level.y = 0
         }
     }
 
@@ -108,6 +108,112 @@ Item {
         button_title: "Quitter CMATHS"
         onClicked: {
             Qt.quit()
+        }
+    }
+
+    Item{
+        id: select_level
+        x: 0
+        y: frm_application.height
+        width: parent.width
+        height: parent.height
+        z: 8
+
+        /*Behavior on y {
+            NumberAnimation {
+                easing.amplitude: 1.8
+                easing.overshoot: 0
+                duration: 1000
+                easing.type: Easing.Linear
+            }
+        }*/
+
+        Rectangle{
+            anchors.fill:  parent
+            color: "#AA740846"
+
+            WID_Button{
+                x: parent.width - 35
+                y: 5
+                width: 30
+                height: 30
+                button_title: "X"
+                onClicked: {
+                    select_level.y = parent.height
+                }
+            }
+
+            Text{
+                y: 10
+                width: parent.width - 50
+                height: 100
+                text: "Choisis un niveau de difficulté"
+                font.pixelSize: 128
+                fontSizeMode: Text.Fit
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                font.family: local_school.name
+                color: "#FFFFFF"
+                style: Text.Outline
+                styleColor: "#000000"
+            }
+
+            WID_Button{
+                y: 180
+                anchors.right: parent.right
+                anchors.rightMargin: 40
+                anchors.left: parent.left
+                anchors.leftMargin: 40
+                button_title: "Facile"
+
+                gradcolor_2: "#EEEEEE"
+                gradcolor_1: "#F5F5F5"
+                textcolor: "#222222"
+
+                onClicked: {
+                    select_level.y = 0
+                    wl_level_of_difficulty = 5
+                    fn_start_game()
+                }
+            }
+
+            WID_Button{
+                y: 240
+                anchors.right: parent.right
+                anchors.rightMargin: 40
+                anchors.left: parent.left
+                anchors.leftMargin: 40
+                button_title: "Moyen"
+
+                gradcolor_2: "#EEEEEE"
+                gradcolor_1: "#F5F5F5"
+                textcolor: "#222222"
+
+                onClicked: {
+                    select_level.y = 0
+                    wl_level_of_difficulty = 15
+                    fn_start_game()
+                }
+            }
+
+            WID_Button{
+                y: 300
+                anchors.right: parent.right
+                anchors.rightMargin: 40
+                anchors.left: parent.left
+                anchors.leftMargin: 40
+                button_title: "Difficile"
+
+                gradcolor_2: "#EEEEEE"
+                gradcolor_1: "#F5F5F5"
+                textcolor: "#222222"
+
+                onClicked: {
+                    select_level.y = 0
+                    wl_level_of_difficulty = 30
+                    fn_start_game()
+                }
+            }
         }
     }
 }
