@@ -114,19 +114,19 @@ Item {
     Item{
         id: select_level
         x: 0
-        y: frm_application.height
+        y: 2200
         width: parent.width
         height: parent.height
         z: 8
 
-        /*Behavior on y {
+        Behavior on y {
             NumberAnimation {
                 easing.amplitude: 1.8
                 easing.overshoot: 0
                 duration: 1000
-                easing.type: Easing.Linear
+                easing.type: Easing.OutElastic
             }
-        }*/
+        }
 
         Rectangle{
             anchors.fill:  parent
@@ -171,7 +171,7 @@ Item {
                 textcolor: "#222222"
 
                 onClicked: {
-                    select_level.y = 0
+                    select_level.y = 2200
                     wl_level_of_difficulty = 5
                     fn_start_game()
                 }
@@ -190,7 +190,7 @@ Item {
                 textcolor: "#222222"
 
                 onClicked: {
-                    select_level.y = 0
+                    select_level.y = 2200
                     wl_level_of_difficulty = 15
                     fn_start_game()
                 }
@@ -209,7 +209,7 @@ Item {
                 textcolor: "#222222"
 
                 onClicked: {
-                    select_level.y = 0
+                    select_level.y = 2200
                     wl_level_of_difficulty = 30
                     fn_start_game()
                 }

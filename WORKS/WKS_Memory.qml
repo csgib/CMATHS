@@ -118,7 +118,19 @@ Item {
     {
         wl_nbre_click = 0
         wl_current_result = 0
-        wl_current_max = 20
+        if ( wl_current_max == 5 )
+        {
+            wl_current_max = 10
+        }
+        if ( wl_current_max == 15 )
+        {
+            wl_current_max = 20
+        }
+        if ( wl_current_max == 30 )
+        {
+            wl_current_max = 30
+        }
+
         change_values()
     }
 
@@ -139,7 +151,7 @@ Item {
 
         var array_numbers_memo = [0,0,0,0]
         array_numbers_memo[0] = Math.ceil(Math.random() * wl_current_max)
-        while ( array_numbers_memo[0] < 6 )
+        while ( array_numbers_memo[0] < wl_level_of_difficulty )
         {
             array_numbers_memo[0] = Math.ceil(Math.random() * wl_current_max)
         }

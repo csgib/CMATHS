@@ -56,7 +56,6 @@ Item {
     // *** MUST ALWAYS HAVE THIS ENTRY POINT IN WORK FOR INITIALIZE ***
     function init_work()
     {
-        wl_current_max = 5
         change_values()
     }
 

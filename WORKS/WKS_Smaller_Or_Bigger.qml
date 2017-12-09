@@ -153,7 +153,7 @@ Item {
 
         if ( wl_current_point > 10 )
         {
-            wl_current_max = 20+(10*wl_current_level)
+            wl_current_max = wl_current_max+(10*wl_current_level)
             wl_current_level++
             wl_current_point = 0
 
