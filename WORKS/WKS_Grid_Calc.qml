@@ -87,7 +87,18 @@ Item {
 
     function init_work()
     {
-        wl_current_max = 6
+        if ( wl_current_max == 5 )
+        {
+            wl_current_max = 6
+        }
+        if ( wl_current_max == 15 )
+        {
+            wl_current_max = 10
+        }
+        if ( wl_current_max == 30 )
+        {
+            wl_current_max = 20
+        }
         change_values()
     }
 
