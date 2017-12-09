@@ -93,11 +93,11 @@ Item {
         }
         if ( wl_current_max == 15 )
         {
-            wl_current_max = 10
+            wl_current_max = 20
         }
         if ( wl_current_max == 30 )
         {
-            wl_current_max = 20
+            wl_current_max = 40
         }
         change_values()
     }
