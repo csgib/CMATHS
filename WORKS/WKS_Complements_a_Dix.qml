@@ -284,6 +284,12 @@ Item {
 
         wl_cumul_comp = 0
         wl_calc_val_1 = Math.ceil(Math.random() * wl_current_max)
+
+        while ( wl_calc_val_1 > 110 )
+        {
+            wl_calc_val_1 = Math.ceil(Math.random() * wl_current_max)
+        }
+
         exo_compadix_operation.text = "Ecrire : " + wl_calc_val_1
     }
 
