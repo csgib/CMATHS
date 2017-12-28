@@ -277,6 +277,22 @@ Item {
             p2.source = "../Images/50cent.png"
             p3.source = "../Images/1euro.png"
             p4.source = "../Images/2euro.png"
+
+            if ( wl_level_of_difficulty == 5 )
+            {
+                wl_current_max = 100
+            }
+            else
+            {
+                if ( wl_level_of_difficulty == 30 )
+                {
+                    wl_current_max = 200
+                }
+                else
+                {
+                    wl_current_max = 300
+                }
+            }
         }
         else
         {
@@ -299,11 +315,11 @@ Item {
 
         if ( wg_sens == 0 )
         {
-            wl_prix = 0.1 * Math.round((Math.random() * 100))
+            wl_prix = 0.1 * Math.round((Math.random() * wl_current_max))
 
             while ( wl_prix == 0 )
             {
-                wl_prix = 0.1 * Math.round((Math.random() * 100))
+                wl_prix = 0.1 * Math.round((Math.random() * wl_current_max))
             }
         }
         else
@@ -379,7 +395,7 @@ Item {
 
             if ( wl_current_point > 10 )
             {
-                wl_current_max = 10+(10*wl_current_level)
+                wl_current_max = wl_current_max+(10*wl_current_level)
                 wl_current_level++
                 wl_current_point = 0
 

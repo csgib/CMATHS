@@ -119,15 +119,6 @@ Item {
         height: parent.height
         z: 8
 
-        Behavior on y {
-            NumberAnimation {
-                easing.amplitude: 1.8
-                easing.overshoot: 0
-                duration: 1000
-                easing.type: Easing.OutElastic
-            }
-        }
-
         Rectangle{
             anchors.fill:  parent
             color: "#AA740846"
@@ -164,7 +155,7 @@ Item {
                 anchors.rightMargin: 40
                 anchors.left: parent.left
                 anchors.leftMargin: 40
-                button_title: "Facile"
+                button_title: "Facile - Niveau CP"
 
                 gradcolor_2: "#EEEEEE"
                 gradcolor_1: "#F5F5F5"
@@ -183,7 +174,7 @@ Item {
                 anchors.rightMargin: 40
                 anchors.left: parent.left
                 anchors.leftMargin: 40
-                button_title: "Moyen"
+                button_title: "Moyen - Niveau CE1"
 
                 gradcolor_2: "#EEEEEE"
                 gradcolor_1: "#F5F5F5"
@@ -191,7 +182,7 @@ Item {
 
                 onClicked: {
                     select_level.y = 2200
-                    wl_level_of_difficulty = 15
+                    wl_level_of_difficulty = 30
                     fn_start_game()
                 }
             }
@@ -202,7 +193,7 @@ Item {
                 anchors.rightMargin: 40
                 anchors.left: parent.left
                 anchors.leftMargin: 40
-                button_title: "Difficile"
+                button_title: "Difficile - Niveau CE2"
 
                 gradcolor_2: "#EEEEEE"
                 gradcolor_1: "#F5F5F5"
@@ -210,7 +201,7 @@ Item {
 
                 onClicked: {
                     select_level.y = 2200
-                    wl_level_of_difficulty = 30
+                    wl_level_of_difficulty = 70
                     fn_start_game()
                 }
             }
