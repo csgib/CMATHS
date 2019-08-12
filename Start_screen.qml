@@ -138,7 +138,7 @@ Item {
                 y: 10
                 width: parent.width - 50
                 height: 100
-                text: "Choisis un niveau de difficulté"
+                text: "Dans qu'elle classe est tu ?\nAinsi CMATHS te proposera des exercices avec un niveau adapté"
                 font.pixelSize: 128
                 fontSizeMode: Text.Fit
                 horizontalAlignment: Text.AlignHCenter
@@ -155,7 +155,7 @@ Item {
                 anchors.rightMargin: 40
                 anchors.left: parent.left
                 anchors.leftMargin: 40
-                button_title: "Facile - Niveau CP"
+                button_title: "CP"
 
                 gradcolor_2: "#EEEEEE"
                 gradcolor_1: "#F5F5F5"
@@ -174,7 +174,7 @@ Item {
                 anchors.rightMargin: 40
                 anchors.left: parent.left
                 anchors.leftMargin: 40
-                button_title: "Moyen - Niveau CE1"
+                button_title: "Niveau CE1"
 
                 gradcolor_2: "#EEEEEE"
                 gradcolor_1: "#F5F5F5"
@@ -193,7 +193,7 @@ Item {
                 anchors.rightMargin: 40
                 anchors.left: parent.left
                 anchors.leftMargin: 40
-                button_title: "Difficile - Niveau CE2"
+                button_title: "Niveau CE2"
 
                 gradcolor_2: "#EEEEEE"
                 gradcolor_1: "#F5F5F5"
