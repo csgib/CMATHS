@@ -7,6 +7,8 @@ Item {
     property int wl_good_answer: 0
     property int wl_interval: 0
     property int wl_alea: 0
+    property int wl_alea_sorte: 0
+    property int wl_alea_sorte_plus: 0
 
     WID_Button{
         x: parent.width - 35
@@ -259,65 +261,227 @@ Item {
 
     function change_values()
     {
-        wl_calc_val_1 = Math.ceil(Math.random() * wl_current_max)
-
-        while ( wl_calc_val_1 < 3 )
-        {
+        switch(wl_level_of_difficulty){
+        case 5:
+            // *** NIVEAU CP ***
             wl_calc_val_1 = Math.ceil(Math.random() * wl_current_max)
-        }
 
-        wl_alea = Math.ceil(Math.random() * 3)
-        if ( wl_alea < 1 )
-        {
-            wl_alea = 1
-        }
+            while ( wl_calc_val_1 < 3 )
+            {
+                wl_calc_val_1 = Math.ceil(Math.random() * wl_current_max)
+            }
 
-        switch(wl_alea){
-            case 1:
-                rock_1_p.opacity = 0.7
-                rock_2_p.opacity = 1
-                rock_3_p.opacity = 1
+            wl_alea = Math.ceil(Math.random() * 3)
+            if ( wl_alea < 1 )
+            {
+                wl_alea = 1
+            }
 
-                rock_1.text = "?"
-                rock_2.text = wl_calc_val_1+1
-                rock_3.text = wl_calc_val_1+2
+            switch(wl_alea){
+                case 1:
+                    rock_1_p.opacity = 0.7
+                    rock_2_p.opacity = 1
+                    rock_3_p.opacity = 1
 
-                rock_1_answer.text = wl_calc_val_1
-                rock_2_answer.text = wl_calc_val_1 - 1
-                rock_3_answer.text = wl_calc_val_1 + 3
+                    rock_1.text = "?"
+                    rock_2.text = wl_calc_val_1+1
+                    rock_3.text = wl_calc_val_1+2
 
-                wl_good_answer = wl_calc_val_1
-                break;
-            case 2:
-                rock_1_p.opacity = 1
-                rock_2_p.opacity = 0.7
-                rock_3_p.opacity = 1
+                    rock_1_answer.text = wl_calc_val_1
+                    rock_2_answer.text = wl_calc_val_1 - 1
+                    rock_3_answer.text = wl_calc_val_1 + 3
 
-                rock_1.text = wl_calc_val_1
-                rock_2.text = "?"
-                rock_3.text = wl_calc_val_1+2
+                    wl_good_answer = wl_calc_val_1
+                    break;
+                case 2:
+                    rock_1_p.opacity = 1
+                    rock_2_p.opacity = 0.7
+                    rock_3_p.opacity = 1
 
-                rock_1_answer.text = wl_calc_val_1 - 1
-                rock_2_answer.text = wl_calc_val_1 + 1
-                rock_3_answer.text = wl_calc_val_1 + 3
+                    rock_1.text = wl_calc_val_1
+                    rock_2.text = "?"
+                    rock_3.text = wl_calc_val_1+2
 
-                wl_good_answer = wl_calc_val_1 + 1
-                break;
-            case 3:
-                rock_1_p.opacity = 1
-                rock_2_p.opacity = 1
-                rock_3_p.opacity = 0.7
+                    rock_1_answer.text = wl_calc_val_1 - 1
+                    rock_2_answer.text = wl_calc_val_1 + 1
+                    rock_3_answer.text = wl_calc_val_1 + 3
 
-                rock_1.text = wl_calc_val_1
-                rock_2.text = wl_calc_val_1+1
-                rock_3.text = "?"
+                    wl_good_answer = wl_calc_val_1 + 1
+                    break;
+                case 3:
+                    rock_1_p.opacity = 1
+                    rock_2_p.opacity = 1
+                    rock_3_p.opacity = 0.7
 
-                rock_1_answer.text = wl_calc_val_1 + 2
-                rock_2_answer.text = wl_calc_val_1 - 1
-                rock_3_answer.text = wl_calc_val_1 + 3
+                    rock_1.text = wl_calc_val_1
+                    rock_2.text = wl_calc_val_1+1
+                    rock_3.text = "?"
 
-                wl_good_answer = wl_calc_val_1 + 2
-                break;
+                    rock_1_answer.text = wl_calc_val_1 + 2
+                    rock_2_answer.text = wl_calc_val_1 - 1
+                    rock_3_answer.text = wl_calc_val_1 + 3
+
+                    wl_good_answer = wl_calc_val_1 + 2
+                    break;
+            }
+
+            break;
+        case 30:
+            // *** NIVEAU CE1 ***
+            wl_calc_val_1 = Math.ceil(Math.random() * wl_current_max)
+
+            while ( wl_calc_val_1 < 3 )
+            {
+                wl_calc_val_1 = Math.ceil(Math.random() * wl_current_max)
+            }
+
+            wl_alea_sorte = Math.ceil(Math.random() * 4)
+            if ( wl_alea_sorte < 1 )
+            {
+                wl_alea_sorte = 1
+            }
+            wl_alea_sorte = wl_alea_sorte * 5
+            if ( wl_calc_val_1 < wl_alea_sorte )
+            {
+                wl_calc_val_1 = wl_alea_sorte
+            }
+
+            wl_alea = Math.ceil(Math.random() * 3)
+            if ( wl_alea < 1 )
+            {
+                wl_alea = 1
+            }
+
+            switch(wl_alea){
+                case 1:
+                    rock_1_p.opacity = 0.7
+                    rock_2_p.opacity = 1
+                    rock_3_p.opacity = 1
+
+                    rock_1.text = "?"
+                    rock_2.text = wl_calc_val_1+wl_alea_sorte
+                    rock_3.text = wl_calc_val_1+(wl_alea_sorte*2)
+
+                    rock_1_answer.text = wl_calc_val_1
+                    rock_2_answer.text = wl_calc_val_1 - wl_alea_sorte
+                    rock_3_answer.text = wl_calc_val_1 + wl_alea_sorte
+
+                    wl_good_answer = wl_calc_val_1
+                    break;
+                case 2:
+                    rock_1_p.opacity = 1
+                    rock_2_p.opacity = 0.7
+                    rock_3_p.opacity = 1
+
+                    rock_1.text = wl_calc_val_1
+                    rock_2.text = "?"
+                    rock_3.text = wl_calc_val_1+(wl_alea_sorte*2)
+
+                    rock_1_answer.text = wl_calc_val_1 - 1
+                    rock_2_answer.text = wl_calc_val_1 + wl_alea_sorte
+                    rock_3_answer.text = wl_calc_val_1 + (wl_alea_sorte*2)
+
+                    wl_good_answer = wl_calc_val_1 + wl_alea_sorte
+                    break;
+                case 3:
+                    rock_1_p.opacity = 1
+                    rock_2_p.opacity = 1
+                    rock_3_p.opacity = 0.7
+
+                    rock_1.text = wl_calc_val_1
+                    rock_2.text = wl_calc_val_1+wl_alea_sorte
+                    rock_3.text = "?"
+
+                    rock_1_answer.text = wl_calc_val_1 + (wl_alea_sorte*2)
+                    rock_2_answer.text = wl_calc_val_1 - 1
+                    rock_3_answer.text = wl_calc_val_1 + (wl_alea_sorte*3)
+
+                    wl_good_answer = wl_calc_val_1 + (wl_alea_sorte*2)
+                    break;
+            }
+
+            break;
+        case 70:
+            // *** NIVEAU CE2 ***
+            wl_calc_val_1 = Math.ceil(Math.random() * wl_current_max)
+
+            while ( wl_calc_val_1 < 3 )
+            {
+                wl_calc_val_1 = Math.ceil(Math.random() * wl_current_max)
+            }
+
+            wl_alea_sorte = Math.ceil(Math.random() * 4)
+            if ( wl_alea_sorte < 1 )
+            {
+                wl_alea_sorte = 1
+            }
+
+            wl_alea_sorte_plus = Math.ceil(Math.random() * 10)
+            if ( wl_alea_sorte < 5 )
+            {
+                wl_alea_sorte = 5
+            }
+
+            wl_alea_sorte = wl_alea_sorte * wl_alea_sorte_plus
+            if ( wl_calc_val_1 < wl_alea_sorte )
+            {
+                wl_calc_val_1 = wl_alea_sorte
+            }
+
+            wl_alea = Math.ceil(Math.random() * 3)
+            if ( wl_alea < 1 )
+            {
+                wl_alea = 1
+            }
+
+            switch(wl_alea){
+                case 1:
+                    rock_1_p.opacity = 0.7
+                    rock_2_p.opacity = 1
+                    rock_3_p.opacity = 1
+
+                    rock_1.text = "?"
+                    rock_2.text = wl_calc_val_1+wl_alea_sorte
+                    rock_3.text = wl_calc_val_1+(wl_alea_sorte*2)
+
+                    rock_1_answer.text = wl_calc_val_1
+                    rock_2_answer.text = wl_calc_val_1 - wl_alea_sorte
+                    rock_3_answer.text = wl_calc_val_1 + wl_alea_sorte
+
+                    wl_good_answer = wl_calc_val_1
+                    break;
+                case 2:
+                    rock_1_p.opacity = 1
+                    rock_2_p.opacity = 0.7
+                    rock_3_p.opacity = 1
+
+                    rock_1.text = wl_calc_val_1
+                    rock_2.text = "?"
+                    rock_3.text = wl_calc_val_1+(wl_alea_sorte*2)
+
+                    rock_1_answer.text = wl_calc_val_1 - 1
+                    rock_2_answer.text = wl_calc_val_1 + wl_alea_sorte
+                    rock_3_answer.text = wl_calc_val_1 + (wl_alea_sorte*2)
+
+                    wl_good_answer = wl_calc_val_1 + wl_alea_sorte
+                    break;
+                case 3:
+                    rock_1_p.opacity = 1
+                    rock_2_p.opacity = 1
+                    rock_3_p.opacity = 0.7
+
+                    rock_1.text = wl_calc_val_1
+                    rock_2.text = wl_calc_val_1+wl_alea_sorte
+                    rock_3.text = "?"
+
+                    rock_1_answer.text = wl_calc_val_1 + (wl_alea_sorte*2)
+                    rock_2_answer.text = wl_calc_val_1 - 1
+                    rock_3_answer.text = wl_calc_val_1 + (wl_alea_sorte*3)
+
+                    wl_good_answer = wl_calc_val_1 + (wl_alea_sorte*2)
+                    break;
+            }
+            break;
         }
         sol_suivant.x = -(frm_application.width - 112)
         flotte_next.x = 102
