@@ -385,7 +385,7 @@ Item {
             rot_aig_hr.angle = ((wl_calc_val_1 * 360) / 12)
             rot_aig_mn.angle = ((wl_calc_val_2 * 360) / 12)
 
-            if ( wl_calc_val_1 > 8 && wl_calc_val_1 < 21 )
+            if ( wl_calc_val_1 > 6 && wl_calc_val_1 < 21 )
             {
                 img_temps.source = "../Images/Background/fd1_jour.png"
                 stars_back.visible = false
