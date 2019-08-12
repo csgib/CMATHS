@@ -76,8 +76,8 @@ Item {
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
-                        fire_cad.x = parent.x
-                        fire_cad.y = parent.y + repeat_carre.y
+                        fire_cad.x = parent.x + (parent.width/2)
+                        fire_cad.y = parent.y + repeat_carre.y + (parent.height/2)
                         if ( parent.opacity < 1 )
                         {
                             parent.opacity = 1
@@ -120,8 +120,8 @@ Item {
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
-                        fire_cad.x = parent.x
-                        fire_cad.y = parent.y + repeat_carre.y
+                        fire_cad.x = parent.x + (parent.width/2)
+                        fire_cad.y = parent.y + repeat_carre.y + (parent.height/2)
 
                         if ( parent.opacity < 1 )
                         {
@@ -164,8 +164,8 @@ Item {
             MouseArea{
                 anchors.fill: parent
                 onClicked: {
-                    fire_cad.x = parent.x
-                    fire_cad.y = parent.y + repeat_carre.y
+                    fire_cad.x = parent.x + (parent.width/2)
+                    fire_cad.y = parent.y + repeat_carre.y + (parent.height/2)
 
                     if ( parent.opacity < 1 )
                     {
@@ -231,7 +231,7 @@ Item {
             Behavior on y {
                 NumberAnimation {
                     easing.amplitude: 0.5
-                    duration: 2000
+                    duration: 200
                     easing.type: Easing.OutBounce
                 }
             }
@@ -239,7 +239,7 @@ Item {
             Behavior on x {
                 NumberAnimation {
                     easing.amplitude: 0.5
-                    duration: 2000
+                    duration: 200
                     easing.type: Easing.OutBounce
                 }
              }

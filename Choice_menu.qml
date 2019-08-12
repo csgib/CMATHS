@@ -262,21 +262,12 @@ Item {
                 }
 
                 WID_Activity{
-                    wg_txt_activity: "L'heure\nNiveau 1"
+                    wg_txt_activity: "L'heure"
                     wg_id_activity: 16
                     wg_niv_1: 1
                     wg_niv_2: 1
-                    wg_niv_3: 0.3
-                    wg_text_expl: "10h30"
-                }
-
-                WID_Activity{
-                    wg_txt_activity: "L'heure\nNiveau 2"
-                    wg_id_activity: 18
-                    wg_niv_1: 0.3
-                    wg_niv_2: 1
                     wg_niv_3: 1
-                    wg_text_expl: "16h40"
+                    wg_text_expl: "10h30"
                 }
 
                 WID_Activity{

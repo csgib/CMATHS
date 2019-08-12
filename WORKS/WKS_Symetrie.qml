@@ -6,6 +6,9 @@ Item {
 
     property int wl_current_motif: 0
     property var array_motif_sym: [
+        ["7", "8", "9", "14", "19", "24"],
+        ["2", "3", "8", "14", "19", "25", "30", "34", "39", "43", "47", "48"],
+        ["7", "8", "12", "13", "16", "17", "18", "19", "20", "23", "24", "28", "29", "33", "34", "38", "39", "40", "42"],
         ["10", "14", "15", "18", "19", "20", "22", "23", "24", "25", "28", "29", "30", "34", "35", "40", "43", "44", "45"],
         ["7", "8", "9", "10", "13", "14", "15", "19", "20", "23", "24", "25", "29", "30", "33", "34", "35", "37", "38", "39", "40", "45"],
         ["9", "10", "18", "19", "20", "23", "24", "25", "32", "33", "34", "35", "38", "39", "40", "44", "45"],
@@ -147,8 +150,8 @@ Item {
             x: -70
             y: 70
 
-            emitRate: 20
-            lifeSpan: 1000
+            emitRate: 5
+            lifeSpan: 10000
 
             acceleration: PointDirection { yVariation: 5; xVariation: 3 }
             velocity: PointDirection {xVariation: 3; yVariation: 5}
@@ -160,7 +163,7 @@ Item {
             Behavior on y {
                 NumberAnimation {
                     easing.amplitude: 0.5
-                    duration: 800
+                    duration: 200
                     easing.type: Easing.OutBounce
                 }
             }
@@ -168,7 +171,7 @@ Item {
             Behavior on x {
                 NumberAnimation {
                     easing.amplitude: 0.5
-                    duration: 800
+                    duration: 200
                     easing.type: Easing.OutBounce
                 }
              }

@@ -94,5 +94,6 @@
         <file>Images/fd_carte.png</file>
         <file>Sounds/exo_memory.wav</file>
         <file>Sounds/exo_tetri.wav</file>
+        <file>Images/Background/fd1_jour.png</file>
     </qresource>
 </RCC>

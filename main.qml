@@ -8,9 +8,9 @@ import "WIDGETS/"
 ApplicationWindow {
     id: frm_application
     visible: true
-    //width: 480
-    //height: 800
-    visibility: Window.FullScreen
+    width: 800
+    height: 700
+    //visibility: Window.FullScreen
     title: "CMATHS"
 
     onClosing: {
@@ -415,6 +415,7 @@ ApplicationWindow {
                     anchors.fill: parent
                     color: "#a780a0"
                     Image{
+                        id: img_temps
                         anchors.fill: parent
                         source: "Images/Background/fd1.png"
                         fillMode: Image.TileHorizontally
@@ -827,7 +828,6 @@ ApplicationWindow {
               consignes_txt.text = "Lis l'heure sur la pendule et donne le bon résultat."
               consignes.y = 0
               exoheures.play()
-              exo11.wl_sens = 0
               exo11.init_work()
               break;
           case 17:
@@ -841,7 +841,6 @@ ApplicationWindow {
               consignes_txt.text = "Lis l'heure sur la pendule et donne le bon résultat."
               consignes.y = 0
               exoheures.play()
-              exo11.wl_sens = 1
               exo11.init_work()
               break;
           case 19:
