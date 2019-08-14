@@ -183,8 +183,74 @@ Item {
     function change_values()
     {
         exo_calc_result.text = "..."
-        wl_calc_val_1 = Math.ceil(Math.random() * wl_current_max)
-        wl_calc_val_2 = Math.ceil(Math.random() * wl_current_max)
+        switch (wl_level_of_difficulty)
+        {
+            case 5:
+                wl_calc_val_1 = Math.ceil(Math.random() * 5)
+                wl_calc_val_2 = Math.ceil(Math.random() * 5)
+                break;
+            case 30:
+                var wl_str_val_1 = "";
+                var wl_str_val_2 = "";
+                var wl_idx_nbre = 0;
+
+                wl_str_val_1 = 0;
+                wl_str_val_2 = 0;
+
+                while ( wl_idx_nbre < 2 )
+                {
+                    wl_calc_val_1 = Math.ceil(Math.random() * 9)
+                    wl_calc_val_2 = Math.ceil(Math.random() * 9)
+
+                    while ( wl_calc_val_1+wl_calc_val_2 > 9 )
+                    {
+                        wl_calc_val_1 = Math.ceil(Math.random() * 9)
+                        wl_calc_val_2 = Math.ceil(Math.random() * 9)
+                    }
+
+                    wl_str_val_1 += "" + wl_calc_val_1;
+                    wl_str_val_2 += "" + wl_calc_val_2;
+
+                    wl_idx_nbre++;
+                }
+
+                wl_calc_val_1 = wl_str_val_1*1;
+                wl_calc_val_2 = wl_str_val_2*1;
+
+                break;
+            case 70:
+                var wl_str_val_1 = "";
+                var wl_str_val_2 = "";
+                var wl_idx_nbre = 0;
+                var wl_vari = Math.ceil(Math.random() * 3);
+
+                while ( wl_vari < 2 )
+                {
+                    wl_vari = Math.ceil(Math.random() * 3);
+                }
+
+                wl_str_val_1 = 0;
+                wl_str_val_2 = 0;
+
+                while ( wl_idx_nbre < wl_vari )
+                {
+                    wl_calc_val_1 = Math.ceil(Math.random() * 9)
+                    wl_calc_val_2 = Math.ceil(Math.random() * 9)
+
+                    wl_str_val_1 += "" + wl_calc_val_1;
+                    wl_str_val_2 += "" + wl_calc_val_2;
+
+                    wl_idx_nbre++;
+                }
+
+                wl_calc_val_1 = wl_str_val_1*1;
+                wl_calc_val_2 = wl_str_val_2*1;
+
+                break;
+        }
+
+
+
         if ( sens_count == 0 )
         {
             exo_calc_operation.text = wl_calc_val_1 + " + " + wl_calc_val_2 + " = ..."

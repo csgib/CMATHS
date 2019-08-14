@@ -30,6 +30,12 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
+# TODO A SUPP CAR ACT BUG QT
+android {
+    QMAKE_LFLAGS += -nostdlib++
+}
+
+
 DISTFILES += \
     android/AndroidManifest.xml \
     android/gradle/wrapper/gradle-wrapper.jar \

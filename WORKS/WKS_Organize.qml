@@ -40,7 +40,7 @@ Item {
 
         Flow{
             id: flow_exo_orga_1
-            width: parent.width
+            width: parent.width-20
             height: (parent.height-20) / 2
 
             spacing: 10
@@ -203,7 +203,7 @@ Item {
         }
 
         Flow{
-            width: parent.width
+            width: parent.width-20
             height: (parent.height-20) / 2
             anchors.top: flow_exo_orga_1.bottom
             anchors.topMargin: 10
