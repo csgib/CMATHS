@@ -13,10 +13,10 @@ Item {
 
     property int wl_angle: 0
 
-    width: wl_width
-    height: wl_height
-    x: wl_x
-    y: wl_y
+    width: (parent.width-6) / 6
+    height: (parent.height-6) / 6
+    /*x: wl_x
+    y: wl_y*/
 
     Behavior on y {
         NumberAnimation {
@@ -34,7 +34,6 @@ Item {
     }
 
     Rectangle {
-
         width: parent.width
         height: parent.height
         color: wl_color

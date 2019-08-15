@@ -8,14 +8,10 @@ import "WIDGETS/"
 ApplicationWindow {
     id: frm_application
     visible: true
-    /*width: 800
-    height: 700*/
-    visibility: Window.FullScreen
-    title: "CMATHS"
-
-    onClosing: {
-        close.accepted = true
-    }
+    width: 700
+    height: 450
+    //visibility: Window.FullScreen
+    title: "CMATHS - Les mathématiques au CP / CE1 / CE2"
 
     // *** BLOCK FOR LEVELS ***
     property int wl_current_level: 1

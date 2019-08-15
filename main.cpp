@@ -1,5 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+
 /*#ifdef Q_OS_ANDROID
 #include <QtAndroidExtras>
 #endif*/
