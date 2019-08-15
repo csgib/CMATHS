@@ -2,11 +2,10 @@ import QtQuick 2.0
 
 Item{
     property string wl_color: ""   
-    property int wl_width: 0
-    property int wl_height: 0
+    property int wl_number: 0
 
-    width: wl_width
-    height: wl_height
+    width: (parent.width-wl_number)/wl_number
+    height: parent.height
 
     Rectangle {
         width: parent.width

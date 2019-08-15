@@ -2,10 +2,6 @@ import QtQuick 2.0
 
 Item {
     id: root_number
-    property int wl_x: 0
-    property int wl_y: 0
-    property int wl_width: 0
-    property int wl_height: 0
     property int wl_col_number: 0
     property int wl_row_number: 0
     property string wl_str_txt: ""
@@ -15,8 +11,6 @@ Item {
 
     width: (parent.width-6) / 6
     height: (parent.height-6) / 6
-    /*x: wl_x
-    y: wl_y*/
 
     Behavior on y {
         NumberAnimation {

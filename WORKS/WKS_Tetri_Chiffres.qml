@@ -81,8 +81,7 @@ Item {
             {
                 wl_calc_val_1 = Math.ceil(Math.random() * wl_current_max)
 
-                wl_item_object = wg_item.createObject(tetri_grid, {"wl_x": ((parent.width-6)/6)*j, "wl_y": ((parent.height-6)/6)*i, "wl_width": (parent.width-12)/6, "wl_height": (parent.height-12)/6, "wl_str_txt": wl_calc_val_1, "wl_col_number": j, "wl_row_number": i})
-                //wl_item_object = wg_item.createObject(tetri_grid, {"wl_x": ((parent.width-6)/6)*j, "wl_y": ((parent.height-6)/6)*i, "wl_str_txt": wl_calc_val_1, "wl_col_number": j, "wl_row_number": i})
+                wl_item_object = wg_item.createObject(tetri_grid, {"wl_str_txt": wl_calc_val_1, "wl_col_number": j, "wl_row_number": i})
                 field[i][j] = wl_item_object
 
             }
@@ -169,39 +168,6 @@ Item {
             }
             else
             {
-
-                var wl_id_search = 0
-
-                for(i = 5; i > 0; i--)
-                {
-                    for(j = 0; j < 6; j++)
-                    {
-                        if ( field[i][j] == "" )
-                        {
-                            wl_id_search = 0
-                            while ( i-wl_id_search >= 0 )
-                            {
-                                if ( field[i-wl_id_search][j] != "" )
-                                {
-                                    break
-                                }
-                                else
-                                {
-                                    wl_id_search++
-                                }
-                            }
-
-                            if ( i-wl_id_search >= 0 )
-                            {
-                                //field[i-wl_id_search][j].y = ((tetri_grid.height-6)/6)*i
-                                field[i][j] = field[i-wl_id_search][j]
-                                field[i][j].wl_row_number = i
-                                field[i-wl_id_search][j] = ""
-                            }
-                        }
-                    }
-                }
-
                 var wl_item_object
 
                 for(i = 5; i >= 0; i--)
@@ -211,9 +177,8 @@ Item {
                         if ( field[i][j] == "" )
                         {
                             wl_calc_val_1 = Math.ceil(Math.random() * wl_current_max)
-                            wl_item_object = wg_item.createObject(tetri_grid, {"wl_x": ((tetri_grid.width-6)/6)*j, "wl_y": -200, "wl_width": (tetri_grid.width-12)/6, "wl_height": (tetri_grid.height-12)/6, "wl_str_txt": wl_calc_val_1, "wl_col_number": j, "wl_row_number": i})
+                            wl_item_object = wg_item.createObject(tetri_grid, {"wl_str_txt": wl_calc_val_1, "wl_col_number": j, "wl_row_number": i})
                             field[i][j] = wl_item_object
-                            //field[i][j].y = ((tetri_grid.height-6)/6)*i
                         }
                     }
                 }

@@ -10,13 +10,6 @@ Item {
         z: 1
     }
 
-    Image{
-        anchors.fill: parent
-        fillMode: Image.Tile
-        z: 2
-        source: "Images/grid.png"
-    }
-
     Rectangle{
         x: 0
         y: 0

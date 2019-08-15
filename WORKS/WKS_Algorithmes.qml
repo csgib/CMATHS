@@ -5,6 +5,7 @@ Item {
     property var array_Color: ["af7ac5", "85c1e9", "82e0aa", "f5b041", "e74c3c"]
     property int wl_current_algo_case: 0
     property int wl_max_algo: 0
+    property int wl_max_algo_difficulty: 0
 
     WID_Button{
         x: parent.width - 35
@@ -41,8 +42,9 @@ Item {
 
         Flow{
             id: flow_algo
-            spacing: 10
-            height: 150
+            spacing: 1
+            height: parent.height/3
+            width: parent.width
         }
 
         Flow{
@@ -52,7 +54,7 @@ Item {
             anchors.right: parent.right
             anchors.bottom: parent.bottom
             anchors.left: parent.left
-            spacing: 10
+            spacing: 1
         }
     }
 
@@ -164,6 +166,18 @@ Item {
     // *** MUST ALWAYS HAVE THIS ENTRY POINT IN WORK FOR INITIALIZE ***
     function init_work()
     {
+        switch (wl_level_of_difficulty)
+        {
+            case 5:
+                wl_max_algo_difficulty = 5
+                break;
+            case 30:
+                wl_max_algo_difficulty = 8
+                break;
+            case 70:
+                wl_max_algo_difficulty = 12
+                break;
+        }
         change_values()
     }
 
@@ -179,13 +193,13 @@ Item {
             flow_algo_answer.children[i].destroy()
         }
 
-        var wl_max = Math.ceil(Math.random() * 6)
+        var wl_max = Math.ceil(Math.random() * wl_max_algo_difficulty)
         while ( wl_max < 3 )
         {
-            wl_max = Math.ceil(Math.random() * 6)
+            wl_max = Math.ceil(Math.random() * wl_max_algo_difficulty)
         }
 
-        wl_max_algo = wl_max
+        wl_max_algo = wl_max*2
 
         var wl_idx = 0
 
@@ -200,21 +214,21 @@ Item {
 
             if ( ((frm_application.width-20) / (wl_max+2)) > supportflowalgo.height )
             {
-                sprite = component.createObject(flow_algo, {"wl_color": "#" + array_Color[wl_color_choose], "wl_width": (frm_application.width-20) / (wl_max+2), "wl_height": supportflowalgo.height})
+                sprite = component.createObject(flow_algo, {"wl_number": wl_max, "wl_color": "#" + array_Color[wl_color_choose], "wl_width": (frm_application.width-20) / (wl_max+2), "wl_height": supportflowalgo.height})
             }
             else
             {
-                sprite = component.createObject(flow_algo, {"wl_color": "#" + array_Color[wl_color_choose], "wl_width": (frm_application.width-20) / (wl_max+2), "wl_height": supportflowalgo.height})
+                sprite = component.createObject(flow_algo, {"wl_number": wl_max, "wl_color": "#" + array_Color[wl_color_choose], "wl_width": (frm_application.width-20) / (wl_max+2), "wl_height": supportflowalgo.height})
             }
 
             wl_idx++
         }
 
         wl_idx = 0
-        while ( wl_idx < 12 )
+        while ( wl_idx < wl_max*2 )
         {
             component = Qt.createComponent("../WIDGETS/Item_Rectangle.qml");
-            sprite = component.createObject(flow_algo_answer, {"wl_color": "#44FFFFFF", "wl_width": (flow_algo_answer.width-60) / 6, "wl_height": (flow_algo_answer.height-20) / 2})
+            sprite = component.createObject(flow_algo_answer, {"wl_number": wl_max*2, "wl_color": "#44FFFFFF"})
 
             wl_idx++
         }
@@ -226,7 +240,7 @@ Item {
         flow_algo_answer.children[wl_current_algo_case].wl_color = wl_saisie
         wl_current_algo_case++
 
-        if ( wl_current_algo_case == 12 )
+        if ( wl_current_algo_case == wl_max_algo )
         {
             fn_valide_result()
         }
@@ -237,7 +251,7 @@ Item {
         var wl_idx = 0
         var wl_idx_algo = 0
         var wl_errors = 0
-        while ( wl_idx < 12 )
+        while ( wl_idx < wl_max_algo )
         {
             if ( flow_algo_answer.children[wl_idx].wl_color != flow_algo.children[wl_idx_algo].wl_color )
             {
@@ -245,7 +259,7 @@ Item {
             }
 
             wl_idx_algo++
-            if ( wl_idx_algo == wl_max_algo )
+            if ( wl_idx_algo == (wl_max_algo/2) )
             {
                 wl_idx_algo = 0
             }
