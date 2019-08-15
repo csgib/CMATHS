@@ -340,10 +340,10 @@ Item {
 
         while ( wl_idx < 6 )
         {
-            wl_value = Math.ceil(Math.random() * wl_current_max)
+            wl_value = Math.ceil(Math.random() * (wl_current_max*2))
             while ( wl_values.indexOf(wl_value, 0) >= 0 )
             {
-                wl_value = Math.ceil(Math.random() * wl_current_max)
+                wl_value = Math.ceil(Math.random() * (wl_current_max*2))
             }
 
             wl_values[wl_idx] = wl_value * 1
