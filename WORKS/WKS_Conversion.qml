@@ -216,7 +216,6 @@ Item {
 
         for (var i=0; i < wl_good_answers.length; i++)
         {
-            console.log(wl_good_answers[i])
             if ( wl_results.indexOf(wl_good_answers[i]) >= 0 )
             {
                 wl_count_good++

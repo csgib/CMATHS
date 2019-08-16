@@ -125,6 +125,7 @@ Item {
             }
 
             Text{
+                id: txtselniv
                 y: 10
                 width: parent.width - 50
                 height: 100
@@ -139,60 +140,101 @@ Item {
                 styleColor: "#000000"
             }
 
-            WID_Button{
-                y: 180
-                anchors.right: parent.right
-                anchors.rightMargin: 40
-                anchors.left: parent.left
-                anchors.leftMargin: 40
-                button_title: "CP"
 
-                gradcolor_2: "#EEEEEE"
-                gradcolor_1: "#F5F5F5"
-                textcolor: "#222222"
+            Column{
+                anchors.top: txtselniv.bottom
+                x: 10
+                width: parent.width-20
+                anchors.bottom: parent.bottom
+                spacing: 10
+                Rectangle{
+                    width: (parent.height-30)/3
+                    height: (parent.height-30)/3
+                    color: "#488acd"
+                    radius: (parent.height-30)/3
+                    anchors.horizontalCenter: parent.horizontalCenter
 
-                onClicked: {
-                    select_level.y = 2200
-                    wl_level_of_difficulty = 5
-                    fn_start_game()
+                    Text{
+                        anchors.fill: parent
+                        font.pixelSize: 64
+                        fontSizeMode: Text.Fit
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                        font.family: local_school.name
+                        color: "#FFFFFF"
+                        style: Text.Outline
+                        styleColor: "#000000"
+                        text: "CP"
+                    }
+
+                    MouseArea{
+                        anchors.fill: parent
+                        onClicked: {
+                            select_level.y = 2200
+                            wl_level_of_difficulty = 5
+                            fn_start_game()
+                        }
+                    }
                 }
-            }
 
-            WID_Button{
-                y: 240
-                anchors.right: parent.right
-                anchors.rightMargin: 40
-                anchors.left: parent.left
-                anchors.leftMargin: 40
-                button_title: "Niveau CE1"
+                Rectangle{
+                    width: (parent.height-30)/3
+                    height: (parent.height-30)/3
+                    color: "#feb627"
+                    radius: (parent.height-30)/3
+                    anchors.horizontalCenter: parent.horizontalCenter
 
-                gradcolor_2: "#EEEEEE"
-                gradcolor_1: "#F5F5F5"
-                textcolor: "#222222"
+                    Text{
+                        anchors.fill: parent
+                        font.pixelSize: 64
+                        fontSizeMode: Text.Fit
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                        font.family: local_school.name
+                        color: "#FFFFFF"
+                        style: Text.Outline
+                        styleColor: "#000000"
+                        text: "CE1"
+                    }
 
-                onClicked: {
-                    select_level.y = 2200
-                    wl_level_of_difficulty = 30
-                    fn_start_game()
+                    MouseArea{
+                        anchors.fill: parent
+                        onClicked: {
+                            select_level.y = 2200
+                            wl_level_of_difficulty = 30
+                            fn_start_game()
+                        }
+                    }
                 }
-            }
 
-            WID_Button{
-                y: 300
-                anchors.right: parent.right
-                anchors.rightMargin: 40
-                anchors.left: parent.left
-                anchors.leftMargin: 40
-                button_title: "Niveau CE2"
+                Rectangle{
+                    width: (parent.height-30)/3
+                    height: (parent.height-30)/3
+                    color: "#ed2338"
+                    radius: (parent.height-30)/3
+                    anchors.horizontalCenter: parent.horizontalCenter
 
-                gradcolor_2: "#EEEEEE"
-                gradcolor_1: "#F5F5F5"
-                textcolor: "#222222"
+                    Text{
+                        anchors.fill: parent
+                        font.pixelSize: 64
+                        fontSizeMode: Text.Fit
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                        font.family: local_school.name
+                        color: "#FFFFFF"
+                        style: Text.Outline
+                        styleColor: "#000000"
+                        text: "CE2"
+                    }
 
-                onClicked: {
-                    select_level.y = 2200
-                    wl_level_of_difficulty = 70
-                    fn_start_game()
+                    MouseArea{
+                        anchors.fill: parent
+                        onClicked: {
+                            select_level.y = 2200
+                            wl_level_of_difficulty = 70
+                            fn_start_game()
+                        }
+                    }
                 }
             }
         }

@@ -44,7 +44,6 @@ DISTFILES += \
     android/build.gradle \
     android/gradle/wrapper/gradle-wrapper.properties \
     android/gradlew.bat \
-    Fonts/Licence_font.txt \
     cmaths.ico \
     LICENSE.txt \
     android/src/MyActivity.java

@@ -23,7 +23,7 @@ ApplicationWindow {
     property int wl_level_of_difficulty: 0
 
     // *** APPLICATION FONTS ***
-    FontLoader { id: local_school; source: "Fonts/GrandHotel-Regular.ttf" }
+    FontLoader { id: local_school; source: "Fonts/PatrickHand-Regular.ttf" }
 
     SoundEffect {
         id: nanbruitage
@@ -343,6 +343,9 @@ ApplicationWindow {
                           break;
                       case 26:
                           exo18.visible = true
+                          break;
+                      case 27:
+                          exo19.visible = true
                           break;
                     }
 
@@ -674,6 +677,17 @@ ApplicationWindow {
                     visible: false
                     z: 2
                 }
+
+                WKS_Pairimpair{
+                    id: exo19
+                    x: 0
+                    y: 10
+                    width: parent.width
+                    height: parent.height - 20
+                    anchors.fill: parent
+                    visible: false
+                    z: 2
+                }
             }
         }
     }
@@ -903,6 +917,12 @@ ApplicationWindow {
               //exomemo.play()
               exo18.init_work()
               break;
+          case 27:
+              consignes_txt.text = "Devines si les nombres et les chiffres sont pairs ou impairs."
+              consignes.y = 0
+              //exomemo.play()
+              exo19.init_work()
+              break;
         }
     }
 
@@ -991,6 +1011,9 @@ ApplicationWindow {
                 break;
             case 26:
                 exo18.visible = false
+                break;
+            case 27:
+                exo19.visible = false
                 break;
         }
     }

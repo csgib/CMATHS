@@ -54,7 +54,6 @@
         <file>Images/Background/fd3.png</file>
         <file>Images/candy3.png</file>
         <file>Images/toy3.png</file>
-        <file>Fonts/GrandHotel-Regular.ttf</file>
         <file>Images/grid.png</file>
         <file>WORKS/WKS_Heures.qml</file>
         <file>Images/aiguille.png</file>
@@ -96,5 +95,8 @@
         <file>Sounds/exo_tetri.wav</file>
         <file>Images/Background/fd1_jour.png</file>
         <file>WORKS/WKS_Conversion.qml</file>
+        <file>Fonts/PatrickHand-Regular.ttf</file>
+        <file>Fonts/OFL.txt</file>
+        <file>WORKS/WKS_Pairimpair.qml</file>
     </qresource>
 </RCC>

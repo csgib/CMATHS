@@ -296,6 +296,15 @@ Item {
                     wg_niv_3: 1
                     wg_text_expl: "1km = 1000m, ..."
                 }
+
+                WID_Activity{
+                    wg_txt_activity: "Pair\nImpair"
+                    wg_id_activity: 27
+                    wg_niv_1: 0.3
+                    wg_niv_2: 1
+                    wg_niv_3: 1
+                    wg_text_expl: "1, 3, 5 / 2, 4, 6"
+                }
             }
         }
     }
