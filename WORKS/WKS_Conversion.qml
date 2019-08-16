@@ -14,6 +14,10 @@ Item {
     property int wl_calc_val_3: 0
     property int wl_calc_val_4: 0
     property real wl_calc_val_5: 0
+    property var wl_good_answers: []
+    property int wl_idx_good_answers : 0
+    property string wl_eleve_answer: ""
+    property string wl_str_outvalues: ""
     property var wg_item: Qt.createComponent('../WIDGETS/WID_Number.qml')
 
     WID_Button{
@@ -90,6 +94,15 @@ Item {
 
     function change_values()
     {
+        for (var i = 0; i < itemcalcvalide_flow.children.length; i++)
+        {
+            itemcalcvalide_flow.children[i].destroy()
+        }
+
+        wl_good_answers= []
+
+        wl_eleve_answer = ""
+        wl_idx_good_answers = 0
         wl_calc_val_1 = Math.ceil(Math.random() * 3)
         wl_calc_val_2 = Math.ceil(Math.random() * 7)
         wl_calc_val_3 = Math.ceil(Math.random() * 20)
@@ -113,8 +126,9 @@ Item {
 
         var wl_item_object
         var wl_str_res = ""
+        wl_str_outvalues = ""
         var wl_good = 0
-        for(var i = 0; i < 4; i++)
+        for(i = 0; i < 4; i++)
         {
             wl_calc_val_4 = Math.ceil(Math.random() * 7)
             while (wl_calc_val_4 == wl_calc_val_2)
@@ -126,11 +140,12 @@ Item {
                 wl_calc_val_4--
             }
 
-            wl_good= Math.ceil(Math.random() * 10)
+            wl_good = Math.ceil(Math.random() * 10)
 
-            if ( wl_good < 5 )
+            if ( wl_good < 3 )
             {
-                if ( wl_calc_val_4 < wl_calc_val_2 )
+                console.log("BON")
+                if ( wl_calc_val_4 > wl_calc_val_2 )
                 {
                     wl_calc_val_5 = wl_calc_val_3 / Math.pow(10, wl_calc_val_2-wl_calc_val_4)
                 }
@@ -141,7 +156,7 @@ Item {
             }
             else
             {
-                if ( wl_calc_val_4 < wl_calc_val_2 )
+                if ( wl_calc_val_4 > wl_calc_val_2 )
                 {
                     wl_calc_val_5 = wl_calc_val_3 * Math.pow(10, wl_calc_val_2-wl_calc_val_4)
                 }
@@ -150,11 +165,62 @@ Item {
                     wl_calc_val_5 = wl_calc_val_3 / Math.pow(10, wl_calc_val_2-wl_calc_val_4)
                 }
             }
-
             wl_str_res = wl_calc_val_5 + " " + array_unites[wl_calc_val_1][wl_calc_val_4]
+
+            while ( wl_str_outvalues.indexOf(wl_str_res) >= 0 )
+            {
+                wl_calc_val_4 = Math.ceil(Math.random() * 7)
+                while (wl_calc_val_4 == wl_calc_val_2)
+                {
+                    wl_calc_val_4 = Math.ceil(Math.random() * 7)
+                }
+                if ( wl_calc_val_4 == 7 )
+                {
+                    wl_calc_val_4--
+                }
+
+                if ( wl_good < 3 )
+                {
+                    if ( wl_calc_val_4 > wl_calc_val_2 )
+                    {
+                        wl_calc_val_5 = wl_calc_val_3 / Math.pow(10, wl_calc_val_2-wl_calc_val_4)
+                    }
+                    else
+                    {
+                        wl_calc_val_5 = wl_calc_val_3 * Math.pow(10, wl_calc_val_2-wl_calc_val_4)
+                    }
+                }
+                else
+                {
+                    if ( wl_calc_val_4 > wl_calc_val_2 )
+                    {
+                        wl_calc_val_5 = wl_calc_val_3 * Math.pow(10, wl_calc_val_2-wl_calc_val_4)
+                    }
+                    else
+                    {
+                        wl_calc_val_5 = wl_calc_val_3 / Math.pow(10, wl_calc_val_2-wl_calc_val_4)
+                    }
+                }
+                wl_str_res = wl_calc_val_5 + " " + array_unites[wl_calc_val_1][wl_calc_val_4]
+            }
+
+            wl_str_outvalues += wl_str_res + ";"
+
+            if ( wl_good < 3 )
+            {
+                console.log("GOOD = " +wl_str_res)
+                wl_good_answers[wl_idx_good_answers] = wl_str_res
+                wl_idx_good_answers++
+            }
+
             wl_item_object = wg_item.createObject(itemcalcvalide_flow, {"wl_number_x": 1, "wl_number_y": 5, "wl_str_txt": wl_str_res, "wl_col_number": 0, "wl_row_number": i})
             field[i] = wl_item_object
         }
+        if ( wl_idx_good_answers == 0 )
+        {
+            wl_good_answers[wl_idx_good_answers] = "Aucune bonne réponse"
+        }
+
         wl_item_object = wg_item.createObject(itemcalcvalide_flow, {"wl_number_x": 1, "wl_number_y": 5, "wl_str_txt": "Aucune bonne réponse", "wl_col_number": 0, "wl_row_number": i})
         field[i] = wl_item_object
     }
@@ -164,77 +230,48 @@ Item {
         if ( field[wl_row].wl_color == "#aa222222" )
         {
             field[wl_row].wl_color = "#AAEEFF41"
+            wl_eleve_answer += wl_coord + ";"
         }
         else
         {
             field[wl_row].wl_color = "#aa222222"
+            wl_eleve_answer = wl_eleve_answer.replace(wl_coord + ";", "")
         }
     }
 
     function fn_valide_exocalc()
     {
-        /*if ( sens_count == 0 )
+        var wl_results = wl_eleve_answer.split(";")
+        var wl_count_good = 0;
+
+        console.log(wl_good_answers.length)
+        for (var i=0; i < wl_good_answers.length; i++)
         {
-            if ( parseInt(exo_calc_result.text) == wl_calc_val_1+wl_calc_val_2 )
+            console.log(wl_good_answers[i])
+            if ( wl_results.indexOf(wl_good_answers[i]) >= 0 )
             {
-                result_question.fn_show_hit("OK")
+                wl_count_good++
+            }
+        }
 
-                if ( wl_current_point > 10 )
-                {
-                    wl_current_max = wl_current_max+5
-                    wl_current_point = 0
+        if ( wl_count_good == wl_good_answers.length )
+        {
+            wl_current_max = wl_current_max+5
+            wl_current_point = 0
 
-                    if ( wl_current_point_cumul >= 50 )
-                    {
-                        fn_show_victory()
-                    }
-                    else
-                    {
-                        change_values()
-                    }
-                }
-                else
-                {
-                    change_values()
-                }
+            if ( wl_current_point_cumul >= 50 )
+            {
+                fn_show_victory()
             }
             else
             {
-                result_question.fn_show_hit("NOK")
-                fn_cancel_exocalc()
+                result_question.fn_show_hit("OK")
+                change_values()
             }
         }
         else
         {
-            if ( parseInt(exo_calc_result.text) == wl_calc_val_1-wl_calc_val_2 )
-            {
-                result_question.fn_show_hit("OK")
-
-                if ( wl_current_point > 10 )
-                {
-                    wl_current_max = wl_current_max+5
-                    wl_current_level++
-                    wl_current_point = 0
-
-                    if ( wl_current_point_cumul > 50 )
-                    {
-                        fn_show_victory()
-                    }
-                    else
-                    {
-                        change_values()
-                    }
-                }
-                else
-                {
-                    change_values()
-                }
-            }
-            else
-            {
-                result_question.fn_show_hit("NOK")
-                fn_cancel_exocalc()
-            }
-        }*/
-    }
+            result_question.fn_show_hit("NOK")
+        }
+     }
 }
