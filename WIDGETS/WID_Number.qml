@@ -6,17 +6,18 @@ Item {
     property int wl_row_number: 0
     property string wl_str_txt: ""
     property string wl_color: "#aa222222"
-
+    property int wl_number_x: 0
+    property int wl_number_y: 0
     property int wl_angle: 0
 
-    width: (parent.width-6) / 6
-    height: (parent.height-6) / 6
+    width: (parent.width-wl_number_x) / wl_number_x
+    height: (parent.height-wl_number_y) / wl_number_y
 
     Behavior on y {
         NumberAnimation {
             easing.amplitude: 1.8
             easing.overshoot: 0
-            duration: 800
+            duration: 900
             easing.type: Easing.OutBounce
         }
     }
@@ -75,7 +76,7 @@ Item {
 
     Timer {
         id: timer_destroy_number
-        interval: 180
+        interval: 280
         running: false
         repeat: false
         onTriggered: {

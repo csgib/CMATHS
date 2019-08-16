@@ -341,6 +341,9 @@ ApplicationWindow {
                       case 25:
                           exo17.visible = true
                           break;
+                      case 26:
+                          exo18.visible = true
+                          break;
                     }
 
                     support_jeu.visible = true
@@ -660,6 +663,17 @@ ApplicationWindow {
                     visible: false
                     z: 2
                 }
+
+                WKS_Conversion{
+                    id: exo18
+                    x: 0
+                    y: 10
+                    width: parent.width
+                    height: parent.height - 20
+                    anchors.fill: parent
+                    visible: false
+                    z: 2
+                }
             }
         }
     }
@@ -883,6 +897,12 @@ ApplicationWindow {
               exomemo.play()
               exo17.init_work()
               break;
+          case 26:
+              consignes_txt.text = "Trouves les bonnes conversions."
+              consignes.y = 0
+              //exomemo.play()
+              exo18.init_work()
+              break;
         }
     }
 
@@ -968,6 +988,9 @@ ApplicationWindow {
                 break;
             case 25:
                 exo17.visible = false
+                break;
+            case 26:
+                exo18.visible = false
                 break;
         }
     }

@@ -3,7 +3,7 @@ import "WIDGETS/"
 import QtGraphicalEffects 1.0
 
 Item {
-    property real activity_number: 12
+    property real activity_number: 14
     property int cell_per_row: Math.ceil((activity_number*2) / Math.floor((frm_application.height-90)/220))
 
     Rectangle{
@@ -286,6 +286,15 @@ Item {
                     wg_niv_2: 1
                     wg_niv_3: 0.3
                     wg_text_expl: "10 G | ?"
+                }
+
+                WID_Activity{
+                    wg_txt_activity: "Conversion\nd unités"
+                    wg_id_activity: 26
+                    wg_niv_1: 0.3
+                    wg_niv_2: 0.3
+                    wg_niv_3: 1
+                    wg_text_expl: "1km = 1000m, ..."
                 }
             }
         }

@@ -81,7 +81,7 @@ Item {
             {
                 wl_calc_val_1 = Math.ceil(Math.random() * wl_current_max)
 
-                wl_item_object = wg_item.createObject(tetri_grid, {"wl_str_txt": wl_calc_val_1, "wl_col_number": j, "wl_row_number": i})
+                wl_item_object = wg_item.createObject(tetri_grid, {"wl_number_x": 6, "wl_number_y": 6, "wl_str_txt": wl_calc_val_1, "wl_col_number": j, "wl_row_number": i})
                 field[i][j] = wl_item_object
 
             }
@@ -177,7 +177,7 @@ Item {
                         if ( field[i][j] == "" )
                         {
                             wl_calc_val_1 = Math.ceil(Math.random() * wl_current_max)
-                            wl_item_object = wg_item.createObject(tetri_grid, {"wl_str_txt": wl_calc_val_1, "wl_col_number": j, "wl_row_number": i})
+                            wl_item_object = wg_item.createObject(tetri_grid, {"wl_number_x": 6, "wl_number_y": 6, "wl_str_txt": wl_calc_val_1, "wl_col_number": j, "wl_row_number": i})
                             field[i][j] = wl_item_object
                         }
                     }
