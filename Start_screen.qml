@@ -111,7 +111,7 @@ Item {
 
         Rectangle{
             anchors.fill:  parent
-            color: "#AA740846"
+            color: "#AA222222"
 
             WID_Button{
                 x: parent.width - 35
