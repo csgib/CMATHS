@@ -142,28 +142,13 @@ Item {
 
             wl_good = Math.ceil(Math.random() * 10)
 
-            if ( wl_good < 3 )
+            if ( wl_good < 5 )
             {
-                console.log("BON")
-                if ( wl_calc_val_4 > wl_calc_val_2 )
-                {
-                    wl_calc_val_5 = wl_calc_val_3 / Math.pow(10, wl_calc_val_2-wl_calc_val_4)
-                }
-                else
-                {
-                    wl_calc_val_5 = wl_calc_val_3 * Math.pow(10, wl_calc_val_2-wl_calc_val_4)
-                }
+                wl_calc_val_5 = wl_calc_val_3 / Math.pow(10, wl_calc_val_2-wl_calc_val_4)
             }
             else
             {
-                if ( wl_calc_val_4 > wl_calc_val_2 )
-                {
-                    wl_calc_val_5 = wl_calc_val_3 * Math.pow(10, wl_calc_val_2-wl_calc_val_4)
-                }
-                else
-                {
-                    wl_calc_val_5 = wl_calc_val_3 / Math.pow(10, wl_calc_val_2-wl_calc_val_4)
-                }
+                 wl_calc_val_5 = wl_calc_val_3 * Math.pow(10, wl_calc_val_2-wl_calc_val_4)
             }
             wl_str_res = wl_calc_val_5 + " " + array_unites[wl_calc_val_1][wl_calc_val_4]
 
@@ -179,36 +164,21 @@ Item {
                     wl_calc_val_4--
                 }
 
-                if ( wl_good < 3 )
+                if ( wl_good < 5 )
                 {
-                    if ( wl_calc_val_4 > wl_calc_val_2 )
-                    {
-                        wl_calc_val_5 = wl_calc_val_3 / Math.pow(10, wl_calc_val_2-wl_calc_val_4)
-                    }
-                    else
-                    {
-                        wl_calc_val_5 = wl_calc_val_3 * Math.pow(10, wl_calc_val_2-wl_calc_val_4)
-                    }
+                    wl_calc_val_5 = wl_calc_val_3 / Math.pow(10, wl_calc_val_2-wl_calc_val_4)
                 }
                 else
                 {
-                    if ( wl_calc_val_4 > wl_calc_val_2 )
-                    {
-                        wl_calc_val_5 = wl_calc_val_3 * Math.pow(10, wl_calc_val_2-wl_calc_val_4)
-                    }
-                    else
-                    {
-                        wl_calc_val_5 = wl_calc_val_3 / Math.pow(10, wl_calc_val_2-wl_calc_val_4)
-                    }
+                    wl_calc_val_5 = wl_calc_val_3 * Math.pow(10, wl_calc_val_2-wl_calc_val_4)
                 }
                 wl_str_res = wl_calc_val_5 + " " + array_unites[wl_calc_val_1][wl_calc_val_4]
             }
 
             wl_str_outvalues += wl_str_res + ";"
 
-            if ( wl_good < 3 )
+            if ( wl_good < 5 )
             {
-                console.log("GOOD = " +wl_str_res)
                 wl_good_answers[wl_idx_good_answers] = wl_str_res
                 wl_idx_good_answers++
             }
@@ -244,7 +214,6 @@ Item {
         var wl_results = wl_eleve_answer.split(";")
         var wl_count_good = 0;
 
-        console.log(wl_good_answers.length)
         for (var i=0; i < wl_good_answers.length; i++)
         {
             console.log(wl_good_answers[i])
