@@ -1,4 +1,5 @@
 import QtQuick 2.0
+import QtQuick.Controls 2.5
 import "WIDGETS/"
 
 Item {
@@ -111,7 +112,7 @@ Item {
 
         Rectangle{
             anchors.fill:  parent
-            color: "#AA222222"
+            color: "#DD222222"
 
             WID_Button{
                 x: parent.width - 35
@@ -129,7 +130,7 @@ Item {
                 y: 10
                 width: parent.width - 50
                 height: 100
-                text: "Dans qu'elle classe est tu ?\nAinsi CMATHS te proposera des exercices avec un niveau adapté"
+                text: "Dans qu'elle classe es tu ?\nAinsi CMATHS te proposera des exercices avec un niveau adapté"
                 font.pixelSize: 128
                 fontSizeMode: Text.Fit
                 horizontalAlignment: Text.AlignHCenter

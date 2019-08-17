@@ -144,11 +144,25 @@ Item {
 
             if ( wl_good < 5 )
             {
-                wl_calc_val_5 = wl_calc_val_3 / Math.pow(10, wl_calc_val_2-wl_calc_val_4)
+                if ( wl_calc_val_2 != wl_calc_val_4 )
+                {
+                    wl_calc_val_5 = wl_calc_val_3 / Math.pow(10, wl_calc_val_2-wl_calc_val_4)
+                }
+                else
+                {
+                    wl_calc_val_5 = wl_calc_val_3
+                }
             }
             else
             {
-                 wl_calc_val_5 = wl_calc_val_3 * Math.pow(10, wl_calc_val_2-wl_calc_val_4)
+                if ( wl_calc_val_2 != wl_calc_val_4 )
+                {
+                    wl_calc_val_5 = wl_calc_val_3 * Math.pow(10, wl_calc_val_2-wl_calc_val_4)
+                }
+                else
+                {
+                    wl_calc_val_5 = wl_calc_val_3
+                }
             }
             wl_str_res = wl_calc_val_5 + " " + array_unites[wl_calc_val_1][wl_calc_val_4]
 
@@ -166,11 +180,25 @@ Item {
 
                 if ( wl_good < 5 )
                 {
-                    wl_calc_val_5 = wl_calc_val_3 / Math.pow(10, wl_calc_val_2-wl_calc_val_4)
+                    if ( wl_calc_val_2 != wl_calc_val_4 )
+                    {
+                        wl_calc_val_5 = wl_calc_val_3 / Math.pow(10, wl_calc_val_2-wl_calc_val_4)
+                    }
+                    else
+                    {
+                        wl_calc_val_5 = wl_calc_val_3
+                    }
                 }
                 else
                 {
-                    wl_calc_val_5 = wl_calc_val_3 * Math.pow(10, wl_calc_val_2-wl_calc_val_4)
+                    if ( wl_calc_val_2 != wl_calc_val_4 )
+                    {
+                        wl_calc_val_5 = wl_calc_val_3 * Math.pow(10, wl_calc_val_2-wl_calc_val_4)
+                    }
+                    else
+                    {
+                        wl_calc_val_5 = wl_calc_val_3
+                    }
                 }
                 wl_str_res = wl_calc_val_5 + " " + array_unites[wl_calc_val_1][wl_calc_val_4]
             }
