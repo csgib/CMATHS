@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.12
 
 Item {
     id: root
@@ -25,7 +25,6 @@ Item {
 
         border.color: Qt.darker(gradcolor_2,1.2)
         border.width: 2
-        radius: 6
 
         Text{
             text: button_title
@@ -42,6 +41,7 @@ Item {
         }
 
         MouseArea {
+            id: btmousearea
             anchors.fill: parent
             hoverEnabled: true
             onEntered: {

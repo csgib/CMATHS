@@ -1,7 +1,8 @@
-import QtQuick 2.7
-import QtQuick.Controls 2.0
-import QtQuick.Window 2.3
-import QtMultimedia 5.9
+import QtQuick 2.12
+import QtQuick.Controls 2.12
+import QtQuick.Window 2.12
+import QtMultimedia 5.12
+import QtGamepad 1.12
 import "WORKS/"
 import "WIDGETS/"
 
@@ -1051,6 +1052,59 @@ ApplicationWindow {
         repeat: false
         onTriggered: {
             choice_menu.x = 10000
+        }
+    }
+
+    Connections {
+        target: GamepadManager
+        onGamepadConnected: {
+            gamepad.deviceId = deviceId
+            console.log("CONNECTED")
+        }
+    }
+
+    Gamepad {
+        id: gamepad
+        deviceId: GamepadManager.connectedGamepads.length > 0 ? GamepadManager.connectedGamepads[0] : -1
+    }
+
+    GamepadKeyNavigation {
+        id: gamepadKeyNavigation
+        gamepad: gamepad
+        active: true
+        buttonYKey: Qt.Key_Y
+    }
+
+    Image{
+        id: mypointer
+        source: "../Images/Cursor.png"
+        width: 56
+        height: 67
+        fillMode: Image.PreserveAspectFit
+        x: gamepad.x
+        y: gamepad.y
+        z: 999
+        visible: false
+    }
+
+    Text {
+        text: ""
+        anchors.centerIn: parent
+        focus: true
+        z: 0
+        Keys.onPressed: {
+            mypointer.visible = true
+            if (event.key === Qt.Key_Up) {
+                mypointer.y = mypointer.y - 10;
+            } else if (event.key === Qt.Key_Down) {
+                mypointer.y = mypointer.y + 10;
+            } else if (event.key === Qt.Key_Right) {
+                mypointer.x = mypointer.x + 10;
+            } else if (event.key === Qt.Key_Left) {
+                mypointer.x = mypointer.x - 10;
+            } else if (event.key === Qt.Key_Enter) {
+                 console.log("coucou" + event.x);
+            }
         }
     }
 }

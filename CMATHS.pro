@@ -1,4 +1,4 @@
-QT += quick multimedia
+QT += quick multimedia gamepad
 #android: QT += androidextras
 CONFIG += c++11
 

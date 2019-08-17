@@ -98,5 +98,6 @@
         <file>Fonts/PatrickHand-Regular.ttf</file>
         <file>Fonts/OFL.txt</file>
         <file>WORKS/WKS_Pairimpair.qml</file>
+        <file>Images/Cursor.png</file>
     </qresource>
 </RCC>
