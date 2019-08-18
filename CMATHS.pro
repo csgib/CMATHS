@@ -49,3 +49,5 @@ DISTFILES += \
     android/src/MyActivity.java
 
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+
+HEADERS +=

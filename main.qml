@@ -1063,16 +1063,54 @@ ApplicationWindow {
         }
     }
 
+    Connections {
+        target: GamepadManager
+        onGamepadConnected: gamepad.deviceId = deviceId
+    }
+
     Gamepad {
         id: gamepad
         deviceId: GamepadManager.connectedGamepads.length > 0 ? GamepadManager.connectedGamepads[0] : -1
+        onButtonAChanged: {
+            if (value == true) {
+                gamepadMouse.mouseButtonPressed(Qt.LeftButton);
+                console.log("Mouse click at: " + gamepadMouse.mousePosition.x + "," + gamepadMouse.mousePosition.y);
+            } else {
+                gamepadMouse.mouseButtonReleased(Qt.LeftButton);
+            }
+        }
     }
 
-    GamepadKeyNavigation {
-        id: gamepadKeyNavigation
-        gamepad: gamepad
+    GamepadMouseItem {
+        id: gamepadMouse
+        anchors.fill: parent
+        gamepad: gamepad1
         active: true
-        buttonYKey: Qt.Key_Y
+
+        Rectangle {
+            id: cursor
+            width: 9
+            height: 9
+            radius: 4.5
+            x: gamepadMouse.mousePosition.x
+            y: gamepadMouse.mousePosition.y
+            color: "transparent"
+            border.color: "red"
+            Rectangle {
+                x: cursor.width * 0.5 - 0.5
+                y: 1
+                width: 1
+                height: cursor.height - 2
+                color: "black"
+            }
+            Rectangle {
+                x: 1
+                y: cursor.height * 0.5 - 0.5
+                height: 1
+                width: cursor.width - 2
+                color: "black"
+            }
+        }
     }
 
     Image{
@@ -1103,7 +1141,14 @@ ApplicationWindow {
             } else if (event.key === Qt.Key_Left) {
                 mypointer.x = mypointer.x - 10;
             } else if (event.key === Qt.Key_Enter) {
-                 console.log("coucou" + event.x);
+                console.log("FIRE")
+                cursor.x = mypointer.x
+                cursor.y = mypointer.y
+                /*gamepadMouse.mousePosition.x = gamepad.x
+                gamepadMouse.mousePosition.y = gamepad.y*/
+
+                gamepadMouse.mouseButtonPressed(Qt.LeftButton)
+                gamepadMouse.mouseButtonReleased(Qt.LeftButton);
             }
         }
     }
