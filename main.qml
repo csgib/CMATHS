@@ -2,7 +2,7 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Window 2.12
 import QtMultimedia 5.12
-import QtGamepad 1.12
+//import QtGamepad 1.12
 import "WORKS/"
 import "WIDGETS/"
 
@@ -53,133 +53,6 @@ ApplicationWindow {
     SoundEffect {
         id: oui4bruitage
         source: "Sounds/oui4.wav"
-        volume: 1.0
-    }
-
-    SoundEffect {
-        id: exo1bruitage
-        source: "Sounds/exo_compare.wav"
-        volume: 1.0
-    }
-
-    SoundEffect {
-        id: exo2bruitage
-        source: "Sounds/exo_pppg.wav"
-        volume: 1.0
-    }
-
-    SoundEffect {
-        id: exo2bruitage2
-        source: "Sounds/exo_pgpp.wav"
-        volume: 1.0
-    }
-
-    SoundEffect {
-        id: exoadd
-        source: "Sounds/exo_additions.wav"
-        volume: 1.0
-    }
-
-    SoundEffect {
-        id: exosous
-        source: "Sounds/exo_soustractions.wav"
-        volume: 1.0
-    }
-
-    SoundEffect {
-        id: exoadix
-        source: "Sounds/exo_adix.wav"
-        volume: 1.0
-    }
-
-    SoundEffect {
-        id: exoalgo
-        source: "Sounds/exo_alogo.wav"
-        volume: 1.0
-    }
-
-    SoundEffect {
-        id: exocompte
-        source: "Sounds/exo_compte.wav"
-        volume: 1.0
-    }
-
-    SoundEffect {
-        id: youwin
-        source: "Sounds/youwin.wav"
-        volume: 1.0
-        loops: 2
-    }
-
-    SoundEffect {
-        id: exotadd
-        source: "Sounds/exo_table_add.wav"
-        volume: 1.0
-    }
-
-    SoundEffect {
-        id: exotmul
-        source: "Sounds/exo_table_mul.wav"
-        volume: 1.0
-    }
-
-    SoundEffect {
-        id: exocomplete
-        source: "Sounds/exo_complete.wav"
-        volume: 1.0
-    }
-
-    SoundEffect {
-        id: exopieces
-        source: "Sounds/exo_pieces.wav"
-        volume: 1.0
-    }
-
-    SoundEffect {
-        id: exogrid
-        source: "Sounds/exo_grid.wav"
-        volume: 1.0
-    }
-
-    SoundEffect {
-        id: exoheures
-        source: "Sounds/exo_heures.wav"
-        volume: 1.0
-    }
-
-    SoundEffect {
-        id: exosymetrie
-        source: "Sounds/exo_symetrie.wav"
-        volume: 1.0
-    }
-
-    SoundEffect {
-        id: exosuivant
-        source: "Sounds/exo_suivant.wav"
-        volume: 1.0
-    }
-
-    SoundEffect {
-        id: exobalance
-        source: "Sounds/exo_balance.wav"
-        volume: 1.0
-    }
-
-    SoundEffect {
-        id: exogridcount
-        source: "Sounds/exo_grid_count.wav"
-        volume: 1.0
-    }
-
-    SoundEffect {
-        id: exomemo
-        source: "Sounds/exo_memory.wav"
-        volume: 1.0
-    }
-
-    SoundEffect {
-        id: exotetri
-        source: "Sounds/exo_tetri.wav"
         volume: 1.0
     }
 
@@ -878,12 +751,12 @@ ApplicationWindow {
               exo17.init_work()
               break;
           case 26:
-              consignes_txt.text = "Trouves les bonnes conversions."
+              consignes_txt.text = "Trouve les bonnes conversions."
               consignes.y = 0
               exo18.init_work()
               break;
           case 27:
-              consignes_txt.text = "Devines si les nombres et les chiffres sont pairs ou impairs."
+              consignes_txt.text = "Devine si les nombres et les chiffres sont pairs ou impairs."
               consignes.y = 0
               exo19.init_work()
               break;

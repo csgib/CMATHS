@@ -27,7 +27,8 @@ Item {
         anchors.topMargin: 10
         Text{
             id: val1
-            anchors.fill: parent
+            width: parent.width
+            height: parent.height
             style: Text.Outline
             styleColor: "#000000"
             color: "#ffffff"

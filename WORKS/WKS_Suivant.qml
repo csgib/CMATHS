@@ -377,7 +377,7 @@ Item {
                     rock_2.text = "?"
                     rock_3.text = wl_calc_val_1+(wl_alea_sorte*2)
 
-                    rock_1_answer.text = wl_calc_val_1 - 1
+                    rock_1_answer.text = wl_calc_val_1 - wl_alea_sorte
                     rock_2_answer.text = wl_calc_val_1 + wl_alea_sorte
                     rock_3_answer.text = wl_calc_val_1 + (wl_alea_sorte*2)
 
@@ -393,7 +393,7 @@ Item {
                     rock_3.text = "?"
 
                     rock_1_answer.text = wl_calc_val_1 + (wl_alea_sorte*2)
-                    rock_2_answer.text = wl_calc_val_1 - 1
+                    rock_2_answer.text = wl_calc_val_1 - wl_alea_sorte
                     rock_3_answer.text = wl_calc_val_1 + (wl_alea_sorte*3)
 
                     wl_good_answer = wl_calc_val_1 + (wl_alea_sorte*2)
@@ -459,7 +459,7 @@ Item {
                     rock_2.text = "?"
                     rock_3.text = wl_calc_val_1+(wl_alea_sorte*2)
 
-                    rock_1_answer.text = wl_calc_val_1 - 1
+                    rock_1_answer.text = wl_calc_val_1 - wl_alea_sorte
                     rock_2_answer.text = wl_calc_val_1 + wl_alea_sorte
                     rock_3_answer.text = wl_calc_val_1 + (wl_alea_sorte*2)
 
@@ -475,7 +475,7 @@ Item {
                     rock_3.text = "?"
 
                     rock_1_answer.text = wl_calc_val_1 + (wl_alea_sorte*2)
-                    rock_2_answer.text = wl_calc_val_1 - 1
+                    rock_2_answer.text = wl_calc_val_1 - wl_alea_sorte
                     rock_3_answer.text = wl_calc_val_1 + (wl_alea_sorte*3)
 
                     wl_good_answer = wl_calc_val_1 + (wl_alea_sorte*2)
