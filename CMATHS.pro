@@ -1,4 +1,4 @@
-QT += quick multimedia gamepad
+QT += quick multimedia
 #android: QT += androidextras
 CONFIG += c++11
 
@@ -30,9 +30,9 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-# TODO A SUPP CAR ACT BUG QT
 android {
-    QMAKE_LFLAGS += -nostdlib++
+    QMAKE_LFLAGS += -nostdlib++ # TODO A SUPP CAR ACT BUG QT
+    QT += gamepad
 }
 
 

@@ -26,19 +26,8 @@
         <file>Images/candy1.png</file>
         <file>Images/candy2.png</file>
         <file>Sounds/oui.wav</file>
-        <file>Sounds/exo_compare.wav</file>
-        <file>Sounds/exo_pgpp.wav</file>
-        <file>Sounds/exo_pppg.wav</file>
-        <file>Sounds/exo_additions.wav</file>
-        <file>Sounds/exo_adix.wav</file>
-        <file>Sounds/exo_alogo.wav</file>
-        <file>Sounds/exo_soustractions.wav</file>
-        <file>Sounds/exo_compte.wav</file>
         <file>WORKS/WKS_Calcul_trou.qml</file>
         <file>WORKS/WKS_Multiplications.qml</file>
-        <file>Sounds/exo_complete.wav</file>
-        <file>Sounds/exo_table_add.wav</file>
-        <file>Sounds/exo_table_mul.wav</file>
         <file>Sounds/youwin.wav</file>
         <file>Images/10cent.png</file>
         <file>Images/2euro.png</file>
@@ -47,8 +36,6 @@
         <file>Images/20cent.png</file>
         <file>WORKS/WKS_Monnaie.qml</file>
         <file>WORKS/WKS_Grid.qml</file>
-        <file>Sounds/exo_pieces.wav</file>
-        <file>Sounds/exo_grid.wav</file>
         <file>Images/Background/fd1.png</file>
         <file>Images/Background/fd2.png</file>
         <file>Images/Background/fd3.png</file>
@@ -60,14 +47,12 @@
         <file>Images/horloge.png</file>
         <file>Images/aiguille_m.png</file>
         <file>Images/fd_activity.png</file>
-        <file>Sounds/exo_heures.wav</file>
         <file>Images/b10.png</file>
         <file>Images/b5.png</file>
         <file>Images/b20.png</file>
         <file>Images/b50.png</file>
         <file>Images/b100.png</file>
         <file>WORKS/WKS_Symetrie.qml</file>
-        <file>Sounds/exo_symetrie.wav</file>
         <file>Sounds/oui2.wav</file>
         <file>Sounds/oui3.wav</file>
         <file>Sounds/oui4.wav</file>
@@ -78,21 +63,16 @@
         <file>WORKS/WKS_Suivant.qml</file>
         <file>Images/Game_art/stone.png</file>
         <file>Images/Game_art/player.gif</file>
-        <file>Sounds/exo_suivant.wav</file>
         <file>WORKS/WKS_Balance.qml</file>
-        <file>Sounds/exo_balance.wav</file>
         <file>Images/Game_art/rock.png</file>
         <file>Images/Game_art/cactus.png</file>
         <file>WORKS/WKS_Grid_Calc.qml</file>
-        <file>Sounds/exo_grid_count.wav</file>
         <file>Images/Game_art/block.png</file>
         <file>Images/Game_art/sand.png</file>
         <file>WORKS/WKS_Tetri_Chiffres.qml</file>
         <file>WIDGETS/WID_Number.qml</file>
         <file>WORKS/WKS_Memory.qml</file>
         <file>Images/fd_carte.png</file>
-        <file>Sounds/exo_memory.wav</file>
-        <file>Sounds/exo_tetri.wav</file>
         <file>Images/Background/fd1_jour.png</file>
         <file>WORKS/WKS_Conversion.qml</file>
         <file>Fonts/PatrickHand-Regular.ttf</file>
